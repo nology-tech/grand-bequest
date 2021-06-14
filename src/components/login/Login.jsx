@@ -3,10 +3,10 @@ import "Login.scss";
 
 const Login = () => {
     return (
-        <div class="login">
-            <input class="login__email" type="text" />
+        <div className="login">
+            <input className="login__email" type="text" />
             <input type="password" />
-            <button class="login__button">Login</button>
+            <button className="login__button">Login</button>
         </div>
     )
 }
