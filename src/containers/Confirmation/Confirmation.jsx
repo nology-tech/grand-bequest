@@ -2,21 +2,35 @@ import React from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
 
-const Confirmation = () => {
+const Confirmation = (props) => {
   const history = useHistory();
 
   const cancelSubmit = () => {
     // Are you sure you want to cancel?
+    const newData = {...props.imgData};
+    for (let i in newData) {
+      newData[i] = "";
+    }
+    console.log(newData);
+    props.setImgData(newData);
 
     history.push("home");
   };
+
+  const confirmImage = () => {
+    const newData = {...props.imgData};
+    newData.image = "this-is-an-abandoned-building.jpg";
+    props.setImgData(newData);
+
+    history.push('submit');
+  }
 
   const quickSubmit = () => {
     // Are you sure you don't want to add more information?
     // with a 'Don't show me this again' tickbox
 
     // If all OK, sends to DB
-    console.log("Sent to DB!");
+    console.log("Sent to DB!", props.imgData);
   };
 
   const handleLiveCapture = () => {
@@ -29,8 +43,9 @@ const Confirmation = () => {
       <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
 
       <div>
+        <p style={{fontSize:"8px"}}>[MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH CAPTURE/CONFIRM]</p>
         <label for="live-capture" className="custom-file-upload button">
-          Capture
+          Retake
         </label>
         <input
           style={{ display: "none" }}
@@ -40,7 +55,7 @@ const Confirmation = () => {
           onChange={handleLiveCapture}
           id="live-capture"
         />
-        <button className="button">Confirm</button>
+        <button className="button" onClick={confirmImage}>Confirm</button>
       </div>
 
       <button className="button" onClick={cancelSubmit}>

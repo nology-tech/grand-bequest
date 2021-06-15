@@ -5,23 +5,24 @@ import Confirmation from "../Confirmation";
 import ErrorPage from "../ErrorPage";
 import Submit from "../Submit";
 
-const Routes = () => {
+const Routes = (props) => {
+
   return (
     <Switch>
       <Route exact path="/">
-        <Home />
+        <Home imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/home">
-        <Home />
+        <Home imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/confirmation">
-        <Confirmation />
+        <Confirmation imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/submit">
-        <Submit />
+        <Submit imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/details">
-        <Details />
+        <Details imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/*">
         <ErrorPage />

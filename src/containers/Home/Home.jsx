@@ -11,6 +11,11 @@ const Home = (props) => {
 
   const handleLiveCapture = () => {
     setHasMedia(true);
+    // handle geolocation here, and add to OBJECT
+    const newData = {...props.imgData};
+    newData.geolocation = "x342.524 y2455.43";
+    props.setImgData(newData);
+
     history.push("confirmation");
   };
 
@@ -22,8 +27,7 @@ const Home = (props) => {
   return (
     <div className="container">
       <p>Home Test</p>
-      {/* <button>Upload existing</button> */}
-      {/* <button onClick={handleOnClick}>Capture</button> */}
+      <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
 
       <label for="file-upload" className="custom-file-upload button">
         Upload Image
