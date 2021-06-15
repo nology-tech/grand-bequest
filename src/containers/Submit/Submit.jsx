@@ -13,7 +13,7 @@ const Submit = (props) => {
     }
     console.log(newData);
     props.setImgData(newData);
-    
+
     history.push("home");
   };
 
@@ -31,6 +31,7 @@ const Submit = (props) => {
     <div className="container">
       <p>Submit Page</p>
       <img src="https://openmaptiles.org/img/home-banner-map.png" />
+      <p style={{fontSize:"10px"}}>[Capture image preview would display with pin on map with this 'Add Information?' button]</p>
       <button className="button" onClick={addInformation}>Add Information?</button>
 
 

@@ -28,6 +28,9 @@ const Confirmation = (props) => {
   const quickSubmit = () => {
     // Are you sure you don't want to add more information?
     // with a 'Don't show me this again' tickbox
+    const newData = {...props.imgData};
+    newData.image = "this-is-an-abandoned-building.jpg";
+    props.setImgData(newData);
 
     // If all OK, sends to DB
     console.log("Sent to DB!", props.imgData);
@@ -43,7 +46,7 @@ const Confirmation = (props) => {
       <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
 
       <div>
-        <p style={{fontSize:"8px"}}>[MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH CAPTURE/CONFIRM]</p>
+        <p style={{fontSize:"10px"}}>[MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH RETAKE/CONFIRM BUTTONS]</p>
         <label for="live-capture" className="custom-file-upload button">
           Retake
         </label>
