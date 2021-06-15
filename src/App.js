@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-import Modal from "./components/Modal";
+import Modal from "../src/components/Modal/Modal";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -14,7 +14,7 @@ function App() {
   };
   return (
     <div className="App">
-      {!show && <button onClick={openModal}>Show modal</button>}
+      {!show && <button onClick={openModal}>Help</button>}
       <Modal closeModal={closeModal} show={show} />
     </div>
   );
