@@ -2,7 +2,8 @@ import React from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
 
-const Confirmation = () => {
+
+const Submit = () => {
 
   const history = useHistory();
 
@@ -12,22 +13,19 @@ const Confirmation = () => {
     history.push('home')
   }
 
-  const quickSubmit = () => {
-    // Are you sure you don't want to add more information?
-    // with a 'Don't show me this again' tickbox
-
-    // If all OK, sends to DB
+  const sendToDB = () => {
+    // Maybe add, do you want to add more information?
+    // Yes sends to details form, no just submits
     console.log("Sent to DB!");
-
   }
 
   return (
     <div className="container">
-      <p>Confirmation Test</p>
+      <p>Submit Page</p>
       <button onClick={cancelSubmit}>Cancel</button>
-      <button onClick={quickSubmit}>Quick Submit</button>
+      <button onClick={sendToDB}>Submit</button>
     </div>
   );
 };
 
-export default Confirmation;
+export default Submit;
