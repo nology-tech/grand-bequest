@@ -3,4 +3,24 @@
   height: 600px;
   border: 1px solid black;
   margin: 60px;
+
+  img {
+    height: 500px;
+    width: 500px;
+  }
+
+  .preview-image {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+.button {
+  padding: 5px;
+  border: 1px solid green;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: greenyellow;
+  }
 }

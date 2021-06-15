@@ -11,15 +11,13 @@ const Home = (props) => {
 
   const handleLiveCapture = () => {
     setHasMedia(true);
-    history.push('confirmation');
-  }
+    history.push("confirmation");
+  };
 
-  const handleUpload= () => {
+  const handleUpload = () => {
     setHasMedia(true);
-    history.push('details');
-  }
-
-
+    history.push("details");
+  };
 
   return (
     <div className="container">
@@ -27,8 +25,28 @@ const Home = (props) => {
       {/* <button>Upload existing</button> */}
       {/* <button onClick={handleOnClick}>Capture</button> */}
 
-      <input type="file" accept="image/*" onChange={handleUpload} />
-      <input type="file" accept="image/*" capture="environment" onChange={handleLiveCapture} />
+      <label for="file-upload" className="custom-file-upload button">
+        Upload Image
+      </label>
+      <input
+        style={{ display: "none" }}
+        type="file"
+        accept="image/*"
+        onChange={handleUpload}
+        id="file-upload"
+      />
+
+      <label for="live-capture" className="custom-file-upload button">
+        Capture
+      </label>
+      <input
+        style={{ display: "none" }}
+        type="file"
+        accept="image/*"
+        capture="environment"
+        onChange={handleLiveCapture}
+        id="live-capture"
+      />
     </div>
   );
 };
