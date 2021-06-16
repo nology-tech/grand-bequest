@@ -68,7 +68,7 @@ const Confirmation = (props) => {
         </p>
         <label
           for="live-capture"
-          className="custom-file-upload core-buttons__left"
+          className="button"
         >
           Retake
         </label>
@@ -80,7 +80,7 @@ const Confirmation = (props) => {
           onChange={handleLiveCapture}
           id="live-capture"
         />
-        <button className="core-buttons__right" onClick={confirmImage}>
+        <button className="button" onClick={confirmImage}>
           Confirm
         </button>
       </div>

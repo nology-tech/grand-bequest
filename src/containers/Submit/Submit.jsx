@@ -35,11 +35,11 @@ const Submit = (props) => {
       <button className="button" onClick={addInformation}>Add Information?</button>
 
 
-      <div>
-        <button className="button" onClick={cancelSubmit}>
+      <div className="core-buttons">
+        <button className="core-buttons__left" onClick={cancelSubmit}>
           Cancel
         </button>
-        <button className="button" onClick={sendToDB}>
+        <button className="core-buttons__right" onClick={sendToDB}>
           Submit
         </button>
 

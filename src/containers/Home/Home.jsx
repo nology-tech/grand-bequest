@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
-import "./Home.scss";
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
@@ -22,7 +21,6 @@ const Home = (props) => {
 
   const history = useHistory();
 
-  // const handleOnClick = useCallback(() => history.push('confirmation'), [history]);
 
   const handleLiveCapture = () => {
     setHasMedia(true);
@@ -41,13 +39,13 @@ const Home = (props) => {
 
   return (
     <div className="container">
-      <p>Home Test</p>
+      <p>Home</p>
       <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
 
       <div className="core-buttons">
         <label
           for="file-upload"
-          className="custom-file-upload core-buttons__left"
+          className="core-buttons__left"
         >
           Upload Image
         </label>
@@ -65,8 +63,8 @@ const Home = (props) => {
             platform.includes("Win") ||
             platform.includes("Mac") ||
             platform.includes("Linux")
-              ? "custom-file-upload core-buttons__right hidden"
-              : "custom-file-upload core-buttons__right"
+              ? "core-buttons__right hidden"
+              : "core-buttons__right"
           }
         >
           Capture

@@ -1,6 +1,24 @@
-.details-form {
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+
+  &__input--name {
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  &__input {
+    border-radius: 10px;
+    padding: 10px;
+    width: 160px;
+  }
+
+  &__input--comments {
+    border-radius: 10px;
+    padding: 10px;
+    height: 80px;
+    word-wrap: break-word;
+    word-break: break-word;
+    resize: none;
+  }
 }
