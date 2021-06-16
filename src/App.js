@@ -5,26 +5,40 @@ import Modal from "../src/components/Modal/Modal";
 
 function App() {
   const [show, setShow] = useState(false);
-  const [hasClicked, setHasClicked] = useState(false);
+
+  const hasDismissed = localStorage.getItem("hasDismissed");
+
   useEffect(() => {
     openModal();
   }, []);
   // different options for button and useEffect
 
   const openModal = () => {
-    if (!hasClicked) {
+    if (!hasDismissed) {
       setShow(true);
     }
   };
-  const closeModal = () => {
+  const handleDismiss = () => {
     setShow(false);
-    setHasClicked(true);
+    localStorage.setItem("hasDismissed", "true");
+  };
+
+  const handleClose = () => {
+    setShow(false);
   };
 
   return (
     <div className="App">
-      {!show && <button onClick={openModal}>Help</button>}
-      <Modal closeModal={closeModal} show={show} />
+      {!show && (
+        <button className="helpButton" onClick={openModal}>
+          ?
+        </button>
+      )}
+      <Modal
+        handleDismiss={handleDismiss}
+        handleClose={handleClose}
+        show={show}
+      />
     </div>
   );
 }

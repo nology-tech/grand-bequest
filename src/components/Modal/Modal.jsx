@@ -2,11 +2,11 @@ import React from "react";
 import "./Modal.scss";
 
 const Modal = (props) => {
-  const { show, closeModal } = props;
+  const { show, handleDismiss, handleClose } = props;
   return (
     <>
       <div className={show ? "popUp modal" : "popUp hide"}>
-        <button className="popUp__closeButton" onClick={closeModal}>
+        <button onClick={handleClose} className="popUp__closeButton">
           X
         </button>
         <h1 className="popUp__heading">Instructions</h1>
@@ -17,6 +17,7 @@ const Modal = (props) => {
           tempora eius asperiores?
         </p>
         <button
+          onClick={handleDismiss}
           className={
             show ? "modal popUp__dontShowButton" : "hide popUp__dontShowButton"
           }
