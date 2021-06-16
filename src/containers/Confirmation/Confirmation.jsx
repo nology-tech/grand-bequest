@@ -5,9 +5,21 @@ import { useHistory } from "react-router-dom";
 const Confirmation = (props) => {
   const history = useHistory();
 
+  const getGeo = () => {
+    let lat = null;
+    let long = null;
+
+    navigator.geolocation.getCurrentPosition((positions) => {
+      lat = positions.coords.latitude;
+      long = positions.coords.longitude;
+    });
+
+    return [lat, long];
+  };
+
   const cancelSubmit = () => {
     // Are you sure you want to cancel?
-    const newData = {...props.imgData};
+    const newData = { ...props.imgData };
     for (let i in newData) {
       newData[i] = "";
     }
@@ -18,17 +30,17 @@ const Confirmation = (props) => {
   };
 
   const confirmImage = () => {
-    const newData = {...props.imgData};
+    const newData = { ...props.imgData };
     newData.image = "this-is-an-abandoned-building.jpg";
     props.setImgData(newData);
 
-    history.push('submit');
-  }
+    history.push("submit");
+  };
 
   const quickSubmit = () => {
     // Are you sure you don't want to add more information?
     // with a 'Don't show me this again' tickbox
-    const newData = {...props.imgData};
+    const newData = { ...props.imgData };
     newData.image = "this-is-an-abandoned-building.jpg";
     props.setImgData(newData);
 
@@ -37,6 +49,10 @@ const Confirmation = (props) => {
   };
 
   const handleLiveCapture = () => {
+    const newData = { ...props.imgData };
+    newData.geolocation = getGeo();
+    props.setImgData(newData);
+
     history.push("confirmation");
   };
 
@@ -46,8 +62,14 @@ const Confirmation = (props) => {
       <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
 
       <div>
-        <p style={{fontSize:"10px"}}>[MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH RETAKE/CONFIRM BUTTONS]</p>
-        <label for="live-capture" className="custom-file-upload button">
+        <p style={{ fontSize: "10px" }}>
+          [MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH RETAKE/CONFIRM
+          BUTTONS]
+        </p>
+        <label
+          for="live-capture"
+          className="custom-file-upload core-buttons__left"
+        >
           Retake
         </label>
         <input
@@ -58,15 +80,19 @@ const Confirmation = (props) => {
           onChange={handleLiveCapture}
           id="live-capture"
         />
-        <button className="button" onClick={confirmImage}>Confirm</button>
+        <button className="core-buttons__right" onClick={confirmImage}>
+          Confirm
+        </button>
       </div>
 
-      <button className="button" onClick={cancelSubmit}>
-        Cancel
-      </button>
-      <button className="button" onClick={quickSubmit}>
-        Quick Submit
-      </button>
+      <div className="core-buttons">
+        <button className="core-buttons__left" onClick={cancelSubmit}>
+          Cancel
+        </button>
+        <button className="core-buttons__right" onClick={quickSubmit}>
+          Quick Submit
+        </button>
+      </div>
     </div>
   );
 };

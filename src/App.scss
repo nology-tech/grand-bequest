@@ -1,8 +1,30 @@
 .container {
-  width: 500px;
-  height: 650px;
-  border: 1px solid black;
-  margin: 60px;
+  // width: 500px;
+  // height: 650px;
+  // border: 1px solid black;
+  // margin: 60px;
+
+  .core-buttons {
+    display: flex;
+    justify-content: space-evenly;
+
+    &__left {
+      // min-height: 200px;
+      // min-width: 380px;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: yellow;
+      color: white;
+      -webkit-text-stroke: 1px black;
+    }
+
+    &__right {
+      padding: 30px;
+      border-radius: 10px;
+      background-color: green;
+      color: white;
+    }
+  }
 
   img {
     height: 500px;

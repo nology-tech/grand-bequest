@@ -1,9 +1,24 @@
 import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
+import "./Home.scss";
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
+
+  const platform = navigator.platform;
+
+  const getGeo = () => {
+    let lat = null;
+    let long = null;
+
+    navigator.geolocation.getCurrentPosition((positions) => {
+      lat = positions.coords.latitude;
+      long = positions.coords.longitude;
+    });
+
+    return [lat, long];
+  };
 
   const history = useHistory();
 
@@ -12,8 +27,8 @@ const Home = (props) => {
   const handleLiveCapture = () => {
     setHasMedia(true);
     // handle geolocation here, and add to OBJECT
-    const newData = {...props.imgData};
-    newData.geolocation = "x342.524 y2455.43";
+    const newData = { ...props.imgData };
+    newData.geolocation = getGeo();
     props.setImgData(newData);
 
     history.push("confirmation");
@@ -29,28 +44,42 @@ const Home = (props) => {
       <p>Home Test</p>
       <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
 
-      <label for="file-upload" className="custom-file-upload button">
-        Upload Image
-      </label>
-      <input
-        style={{ display: "none" }}
-        type="file"
-        accept="image/*"
-        onChange={handleUpload}
-        id="file-upload"
-      />
+      <div className="core-buttons">
+        <label
+          for="file-upload"
+          className="custom-file-upload core-buttons__left"
+        >
+          Upload Image
+        </label>
+        <input
+          style={{ display: "none" }}
+          type="file"
+          accept="image/*"
+          onChange={handleUpload}
+          id="file-upload"
+        />
 
-      <label for="live-capture" className="custom-file-upload button">
-        Capture
-      </label>
-      <input
-        style={{ display: "none" }}
-        type="file"
-        accept="image/*"
-        capture="environment"
-        onChange={handleLiveCapture}
-        id="live-capture"
-      />
+        <label
+          for="live-capture"
+          className={
+            platform.includes("Win") ||
+            platform.includes("Mac") ||
+            platform.includes("Linux")
+              ? "custom-file-upload core-buttons__right hidden"
+              : "custom-file-upload core-buttons__right"
+          }
+        >
+          Capture
+        </label>
+        <input
+          style={{ display: "none" }}
+          type="file"
+          accept="image/*"
+          capture="environment"
+          onChange={handleLiveCapture}
+          id="live-capture"
+        />
+      </div>
     </div>
   );
 };
