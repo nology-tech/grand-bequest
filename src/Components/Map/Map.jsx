@@ -11,7 +11,7 @@ const Map = () => {
   const LocationMarker = () => {
     const [position, setPosition] = useState(null);
     const map = useMapEvents({
-      click() {
+      dblclick() {
         map.locate();
       },
       locationfound(e) {
@@ -45,8 +45,8 @@ const Map = () => {
   return (
     <div>
       <MapContainer
-        center={[52.307639, -1.381702]}
-        zoom={7}
+        center={[51.505537, -0.128746]}
+        zoom={12}
         scrollWheelZoom={true}
       >
         <TileLayer
@@ -57,7 +57,7 @@ const Map = () => {
           <Popup>Almost certainly not _Nology</Popup>
         </Marker>
         <ClickMarker />
-        {/* <LocationMarker /> */}
+        <LocationMarker />
       </MapContainer>
     </div>
   );
