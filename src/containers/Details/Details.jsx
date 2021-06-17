@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import "./Details.scss";
 
 const Details = (props) => {
-  const history = useHistory();
+  let history = useHistory();
 
   const [nameOfBuilding, setNameOfBuilding] = useState("");
   const [zip, setZip] = useState("");
@@ -27,7 +27,6 @@ const Details = (props) => {
 
   return (
     <div className="container">
-      <p>Details Form</p>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Abandoned_building_in_the_Ronet_classification_yard_%28DSCF5518%29.jpg/800px-Abandoned_building_in_the_Ronet_classification_yard_%28DSCF5518%29.jpg"
         alt="abandoned building"
@@ -42,15 +41,15 @@ const Details = (props) => {
           onBlur={(e) => setNameOfBuilding(e.target.value)}
         />
 
-        <div>
+        <div className="form__middle">
           <input
-            className="form__input"
+            className="form__middle__input"
             type="text"
             placeholder="Area Postcode/Zip"
             onBlur={(e) => setZip(e.target.value)}
           />
           <input
-            className="form__input"
+            className="form__middle__input"
             type="text"
             placeholder="Country"
             onBlur={(e) => setCountry(e.target.value)}

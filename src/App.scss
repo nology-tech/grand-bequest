@@ -1,7 +1,9 @@
-
 * {
-  // font-family: "brandon-grot-w01-light", "san-serif"; // for titles?
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+.title {
+  font-family: "Cinzel", "serif";
 }
 
 .container {
@@ -15,15 +17,17 @@
 
   .core-buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    margin: 10px;
 
+    gap: 10px;
     &__left {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 30px;
       border-radius: 10px;
-      background-color: yellow;
+      background-color: #ffe17d;
       color: white;
       min-width: 126px;
       max-width: 126px;
@@ -37,7 +41,7 @@
       border: none;
 
       &:hover {
-        background-color: rgb(255, 255, 147);
+        background-color: #fff132;
       }
     }
 
@@ -47,10 +51,10 @@
       align-items: center;
       padding: 30px;
       max-height: 122px;
-      min-width: 240px;
-      max-width: 240px;
+      min-width: 230px;
+      max-width: 230px;
       border-radius: 10px;
-      background-color: green;
+      background-color: #109e48;
       font-weight: 900;
       text-align: center;
       -webkit-text-stroke: 1px white;
@@ -61,7 +65,7 @@
       border: none;
 
       &:hover {
-        background-color: rgb(2, 236, 2);
+        background-color: rgb(91, 224, 91);
       }
     }
   }
@@ -74,19 +78,20 @@
   }
 
   .preview-image {
-    height: 360px;
-    width: 360px;
+    height: 300px;
+    width: 300px;
     border-radius: 16px;
+    margin-top: 20px;
   }
 }
 
 .button {
   padding: 5px;
-  border: 1px solid green;
+  border: 1px solid #109e48;
   border-radius: 10px;
 
   &:hover {
-    background-color: greenyellow;
+    background-color: #109e48;
   }
 }
 

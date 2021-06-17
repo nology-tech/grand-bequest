@@ -4,13 +4,13 @@ import Details from "../Details";
 import Confirmation from "../Confirmation";
 import ErrorPage from "../ErrorPage";
 import Submit from "../Submit";
+import Landing from "../Landing/Landing";
 
 const Routes = (props) => {
-
   return (
     <Switch>
       <Route exact path="/">
-        <Home imgData={props.imgData} setImgData={props.setImgData} />
+        <Landing />
       </Route>
       <Route path="/home">
         <Home imgData={props.imgData} setImgData={props.setImgData} />
