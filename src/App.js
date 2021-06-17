@@ -18,6 +18,9 @@ function App() {
       setShow(true);
     }
   };
+  const handleOpen = () => {
+    setShow(true);
+  };
   const handleDismiss = () => {
     setShow(false);
     localStorage.setItem("hasDismissed", "true");
@@ -30,7 +33,7 @@ function App() {
   return (
     <div className="App">
       {!show && (
-        <button className="helpButton" onClick={openModal}>
+        <button className="helpButton" onClick={handleOpen}>
           ?
         </button>
       )}
