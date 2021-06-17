@@ -1,8 +1,6 @@
 import React from "react";
-import "./Landing.scss";
 import logo from "../../assets/images/GrandBequestLogo.png";
 import { useHistory } from "react-router-dom";
-import "../../App.scss";
 
 const Landing = () => {
   let history = useHistory();

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
+import Map from '../../components/Map/Map.jsx';
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
@@ -40,7 +41,7 @@ const Home = (props) => {
   return (
     <div className="container">
       <p>Home</p>
-      <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
+      <Map></Map>
 
       <div className="core-buttons">
         <label

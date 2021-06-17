@@ -1,5 +1,4 @@
 import React from "react";
-import "../../App.scss";
 import { useHistory } from "react-router-dom";
 
 const Submit = (props) => {

@@ -6,6 +6,7 @@ import {
   Popup,
   useMapEvents,
 } from "react-leaflet";
+import "./Map.scss";
 
 const Map = () => {
   const LocationMarker = () => {
