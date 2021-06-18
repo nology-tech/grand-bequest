@@ -16,10 +16,10 @@ const Routes = (props) => {
         <Home imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/confirmation">
-        <Confirmation imgData={props.imgData} setImgData={props.setImgData} />
+        <Confirmation upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/submit">
-        <Submit imgData={props.imgData} setImgData={props.setImgData} />
+        <Submit upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/details">
         <Details imgData={props.imgData} setImgData={props.setImgData} />

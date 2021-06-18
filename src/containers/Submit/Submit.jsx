@@ -23,6 +23,7 @@ const Submit = (props) => {
   const sendToDB = () => {
     // Maybe add, do you want to add more information?
     // Yes sends to details form, no just submits
+    props.upload();
     console.log("Sent to DB!", props.imgData);
   };
 

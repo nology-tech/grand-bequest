@@ -44,6 +44,7 @@ const Confirmation = (props) => {
     props.setImgData(newData);
 
     // If all OK, sends to DB
+    props.upload();
     console.log("Sent to DB!", props.imgData);
   };
 
