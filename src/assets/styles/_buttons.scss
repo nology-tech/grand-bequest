@@ -1,9 +1,59 @@
+@use "variables" as *;
 
 .btn-primary {
-    // background-color: $primary;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  max-height: 122px;
+  min-width: 230px;
+  max-width: 230px;
+  border-radius: 10px;
+  background-color: $primary-colour;
+  font-weight: 900;
+  text-align: center;
+  -webkit-text-stroke: 1px white;
+  font-size: 24px;
+  color: white;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.705);
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: rgb(91, 224, 91);
+  }
 }
 
 .btn-secondary {
-    // background-color: $secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: $secondary-colour;
+  color: white;
+  min-width: 126px;
+  max-width: 126px;
+  max-height: 122px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  -webkit-text-stroke: 0.2px black;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.705);
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: #fff132;
+  }
+}
+
+.btn-tertiary {
+  padding: 5px;
+  border: 1px solid $primary-colour;
+  border-radius: 10px;
+
+  &:hover {
+    background-color:  $primary-colour;
+  }
 }

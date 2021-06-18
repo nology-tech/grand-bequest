@@ -67,10 +67,10 @@ const Details = (props) => {
       <button className="button">Have more information?</button>
 
       <div className="core-buttons">
-        <button className="core-buttons__left" onClick={history.goBack}>
+        <button className="btn-secondary" onClick={history.goBack}>
           Back
         </button>
-        <button className="core-buttons__right" onClick={updateInformation}>
+        <button className="btn-primary" onClick={updateInformation}>
           Update Info
         </button>
       </div>

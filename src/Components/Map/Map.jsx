@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -9,12 +9,18 @@ import {
 import "./Map.scss";
 
 const Map = () => {
+  const [currentLat, setCurrentLat] = useState(51.505537);
+  const [currentLong, setCurrentLong] = useState(-0.128746);
+
+
   const LocationMarker = () => {
     const [position, setPosition] = useState(null);
+
     const map = useMapEvents({
       dblclick() {
         map.locate();
       },
+      
       locationfound(e) {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
@@ -46,7 +52,7 @@ const Map = () => {
   return (
     <div>
       <MapContainer
-        center={[51.505537, -0.128746]}
+        center={[currentLat, currentLong]}
         zoom={12}
         scrollWheelZoom={true}
       >
@@ -54,11 +60,14 @@ const Map = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[51.449313, -2.58797]}>
-          <Popup>Almost certainly not _Nology</Popup>
-        </Marker>
-        <ClickMarker />
+
         <LocationMarker />
+
+        <ClickMarker />
+
+        {/* <Marker position={[51.449313, -2.58797]}>
+          <Popup>Almost certainly not _Nology</Popup>
+        </Marker> */}
       </MapContainer>
     </div>
   );

@@ -67,7 +67,7 @@ const Confirmation = (props) => {
         </p>
         <label
           for="live-capture"
-          className="button"
+          className="btn-tertiary"
         >
           Retake
         </label>
@@ -79,16 +79,16 @@ const Confirmation = (props) => {
           onChange={handleLiveCapture}
           id="live-capture"
         />
-        <button className="button" onClick={confirmImage}>
+        <button className="btn-tertiary" onClick={confirmImage}>
           Confirm
         </button>
       </div>
 
       <div className="core-buttons">
-        <button className="core-buttons__left" onClick={cancelSubmit}>
+        <button className="btn-secondary" onClick={cancelSubmit}>
           Cancel
         </button>
-        <button className="core-buttons__right" onClick={quickSubmit}>
+        <button className="btn-primary" onClick={quickSubmit}>
           Quick Submit
         </button>
       </div>

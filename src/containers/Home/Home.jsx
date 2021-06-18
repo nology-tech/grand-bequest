@@ -46,7 +46,7 @@ const Home = (props) => {
       <div className="core-buttons">
         <label
           for="file-upload"
-          className="core-buttons__left"
+          className="btn-secondary"
         >
           Upload Image
         </label>
@@ -64,8 +64,8 @@ const Home = (props) => {
             platform.includes("Win") ||
             platform.includes("Mac") ||
             platform.includes("Linux")
-              ? "core-buttons__right hidden"
-              : "core-buttons__right"
+              ? "btn-primary hidden"
+              : "btn-primary"
           }
         >
           Capture

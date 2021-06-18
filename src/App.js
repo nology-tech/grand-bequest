@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
 import { useState } from "react";
 import "./App.scss";
+import "./assets/styles/main.scss";
 
 function App() {
   const [imgData, setImgData] = useState({

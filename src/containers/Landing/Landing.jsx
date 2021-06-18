@@ -13,7 +13,7 @@ const Landing = () => {
         <h3>Build your Legacy and Help Save an Old Building!</h3>
         <div className="core-buttons">
           <button
-            className="core-buttons__right"
+            className="btn-primary"
             onClick={() => history.push("/home")}
           >
             Start
