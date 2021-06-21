@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
 import "./Details.scss";
+import Information from "../Information/Information";
 
 const Details = (props) => {
   let history = useHistory();
@@ -21,6 +22,10 @@ const Details = (props) => {
     newData.country = country;
     newData.comments = comments;
     props.setImgData(newData);
+
+    const addDetails = () => {
+      history.push("information");
+    };
 
     history.push("submit");
   };
@@ -64,7 +69,9 @@ const Details = (props) => {
         />
       </div>
 
-      <button className="button">Have more information?</button>
+      <a href="information">
+        <button className="button">Have more information?</button>
+      </a>
 
       <div className="core-buttons">
         <button className="core-buttons__left" onClick={history.goBack}>

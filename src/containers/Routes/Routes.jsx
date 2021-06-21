@@ -5,6 +5,7 @@ import Confirmation from "../Confirmation";
 import ErrorPage from "../ErrorPage";
 import Submit from "../Submit";
 import Landing from "../Landing/Landing";
+import Information from "../Information/Information";
 
 const Routes = (props) => {
   return (
@@ -23,6 +24,9 @@ const Routes = (props) => {
       </Route>
       <Route path="/details">
         <Details imgData={props.imgData} setImgData={props.setImgData} />
+      </Route>
+      <Route path="/information">
+        <Information imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/*">
         <ErrorPage />
