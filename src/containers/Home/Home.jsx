@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
-import Map from '../../components/Map/Map.jsx';
-import Overlay from '../../components/Overlay';
+import Map from "../../Components/Map/Map.jsx";
+import Overlay from "../../Components/Overlay";
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
@@ -23,7 +23,6 @@ const Home = (props) => {
 
   const history = useHistory();
 
-
   const handleLiveCapture = () => {
     setHasMedia(true);
     // handle geolocation here, and add to OBJECT
@@ -41,17 +40,13 @@ const Home = (props) => {
 
   return (
     <div className="container">
-
-        <Overlay></Overlay>
+      <Overlay></Overlay>
 
       <p>Home</p>
       <Map></Map>
 
       <div className="core-buttons">
-        <label
-          for="file-upload"
-          className="btn-secondary"
-        >
+        <label for="file-upload" className="btn-secondary">
           Upload Image
         </label>
         <input
