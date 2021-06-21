@@ -1,4 +1,4 @@
-import NavBar from "./components/NavBar";
+import NavBar from "./Components/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
 import { useState } from "react";
@@ -21,11 +21,11 @@ function App() {
   const upload = () => {
     // direct upload without user ID
     // firestore.collection("locations").add(imgData);
-    
+
     // for specific user via some sort of ID
     // firestore.collection("locations").doc(USERID).collections("uploaded").add(imgData);
     console.log("Finishing upload...");
-  }
+  };
 
   return (
     <Router className="App">
