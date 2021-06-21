@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
 import Map from '../../components/Map/Map.jsx';
+import Overlay from '../../components/Overlay';
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
@@ -40,6 +41,9 @@ const Home = (props) => {
 
   return (
     <div className="container">
+
+        <Overlay></Overlay>
+
       <p>Home</p>
       <Map></Map>
 
