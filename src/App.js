@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import NavBar from "./components/NavBar";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./containers/Routes";
+import { useState } from "react";
+import "./App.scss";
+import "./assets/styles/main.scss";
+// import {firestore} from "./firebase"
 
 function App() {
+  const [imgData, setImgData] = useState({
+    image: "",
+    geolocation: "",
+    name_of_building: "",
+    zip: "",
+    country: "",
+    comments: "",
+    // ownership: "",
+    // further_comments: "",
+  });
+
+  const upload = () => {
+    // direct upload without user ID
+    // firestore.collection("locations").add(imgData);
+    
+    // for specific user via some sort of ID
+    // firestore.collection("locations").doc(USERID).collections("uploaded").add(imgData);
+    console.log("Finishing upload...");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router className="App">
+      <Routes upload={upload} imgData={imgData} setImgData={setImgData} />
+    </Router>
   );
 }
 
