@@ -1,34 +1,33 @@
 import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
-import Map from '../../components/Map/Map.jsx';
-import Overlay from '../../components/Overlay';
+import Map from "../../components/Map/Map.jsx";
+import Overlay from "../../components/Overlay";
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
 
   const platform = navigator.platform;
 
-  const getGeo = () => {
-    let lat = null;
-    let long = null;
+  // const getGeo = () => {
+  //   let lat = null;
+  //   let long = null;
 
-    navigator.geolocation.getCurrentPosition((positions) => {
-      lat = positions.coords.latitude;
-      long = positions.coords.longitude;
-    });
+  //   navigator.geolocation.getCurrentPosition((positions) => {
+  //     lat = positions.coords.latitude;
+  //     long = positions.coords.longitude;
+  //   });
 
-    return [lat, long];
-  };
+  //   return [lat, long];
+  // };
 
   const history = useHistory();
-
 
   const handleLiveCapture = () => {
     setHasMedia(true);
     // handle geolocation here, and add to OBJECT
     const newData = { ...props.imgData };
-    newData.geolocation = getGeo();
+    newData.geolocation = props.manualLocation;
     props.setImgData(newData);
 
     history.push("confirmation");
@@ -41,17 +40,18 @@ const Home = (props) => {
 
   return (
     <div className="container">
-
-        <Overlay></Overlay>
+      <Overlay></Overlay>
 
       <p>Home</p>
-      <Map></Map>
+      <Map
+        currentLocation={props.currentLocation}
+        setCurrentLocation={props.setCurrentLocation}
+        manualLocation={props.manualLocation}
+        setManualLocation={props.setManualLocation}
+      />
 
       <div className="core-buttons">
-        <label
-          for="file-upload"
-          className="btn-secondary"
-        >
+        <label for="file-upload" className="btn-secondary">
           Upload Image
         </label>
         <input

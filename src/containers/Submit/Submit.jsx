@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Map from "../../components/Map/Map";
 
 const Submit = (props) => {
   const history = useHistory();
@@ -30,7 +31,13 @@ const Submit = (props) => {
   return (
     <div className="container">
       <p>Submit Page</p>
-      <img src="https://openmaptiles.org/img/home-banner-map.png" />
+      <Map
+        currentLocation={props.currentLocation}
+        setCurrentLocation={props.setCurrentLocation}
+        manualLocation={props.manualLocation}
+        setManualLocation={props.setManualLocation}
+      />
+
       <p style={{fontSize:"10px"}}>[Capture image preview would display with pin on map with this 'Add Information?' button]</p>
       <button className="button" onClick={addInformation}>Add Information?</button>
 

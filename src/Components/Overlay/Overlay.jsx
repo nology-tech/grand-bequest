@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Modal from '../Modal/Modal.jsx';
 
 const Overlay = () => {
     const hasDismissed = localStorage.getItem("hasDismissed");
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         if (!hasDismissed) setShow(true);

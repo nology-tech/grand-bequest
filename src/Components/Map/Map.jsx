@@ -5,26 +5,30 @@ import {
   Marker,
   Popup,
   useMapEvents,
-  useMap,
 } from "react-leaflet";
 import "./Map.scss";
 
-const Map = () => {
+const Map = (props) => {
+
   const LocationMarker = () => {
     const [position, setPosition] = useState(null);
 
     useEffect(() => {
-      map.locate();
+      if (!props.currentLocation.length) {
+        console.log("map.locate");
+        map.locate({enableHighAccuracy: true});
+      }
     }, []);
     
     const map = useMapEvents({
-      dblclick: () => {
-        map.locate();
-      },
-
       locationfound: (e) => {
+        console.log("location found");
+        props.setCurrentLocation(e.latlng);
         setPosition(e.latlng);
-        map.flyTo(e.latlng, map.getZoom());
+        map.flyTo(e.latlng, map.getZoom(), {
+          animate: true,
+          duration: 1 // seconds
+        });
       },
     });
 
@@ -38,7 +42,8 @@ const Map = () => {
   const ClickMarker = () => {
     const [position, setPosition] = useState(null);
     useMapEvents({
-      click(e) {
+      dblclick(e) {
+        props.setManualLocation(e.latlng);
         setPosition(e.latlng);
       },
     });
@@ -53,8 +58,9 @@ const Map = () => {
   return (
     <div>
       <MapContainer
-        center={[51.505537, -0.128746]}
-        zoom={12}
+        center={!props.currentLocation.length ? [51.505537, -0.128746] : props.currentLocation}
+        zoom={15}
+        maxZoom={18}
         scrollWheelZoom={true}
       >
         <TileLayer

@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Map from "../../components/Map/Map.jsx";
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -59,7 +60,12 @@ const Confirmation = (props) => {
   return (
     <div className="container">
       <p>Confirmation Page</p>
-      <img src="https://openmaptiles.org/img/home-banner-map.png" alt="map" />
+      <Map
+        currentLocation={props.currentLocation}
+        setCurrentLocation={props.setCurrentLocation}
+        manualLocation={props.manualLocation}
+        setManualLocation={props.setManualLocation}
+      />
 
       <div>
         <p style={{ fontSize: "10px" }}>

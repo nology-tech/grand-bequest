@@ -13,13 +13,36 @@ const Routes = (props) => {
         <Landing />
       </Route>
       <Route path="/home">
-        <Home imgData={props.imgData} setImgData={props.setImgData} />
+        <Home
+          currentLocation={props.currentLocation}
+          setCurrentLocation={props.setCurrentLocation}
+          manualLocation={props.manualLocation}
+          setManualLocation={props.setManualLocation}
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+        />
       </Route>
       <Route path="/confirmation">
-        <Confirmation upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
+        <Confirmation
+          currentLocation={props.currentLocation}
+          setCurrentLocation={props.setCurrentLocation}
+          manualLocation={props.manualLocation}
+          setManualLocation={props.setManualLocation}
+          upload={props.upload}
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+        />
       </Route>
       <Route path="/submit">
-        <Submit upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
+        <Submit
+          currentLocation={props.currentLocation}
+          setCurrentLocation={props.setCurrentLocation}
+          manualLocation={props.manualLocation}
+          setManualLocation={props.setManualLocation}
+          upload={props.upload}
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+        />
       </Route>
       <Route path="/details">
         <Details imgData={props.imgData} setImgData={props.setImgData} />
