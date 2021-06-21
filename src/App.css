@@ -1,0 +1,12 @@
+.App {
+  margin: 1rem auto;
+  max-width: 1000px;
+  padding: 1rem;
+}
+.helpButton {
+  border: none;
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
