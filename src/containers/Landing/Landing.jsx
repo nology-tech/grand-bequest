@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/GrandBequestLogo.png";
+import "./Landing.scss";
 import { useHistory } from "react-router-dom";
 
 const Landing = () => {
@@ -12,10 +13,7 @@ const Landing = () => {
         <h1 className="title">Grand Bequest</h1>
         <h3>Build your Legacy and Help Save an Old Building!</h3>
         <div className="core-buttons">
-          <button
-            className="btn-primary"
-            onClick={() => history.push("/home")}
-          >
+          <button className="btn-primary" onClick={() => history.push("/home")}>
             Start
           </button>
         </div>
