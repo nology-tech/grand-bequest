@@ -77,31 +77,6 @@ const Home = (props) => {
           onChange={handleLiveCapture}
           id="live-capture"
         />
-        <div
-          class="fb-share-button"
-          data-href="https://www.grandbequest.co.uk/"
-          data-layout="button"
-          data-size="small"
-        >
-          <a
-            target="_blank"
-            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.grandbequest.co.uk%2F&amp;src=sdkpreparse"
-            class="fb-xfbml-parse-ignore"
-          >
-            Share{" "}
-          </a>
-          <a
-            class="twitter-share-button"
-            href="https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20old%20building,%20We%20must%20save%20it!&url=https://twitter.com/GrandBequest"
-          >
-            Tweet
-          </a>
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"
-          ></script>
-        </div>
       </div>
     </div>
   );
