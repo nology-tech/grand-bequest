@@ -12,8 +12,8 @@ library.add(fab, faFacebookSquare, faTwitterSquare);
 
 const Socials = () => {
   return (
-    <div className="socialContainer">
-      <div className="socialIcons">
+    <div className="socials__Container">
+      <div className="socials__Container-Icons">
         <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.grandbequest.co.uk%2F&amp;src=sdkpreparse">
           <FontAwesomeIcon icon={["fab", "facebook-square"]} />
         </a>
