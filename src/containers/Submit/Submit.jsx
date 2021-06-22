@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState} from "react";
 import { useHistory } from "react-router-dom";
+import storage from '../../firebase';
 
 const Submit = (props) => {
   const history = useHistory();
@@ -20,12 +21,13 @@ const Submit = (props) => {
     history.push('details')
   }
 
-  const sendToDB = () => {
-    // Maybe add, do you want to add more information?
-    // Yes sends to details form, no just submits
-    props.upload();
-    console.log("Sent to DB!", props.imgData);
-  };
+  // const sendToDB = () => {
+  //   // Maybe add, do you want to add more information?
+  //   // Yes sends to details form, no just submits
+  //   props.upload();
+  //   console.log("Sent to DB!", props.imgData);
+  // };
+  
 
   return (
     <div className="container">
@@ -39,9 +41,9 @@ const Submit = (props) => {
         <button className="btn-secondary" onClick={cancelSubmit}>
           Cancel
         </button>
-        <button className="btn-primary" onClick={sendToDB}>
+        {/* <button className="btn-primary" onClick={handleUpload}>
           Submit
-        </button>
+        </button> */}
 
       </div>
     </div>

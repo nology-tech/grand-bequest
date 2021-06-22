@@ -35,6 +35,7 @@ const Home = (props) => {
   };
 
   const handleUpload = () => {
+    console.log("")
     setHasMedia(true);
     history.push("details");
   };
