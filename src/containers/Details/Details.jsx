@@ -64,6 +64,8 @@ const Details = (props) => {
         />
       </div>
 
+
+
       <button className="button">Have more information?</button>
 
       <div className="core-buttons">
