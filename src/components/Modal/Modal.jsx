@@ -17,16 +17,14 @@ const Modal = (props) => {
             inventore sed fugit dolore? Corrupti ipsa officia quos ipsam dolore
             aliquam tempora eius asperiores?
           </p>
-          <button
-            onClick={handleDismiss}
-            className={
-              show
-                ? "popUp__modal popUp__dontShowButton"
-                : "hide popUp__dontShowButton"
-            }
-          >
-            Don't show again
-          </button>
+          <div className="popUp__button-container">
+            <button
+              onClick={handleDismiss}
+              className="popUp__dontShowButton btn-primary"
+            >
+              Don't show again
+            </button>
+          </div>
         </div>
       </div>
     </>
