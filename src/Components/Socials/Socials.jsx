@@ -6,13 +6,14 @@ import {
   fab,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./styles.css";
 
 library.add(fab, faFacebookSquare, faTwitterSquare);
 
 const Socials = () => {
   return (
-    <div>
-      <div>
+    <div className="socialContainer">
+      <div className="socialIcons">
         <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.grandbequest.co.uk%2F&amp;src=sdkpreparse">
           <FontAwesomeIcon icon={["fab", "facebook-square"]} />
         </a>

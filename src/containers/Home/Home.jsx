@@ -3,6 +3,7 @@ import "../../App.scss";
 import { useHistory } from "react-router-dom";
 import Map from "../../Components/Map/Map.jsx";
 import Overlay from "../../Components/Overlay";
+import Socials from "../../Components/Socials/Socials";
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
@@ -78,6 +79,7 @@ const Home = (props) => {
           id="live-capture"
         />
       </div>
+      <Socials />
     </div>
   );
 };
