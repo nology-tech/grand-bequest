@@ -1,0 +1,12 @@
+@use "../../assets/styles/buttons" as *;
+
+@media screen and (min-width: 375px) {
+  .core-buttons {
+    .btn-secondary {
+      max-height: 66px;
+      min-width: 130px;
+      max-width: 130px;
+      margin-bottom: 20px;
+    }
+  }
+}

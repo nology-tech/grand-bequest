@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../App.scss";
+import "../Home/Home.scss";
 import { useHistory } from "react-router-dom";
 import Map from "../../Components/Map/Map.jsx";
 import Overlay from "../../Components/Overlay";
@@ -43,11 +44,13 @@ const Home = (props) => {
       <Overlay></Overlay>
 
       <p>Home</p>
-      <Map></Map>
+      <div className="map-container">
+        <Map></Map>
+      </div>
 
       <div className="core-buttons">
         <label for="file-upload" className="btn-secondary">
-          Upload Image
+          Upload
         </label>
         <input
           style={{ display: "none" }}
