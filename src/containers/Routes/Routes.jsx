@@ -5,6 +5,7 @@ import Confirmation from "../Confirmation";
 import ErrorPage from "../ErrorPage";
 import Submit from "../Submit";
 import Landing from "../Landing/Landing";
+import Test from "../Test/Test";
 
 const Routes = (props) => {
   return (
@@ -16,13 +17,24 @@ const Routes = (props) => {
         <Home imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/confirmation">
-        <Confirmation upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
+        <Confirmation
+          upload={props.upload}
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+        />
       </Route>
       <Route path="/submit">
-        <Submit upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
+        <Submit
+          upload={props.upload}
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+        />
       </Route>
       <Route path="/details">
         <Details imgData={props.imgData} setImgData={props.setImgData} />
+      </Route>
+      <Route path="/test">
+        <Test />
       </Route>
       <Route path="/*">
         <ErrorPage />

@@ -34,9 +34,6 @@ const Confirmation = (props) => {
     newData.image = "this-is-an-abandoned-building.jpg";
     props.setImgData(newData);
 
-    console.log("confirm image in confirmation");
-    console.log(newData);
-
     history.push("submit");
   };
 
@@ -60,7 +57,27 @@ const Confirmation = (props) => {
     history.push("confirmation");
   };
 
+  // const handleUpload = () => {
+  //   const [image, setImage] = useState(null);
+  //   const uploadTask = storage.put(image);
 
+  //   uploadTask.on(
+  //     "state changed",
+  //     (snapshot) => {},
+  //     (error) => {
+  //       console.log(error);
+  //     },
+  //     () => {
+  //       storage
+  //         .ref("images")
+  //         .child(image.name)
+  //         .getDownloadURL()
+  //         .then((url) => {
+  //           console.log(url);
+  //         });
+  //     }
+  //   );
+  // };
 
   return (
     <div className="container">
@@ -87,6 +104,7 @@ const Confirmation = (props) => {
           className="btn-tertiary"
           onClick={() => {
             confirmImage();
+            // handleUpload();
           }}
         >
           Confirm
