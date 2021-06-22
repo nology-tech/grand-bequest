@@ -43,7 +43,6 @@ const Home = (props) => {
     <div className="container">
       <Overlay></Overlay>
 
-      <p>Home</p>
       <div className="map-container">
         <Map></Map>
       </div>
