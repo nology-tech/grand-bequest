@@ -16,6 +16,7 @@ const Information = (props) => {
   const [buildingUse, setBuildingUse] = useState("");
   const [contactPermission, setContactPermission] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
+  const [contactNumber, setContactNumber] = useState("");
 
   const updateInformation = () => {
     const newData = { ...props.imgData };
@@ -23,11 +24,14 @@ const Information = (props) => {
     newData.building_use = buildingUse;
     newData.contact_permission = contactPermission;
     newData.email_address = emailAddress;
+    newData.contact_number = contactNumber;
     props.setImgData(newData);
 
     const addInformation = () => {
       history.push("information");
     };
+
+    const Checkbox = (props) => <input type="checkbox" {...props} />;
 
     // history.push("submit");
   };
@@ -54,8 +58,16 @@ const Information = (props) => {
           />
           <input
             className="form__input"
-            type="text"
             placeholder="Are you happy to be contacted regarding this building?"
+          />
+          <input
+            className="form__input"
+            type="checkbox"
+            onBlur={(e) => setContactPermission(e.target.value)}
+          />
+          <input
+            className="form__input"
+            type="checkbox"
             onBlur={(e) => setContactPermission(e.target.value)}
           />
           <input
@@ -63,6 +75,12 @@ const Information = (props) => {
             type="text"
             placeholder="If yes please provide your email address:"
             onBlur={(e) => setEmailAddress(e.target.value)}
+          />
+          <input
+            className="form__input"
+            type="text"
+            placeholder="If yes please provide your contact number:"
+            onBlur={(e) => setContactNumber(e.target.value)}
           />
         </div>
         <div className="core-buttons">
