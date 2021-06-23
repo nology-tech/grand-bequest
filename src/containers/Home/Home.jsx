@@ -65,7 +65,7 @@ const Home = (props) => {
             platform.includes("Win") ||
             platform.includes("Mac") ||
             platform.includes("Linux")
-              ? "btn-primary hidden"
+              ? "btn-primary"
               : "btn-primary"
           }
         >
