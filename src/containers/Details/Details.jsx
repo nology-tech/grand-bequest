@@ -71,7 +71,7 @@ const Details = (props) => {
           Back
         </button>
         <button className="btn-primary" onClick={updateInformation}>
-          Update Info
+          Update
         </button>
       </div>
     </div>
