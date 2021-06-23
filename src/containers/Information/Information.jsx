@@ -81,15 +81,25 @@ const Information = (props) => {
             <label htmlFor="canContact">
               Please tick if you are happy to be contacted?
             </label>
-            <input
+            <textarea
               className="form__permission"
               type="checkbox"
               name="canContact"
               id="canContact"
-              style={{ width: 26, height: 26 }}
+              style={{
+                width: 25,
+                height: 26,
+                padding: 2,
+                height: 80,
+                wordWrap: "break-word",
+                wordBreak: "break-word",
+                resize: "none",
+                border: "none",
+                margin: 20,
+              }}
             />
           </div>
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="Please provide your email address:"
