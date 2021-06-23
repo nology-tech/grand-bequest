@@ -1,16 +1,16 @@
 .map-container {
-  margin: 20px;
+  // margin: 20px;
   // width: fit-content;
   // height: 0.5vh;
   // position: absolute;
   width: auto;
-  height: auto;
+  height: 100%;
   margin-top: 20px;
 
   .leaflet-container {
     border-radius: 20px;
     width: 95vw;
-    height: 90vh;
-    margin-top: 60px;
+    height: 80vh;
+    // margin-bottom: 30px;
   }
 }
