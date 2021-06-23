@@ -38,7 +38,17 @@ const Information = (props) => {
     };
   };
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{
+        borderRadius: 10,
+        padding: 10,
+        width: 380,
+        height: 610,
+        wordWrap: "break-word",
+        wordBreak: "break-word",
+      }}
+    >
       <div className="form">
         <div className="form__middle">
           <textarea
@@ -87,15 +97,8 @@ const Information = (props) => {
               name="canContact"
               id="canContact"
               style={{
-                width: 25,
                 height: 26,
-                padding: 2,
-                height: 80,
-                wordWrap: "break-word",
-                wordBreak: "break-word",
-                resize: "none",
-                border: "none",
-                margin: 20,
+                width: 25,
               }}
             />
           </div>
