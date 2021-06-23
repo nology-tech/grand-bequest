@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
 import "./Details.scss";
-import storage from '../../firebase';
-
+import storage from "../../firebase";
 
 const Details = (props) => {
   let history = useHistory();
@@ -12,41 +11,14 @@ const Details = (props) => {
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("");
   const [comments, setComments] = useState("");
-  const image = require('../../assets/images/GrandBequestLogo.png')
-
-
-  const handleUpload = () => {
-
-    console.log(image);
-
-    const uploadTask = storage
-      .ref(`images/${nameOfBuilding}.png`)
-      .put(image);
-
-    uploadTask.on(
-      "state changed",
-      (snapshot) => {},
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        storage
-          .ref("images")
-          .child(image)
-          .getDownloadURL()
-          .then((url) => {
-            console.log(url);
-          });
-      }
-    );
-  };
+  const image = require("../../assets/images/GrandBequestLogo.png");
 
   const updateInformation = () => {
     // Goes to submit page with updated info, ready to go to DB
 
     // Update image data
     const newData = { ...props.imgData };
-    newData.image = image
+    newData.image = image;
     newData.name_of_building = nameOfBuilding;
     newData.zip = zip;
     newData.country = country;
@@ -101,7 +73,7 @@ const Details = (props) => {
         <button className="btn-secondary" onClick={history.goBack}>
           Back
         </button>
-        <button className="btn-primary" onClick={handleUpload}>
+        <button className="btn-primary" onClick={updateInformation}>
           Update Info
         </button>
       </div>

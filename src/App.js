@@ -17,18 +17,26 @@ function App() {
     // further_comments: "",
   });
 
+  const [imgFile, setImgFile] = useState(null);
+
   const upload = () => {
     // direct upload without user ID
     // firestore.collection("locations").add(imgData);
-    
+
     // for specific user via some sort of ID
     // firestore.collection("locations").doc(USERID).collections("uploaded").add(imgData);
     console.log("Finishing upload...");
-  }
+  };
 
   return (
     <Router className="App">
-      <Routes upload={upload} imgData={imgData} setImgData={setImgData} />
+      <Routes
+        upload={upload}
+        imgData={imgData}
+        setImgData={setImgData}
+        setImgFile={setImgFile}
+        imgFile={imgFile}
+      />
     </Router>
   );
 }
