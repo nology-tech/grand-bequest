@@ -41,31 +41,31 @@ const Information = (props) => {
     <div className="container">
       <div className="form">
         <div className="form__middle">
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="What do you think this building should be used for?"
             onBlur={(e) => setPotentialUse(e.target.value)}
           />
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="Who is the owner of this building?"
             onBlur={(e) => setOwnership(e.target.value)}
           />
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="Are you from the local area?"
             onBlur={(e) => setLocalResident(e.target.value)}
           />
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="When was this building built?"
             onBlur={(e) => setYearBuiltPeriod(e.target.value)}
           />
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="When was this building last used/occupied?"
