@@ -11,7 +11,14 @@ function App() {
     zip: "",
     country: "",
     comments: "",
-    // ownership: "",
+    ownership: "",
+    potential_use: "",
+    last_occupied: "",
+    local_resident: "",
+    year_built_period: "",
+    contact_permission: "",
+    email: "",
+    contact_number: "",
     // further_comments: "",
   });
 
