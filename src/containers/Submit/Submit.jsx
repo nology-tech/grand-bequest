@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Map from "../../components/Map/Map";
+// import { firestore } from "../../firebase";
 
 const Submit = (props) => {
   const history = useHistory();
@@ -30,7 +31,6 @@ const Submit = (props) => {
 
   return (
     <div className="container">
-      <p>Submit Page</p>
       <Map
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}

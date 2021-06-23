@@ -59,7 +59,6 @@ const Confirmation = (props) => {
 
   return (
     <div className="container">
-      <p>Confirmation Page</p>
       <Map
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}
