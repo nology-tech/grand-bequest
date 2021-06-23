@@ -28,7 +28,6 @@ const Routes = (props) => {
           setCurrentLocation={props.setCurrentLocation}
           manualLocation={props.manualLocation}
           setManualLocation={props.setManualLocation}
-          upload={props.upload}
           imgData={props.imgData}
           setImgData={props.setImgData}
         />
@@ -39,7 +38,6 @@ const Routes = (props) => {
           setCurrentLocation={props.setCurrentLocation}
           manualLocation={props.manualLocation}
           setManualLocation={props.setManualLocation}
-          upload={props.upload}
           imgData={props.imgData}
           setImgData={props.setImgData}
         />

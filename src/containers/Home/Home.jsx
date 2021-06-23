@@ -41,8 +41,7 @@ const Home = (props) => {
   return (
     <div className="container">
       <Overlay></Overlay>
-
-      <p>Home</p>
+      
       <Map
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}
