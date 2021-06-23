@@ -40,14 +40,14 @@ const Information = (props) => {
   return (
     <div
       className="container"
-      style={{
-        borderRadius: 10,
-        padding: 10,
-        width: 380,
-        height: 610,
-        wordWrap: "break-word",
-        wordBreak: "break-word",
-      }}
+      // style={{
+      //   borderRadius: 10,
+      //   padding: 10,
+      //   width: 380,
+      //   height: 610,
+      //   wordWrap: "break-word",
+      //   wordBreak: "break-word",
+      // }}
     >
       <div className="form">
         <div className="form__middle">

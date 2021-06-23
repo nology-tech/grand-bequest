@@ -1,29 +1,33 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin: 20px;
-  border-radius: 20px;
-  background-color: #cdefd1;
-
-  & > * {
-    margin: 2px;
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-  }
-
-  &__input {
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-  }
-
-  &__middle {
+@media screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .form {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
     padding: 10px;
-    border: none;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #cdefd1;
+
+    & > * {
+      margin: 2px;
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+    }
+
+    &__input {
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+    }
+
+    &__middle {
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+    }
   }
+}
+@media screen {
 }
