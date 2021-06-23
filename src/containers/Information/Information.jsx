@@ -89,13 +89,13 @@ const Information = (props) => {
               style={{ width: 26, height: 26 }}
             />
           </div>
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="Please provide your email address:"
             onBlur={(e) => setEmail(e.target.value)}
           />
-          <input
+          <textarea
             className="form__input"
             type="text"
             placeholder="Please provide your contact number:"

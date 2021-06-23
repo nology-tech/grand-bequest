@@ -19,6 +19,7 @@ function App() {
     contact_permission: "",
     email: "",
     contact_number: "",
+    live: 0,
     // further_comments: "",
   });
 
