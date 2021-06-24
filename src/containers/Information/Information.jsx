@@ -33,9 +33,9 @@ const Information = (props) => {
     newData.contact_number = contactNumber;
     props.setImgData(newData);
 
-    const addInformation = () => {
-      history.push("information");
-    };
+
+    history.push("/submit");
+
   };
   return (
     <div className="container">
@@ -109,11 +109,11 @@ const Information = (props) => {
           />
         </div>
         <div className="core-buttons">
-          <button className="core-buttons__left" onClick={history.goBack}>
+          <button className="btn-secondary" onClick={() => history.push("/submit")}>
             Back
           </button>
-          <button className="core-buttons__right" onClick={updateInformation}>
-            Update Info
+          <button className="btn-primary" onClick={updateInformation}>
+            Add Info
           </button>
         </div>
       </div>

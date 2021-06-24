@@ -4,7 +4,6 @@ import { storage } from "../../firebase";
 import Map from "../../components/Map/Map";
 import { firestore } from "../../firebase";
 
-
 const Submit = (props) => {
   const [url, setUrl] = useState("");
   const history = useHistory();
@@ -49,11 +48,16 @@ const Submit = (props) => {
           });
       }
     );
-    // Maybe add, do you want to add more information?
-    // Yes sends to details form, no just submits
+
+    // updates with geolocation, mobile location if it exists, otherwise manual
+    // MUST CHANGE for desktop users
+    const newData = { ...props.imgData };
+    console.log(props.manualLocation, props.currentLocation);
+    newData.geolocation = props.manualLocation ? props.manualLocation : props.currentLocation;
 
     // direct upload without user ID
-    firestore.collection("locations").add(props.imgData);
+    // send newsData, not props.imgData because we've just added the geolocation
+    firestore.collection("locations").add(newData);
 
     // for specific user via some sort of ID
     // firestore.collection("locations").doc(USERID).collections("uploaded").add(imgData);
@@ -63,7 +67,6 @@ const Submit = (props) => {
 
   return (
     <div className="container">
-      
       <Map
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}

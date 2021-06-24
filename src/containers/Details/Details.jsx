@@ -26,12 +26,14 @@ const Details = (props) => {
     newData.comments = comments;
     props.setImgData(newData);
 
-    const addDetails = () => {
-      history.push("information");
-    };
-
     history.push("submit");
   };
+
+  const addMoreInformation = () => {
+    // ADDS current details AND goes to next page
+    updateInformation();
+    history.push("/information")
+  }
 
   console.log(props.imgFile);
 
@@ -74,9 +76,9 @@ const Details = (props) => {
         />
       </div>
 
-      <a href="information">
-        <button className="button">Have more information?</button>
-      </a>
+     
+      <button className="button" onClick={addMoreInformation}>Have more information?</button>
+  
 
       <div className="core-buttons">
         <button className="btn-secondary" onClick={history.goBack}>
