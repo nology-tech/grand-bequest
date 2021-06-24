@@ -8,6 +8,7 @@ import Socials from "./components/Socials/Socials";
 import { firestore } from "./firebase";
 
 function App() {
+  const [imgFile, setImgFile] = useState(null);
   const [imgData, setImgData] = useState({
     image: "",
     geolocation: "",

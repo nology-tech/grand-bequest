@@ -3,7 +3,7 @@ import "../../App.scss";
 import { useHistory } from "react-router-dom";
 import "./Details.scss";
 import Information from "../Information/Information";
-import storage from "../../firebase";
+import { storage } from "../../firebase";
 
 const Details = (props) => {
   let history = useHistory();

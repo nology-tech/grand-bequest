@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import storage from "../../firebase";
+import { storage } from "../../firebase";
 import Map from "../../components/Map/Map.jsx";
 
 const Confirmation = (props) => {
