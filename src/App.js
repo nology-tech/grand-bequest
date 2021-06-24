@@ -1,4 +1,4 @@
-import NavBar from "./Components/NavBar";
+import NavBar from "./components/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
 import { useState } from "react";
@@ -27,7 +27,6 @@ function App() {
   const setCurrentLocation = (newLocation) => {
     currentLocation = newLocation;
   };
-
 
   return (
     <Router className="App">
