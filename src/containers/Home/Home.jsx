@@ -59,22 +59,22 @@ const Home = (props) => {
     //   <div className="home__core-buttons">
     //     <label for="file-upload" className="btn-secondary">
     //       Upload
-    <div className="home">
+    <div className="container">
       <h1 className="home__title">Capture</h1>
       <Overlay></Overlay>
 
-      <div className="map-container">
+      {/* <div className="map-container"> */}
         <Map
           currentLocation={props.currentLocation}
           setCurrentLocation={props.setCurrentLocation}
           manualLocation={props.manualLocation}
           setManualLocation={props.setManualLocation}
         />
-      </div>
+      {/* </div> */}
 
-      <div className="home__core-buttons">
+      <div className="core-buttons">
         <label for="file-upload" className="btn-secondary">
-          Upload Image
+          Upload
         </label>
         <input
           style={{ display: "none" }}

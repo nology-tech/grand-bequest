@@ -63,6 +63,7 @@ const Submit = (props) => {
 
   return (
     <div className="container">
+      
       <Map
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}
