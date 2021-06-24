@@ -81,7 +81,7 @@ const Information = (props) => {
             <label htmlFor="canContact">
               Please tick if you are happy to be contacted?
             </label>
-            <textarea
+            <input
               className="form__permission"
               type="checkbox"
               name="canContact"
