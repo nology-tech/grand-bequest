@@ -1,10 +1,10 @@
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
 import { useState } from "react";
 import "./App.scss";
 import "./assets/styles/main.scss";
-import Socials from "./components/Socials/Socials";
+import Socials from "./Components/Socials/Socials";
 // import {firestore} from "./firebase"
 
 function App() {

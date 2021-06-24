@@ -8,6 +8,7 @@ import {
   useMap,
 } from "react-leaflet";
 import "./Map.scss";
+import InfoModal from "../InfoModal/InfoModal";
 
 const Map = () => {
   const LocationMarker = () => {
@@ -37,19 +38,33 @@ const Map = () => {
 
   const ClickMarker = () => {
     const [position, setPosition] = useState(null);
+
     useMapEvents({
       click(e) {
         setPosition(e.latlng);
       },
     });
+    const [show, setShow] = useState(true);
 
+    const handleOpen = () => {
+      setShow(true);
+    };
+    const handleClose = () => {
+      setShow(false);
+    };
     return position === null ? null : (
       <Marker position={position}>
         <Popup>
           <img src="https://www.wilsons.school/history/files/image_256-687129.jpg"></img>
-          {/* <button className="moreInfo btn-primary">More Info!</button> */}
-          <button className="pendingInfo btn-secondary">Pending Info...</button>
+          <button onClick={handleOpen} className="moreInfo btn-primary">
+            More Info!
+          </button>
+
+          {/* <button onClick={handleOpen} className="pendingInfo btn-secondary">
+            Pending Info...
+          </button> */}
         </Popup>
+        <InfoModal />
       </Marker>
     );
   };
