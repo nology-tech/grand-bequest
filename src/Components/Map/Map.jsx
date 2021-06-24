@@ -91,7 +91,7 @@ const Map = (props) => {
     });
 
     return position === null ? null : (
-      <Marker position={position}>
+      <Marker position={position} icon={buildingMarker}>
         <Popup>
           <img src="https://www.wilsons.school/history/files/image_256-687129.jpg"></img>
           {/* <button className="moreInfo btn-primary">More Info!</button> */}
