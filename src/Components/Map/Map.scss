@@ -1,3 +1,6 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/buttons" as *;
+
 .leaflet-container {
   width: 100vw;
   height: 100vh;
@@ -5,15 +8,31 @@
 
 .leaflet-popup-content {
   height: 221px;
+  width: 221px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.element.style {
+  width: 221px;
 }
 
 .leaflet-popup-content button {
   width: 90%;
   height: 10%;
-  background-color: green;
-  color: white;
-  border-radius: 10px;
 }
+
+.pendingInfo {
+  color: $tertiary-colour;
+  background-color: $secondary-colour;
+}
+
+.moreInfo {
+  color: white;
+  background-color: $primary-colour;
+}
+
 .leaflet-popup-content img {
   width: 90%;
   height: 90%;

@@ -47,7 +47,8 @@ const Map = () => {
       <Marker position={position}>
         <Popup>
           <img src="https://www.wilsons.school/history/files/image_256-687129.jpg"></img>
-          <button>More Info!</button>
+          {/* <button className="moreInfo btn-primary">More Info!</button> */}
+          <button className="pendingInfo btn-secondary">Pending Info...</button>
         </Popup>
       </Marker>
     );
