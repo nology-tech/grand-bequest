@@ -38,7 +38,17 @@ const Information = (props) => {
     };
   };
   return (
-    <div className="container">
+    <div
+      className="container"
+      // style={{
+      //   borderRadius: 10,
+      //   padding: 10,
+      //   width: 380,
+      //   height: 610,
+      //   wordWrap: "break-word",
+      //   wordBreak: "break-word",
+      // }}
+    >
       <div className="form">
         <div className="form__middle">
           <textarea
@@ -81,12 +91,15 @@ const Information = (props) => {
             <label htmlFor="canContact">
               Please tick if you are happy to be contacted?
             </label>
-            <input
+            <textarea
               className="form__permission"
               type="checkbox"
               name="canContact"
               id="canContact"
-              style={{ width: 26, height: 26 }}
+              style={{
+                height: 26,
+                width: 25,
+              }}
             />
           </div>
           <textarea
