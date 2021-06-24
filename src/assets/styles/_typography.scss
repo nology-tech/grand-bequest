@@ -8,3 +8,11 @@ $title-font: "Cinzel", "serif";
 * {
     font-family: $body-font;
 }
+
+h1, h2, h3, h4, h5 {
+    font-family: $title-font;
+}
+
+h1 {
+    margin: 10px 0px;
+}
