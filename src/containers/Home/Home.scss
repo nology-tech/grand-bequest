@@ -1,3 +1,10 @@
+.home {
+  &__title {
+    margin: 20px 0px;
+    text-align: center;
+  }
+}
+
 @media screen and (min-width: 375px) {
   .core-buttons {
     .btn-primary {

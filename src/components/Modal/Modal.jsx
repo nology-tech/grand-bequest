@@ -10,7 +10,7 @@ const Modal = (props) => {
           X
         </button>
         <div className="popUp__container">
-          <h1 className="popUp__heading">Instructions</h1>
+          <h2 className="popUp__heading">Instructions</h2>
           <p className="popUp__paragraph">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
             repellendus magni laborum magnam doloremque accusamus labore

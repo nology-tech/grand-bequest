@@ -38,7 +38,6 @@ const Landing = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam doloremque ipsam ut cum cupiditate amet, 
           temporibus perferendis corporis aut, aperiam quo. Nihil, aliquam sed vel recusandae eum qui voluptate molestias</p>
           <img className="about__wave" src={wave} />
-          
       </section>
 
       <section className="contact">

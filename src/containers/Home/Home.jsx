@@ -40,7 +40,8 @@ const Home = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="home">
+      <h1 className="home__title">Capture</h1>
       <Overlay></Overlay>
 
       <div className="map-container">
