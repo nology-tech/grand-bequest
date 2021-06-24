@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import storage from "../../firebase";
+import Map from "../../components/Map/Map";
+import { firestore } from "../../firebase";
+
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");
   const history = useHistory();
+
+  console.log(props.imgData);
 
   const cancelSubmit = () => {
     // Are you sure you want to cancel?
@@ -46,14 +51,25 @@ const Submit = (props) => {
     );
     // Maybe add, do you want to add more information?
     // Yes sends to details form, no just submits
-    // props.upload();
+
+    // direct upload without user ID
+    firestore.collection("locations").add(props.imgData);
+
+    // for specific user via some sort of ID
+    // firestore.collection("locations").doc(USERID).collections("uploaded").add(imgData);
+
     console.log("Sent to DB!", props.imgData);
   };
 
   return (
     <div className="container">
-      <p>Submit Page</p>
-      <img src="https://openmaptiles.org/img/home-banner-map.png" />
+      <Map
+        currentLocation={props.currentLocation}
+        setCurrentLocation={props.setCurrentLocation}
+        manualLocation={props.manualLocation}
+        setManualLocation={props.setManualLocation}
+      />
+
       <p style={{ fontSize: "10px" }}>
         [Capture image preview would display with pin on map with this 'Add
         Information?' button]

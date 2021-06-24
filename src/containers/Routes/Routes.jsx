@@ -15,25 +15,35 @@ const Routes = (props) => {
       </Route>
       <Route path="/home">
         <Home
+          setImgFile={props.setImgFile}
+          currentLocation={props.currentLocation}
+          setCurrentLocation={props.setCurrentLocation}
+          manualLocation={props.manualLocation}
+          setManualLocation={props.setManualLocation}
           imgData={props.imgData}
           setImgData={props.setImgData}
-          setImgFile={props.setImgFile}
         />
       </Route>
       <Route path="/confirmation">
         <Confirmation
-          upload={props.upload}
+          imgFile={props.imgFile}
+          currentLocation={props.currentLocation}
+          setCurrentLocation={props.setCurrentLocation}
+          manualLocation={props.manualLocation}
+          setManualLocation={props.setManualLocation}
           imgData={props.imgData}
           setImgData={props.setImgData}
-          imgFile={props.imgFile}
         />
       </Route>
       <Route path="/submit">
         <Submit
-          upload={props.upload}
+          imgFile={props.imgFile}
+          currentLocation={props.currentLocation}
+          setCurrentLocation={props.setCurrentLocation}
+          manualLocation={props.manualLocation}
+          setManualLocation={props.setManualLocation}
           imgData={props.imgData}
           setImgData={props.setImgData}
-          imgFile={props.imgFile}
         />
       </Route>
       <Route path="/details">

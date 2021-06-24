@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./App.scss";
 import "./assets/styles/main.scss";
 import Socials from "./components/Socials/Socials";
-// import {firestore} from "./firebase"
+import { firestore } from "./firebase";
 
 function App() {
   const [imgData, setImgData] = useState({
@@ -27,24 +27,30 @@ function App() {
     // further_comments: "",
   });
 
-  const [imgFile, setImgFile] = useState(null);
+  let manualLocation = [];
+  const setManualLocation = (newLocation) => {
+    manualLocation = newLocation;
+  };
 
-  const upload = () => {
-    // direct upload without user ID
-    // firestore.collection("locations").add(imgData);
-    // for specific user via some sort of ID
-    // firestore.collection("locations").doc(USERID).collections("uploaded").add(imgData);
-    console.log("Finishing upload...");
+  let currentLocation = [];
+  const setCurrentLocation = (newLocation) => {
+    currentLocation = newLocation;
   };
 
   return (
     <Router className="App">
       <Routes
-        upload={upload}
-        imgData={imgData}
-        setImgData={setImgData}
+        // upload={upload}
+        // imgData={imgData}
+        // setImgData={setImgData}
         setImgFile={setImgFile}
         imgFile={imgFile}
+        currentLocation={currentLocation}
+        setCurrentLocation={setCurrentLocation}
+        manualLocation={manualLocation}
+        setManualLocation={setManualLocation}
+        imgData={imgData}
+        setImgData={setImgData}
       />
     </Router>
   );

@@ -12,17 +12,17 @@ const Home = (props) => {
 
   const platform = navigator.platform;
 
-  const getGeo = () => {
-    let lat = null;
-    let long = null;
+  // const getGeo = () => {
+  //   let lat = null;
+  //   let long = null;
 
-    navigator.geolocation.getCurrentPosition((positions) => {
-      lat = positions.coords.latitude;
-      long = positions.coords.longitude;
-    });
+  //   navigator.geolocation.getCurrentPosition((positions) => {
+  //     lat = positions.coords.latitude;
+  //     long = positions.coords.longitude;
+  //   });
 
-    return [lat, long];
-  };
+  //   return [lat, long];
+  // };
 
   const handleLiveCapture = (e) => {
     if (e.target.files[0]) {
@@ -31,7 +31,7 @@ const Home = (props) => {
     setHasMedia(true);
     // handle geolocation here, and add to OBJECT
     const newData = { ...props.imgData };
-    newData.geolocation = getGeo();
+    newData.geolocation = props.manualLocation;
     props.setImgData(newData);
 
     history.push("confirmation");
@@ -48,17 +48,33 @@ const Home = (props) => {
   };
 
   return (
+    // <div className="home">
+    //   <h1 className="home__title">Capture</h1>
+    //   <Overlay></Overlay>
+
+    //   <div className="map-container">
+    //     <Map></Map>
+    //   </div>
+
+    //   <div className="home__core-buttons">
+    //     <label for="file-upload" className="btn-secondary">
+    //       Upload
     <div className="home">
       <h1 className="home__title">Capture</h1>
       <Overlay></Overlay>
 
       <div className="map-container">
-        <Map></Map>
+        <Map
+          currentLocation={props.currentLocation}
+          setCurrentLocation={props.setCurrentLocation}
+          manualLocation={props.manualLocation}
+          setManualLocation={props.setManualLocation}
+        />
       </div>
 
       <div className="home__core-buttons">
         <label for="file-upload" className="btn-secondary">
-          Upload
+          Upload Image
         </label>
         <input
           style={{ display: "none" }}
