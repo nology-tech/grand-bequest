@@ -8,6 +8,17 @@ import Socials from "./components/Socials/Socials";
 import { firestore } from "./firebase";
 
 function App() {
+  
+  let manualLocation = [];
+  const setManualLocation = (newLocation) => {
+    manualLocation = newLocation;
+  };
+  
+  let currentLocation = [];
+  const setCurrentLocation = (newLocation) => {
+    currentLocation = newLocation;
+  };
+  
   const [imgFile, setImgFile] = useState(null);
   const [imgData, setImgData] = useState({
     image: "",
@@ -27,16 +38,6 @@ function App() {
     live: 0,
     // further_comments: "",
   });
-
-  let manualLocation = [];
-  const setManualLocation = (newLocation) => {
-    manualLocation = newLocation;
-  };
-
-  let currentLocation = [];
-  const setCurrentLocation = (newLocation) => {
-    currentLocation = newLocation;
-  };
 
   return (
     <Router className="App">
