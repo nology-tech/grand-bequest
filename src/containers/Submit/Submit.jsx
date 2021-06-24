@@ -58,6 +58,8 @@ const Submit = (props) => {
         [Capture image preview would display with pin on map with this 'Add
         Information?' button]
       </p>
+      {/* image preview image logic */}
+      {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
       <button className="button" onClick={addInformation}>
         Add Information?
       </button>

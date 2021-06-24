@@ -35,7 +35,11 @@ const Routes = (props) => {
         />
       </Route>
       <Route path="/details">
-        <Details imgData={props.imgData} setImgData={props.setImgData} />
+        <Details
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+          imgFile={props.imgFile}
+        />
       </Route>
 
       <Route path="/*">

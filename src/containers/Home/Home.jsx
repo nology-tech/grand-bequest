@@ -38,7 +38,7 @@ const Home = (props) => {
   const handleUpload = (e) => {
     // console.log("");
     // setHasMedia(true);
-
+    console.log(e.target.files);
     if (e.target.files[0]) {
       props.setImgFile(e.target.files[0]);
     }

@@ -28,10 +28,12 @@ const Details = (props) => {
     history.push("submit");
   };
 
+  console.log(props.imgFile);
+
   return (
     <div className="container">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Abandoned_building_in_the_Ronet_classification_yard_%28DSCF5518%29.jpg/800px-Abandoned_building_in_the_Ronet_classification_yard_%28DSCF5518%29.jpg"
+        src={URL.createObjectURL(props.imgFile)}
         alt="abandoned building"
         className="preview-image"
       />
