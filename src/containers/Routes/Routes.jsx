@@ -24,6 +24,7 @@ const Routes = (props) => {
           upload={props.upload}
           imgData={props.imgData}
           setImgData={props.setImgData}
+          imgFile={props.imgFile}
         />
       </Route>
       <Route path="/submit">

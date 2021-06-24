@@ -57,28 +57,6 @@ const Confirmation = (props) => {
     history.push("confirmation");
   };
 
-  // const handleUpload = () => {
-  //   const [image, setImage] = useState(null);
-  //   const uploadTask = storage.put(image);
-
-  //   uploadTask.on(
-  //     "state changed",
-  //     (snapshot) => {},
-  //     (error) => {
-  //       console.log(error);
-  //     },
-  //     () => {
-  //       storage
-  //         .ref("images")
-  //         .child(image.name)
-  //         .getDownloadURL()
-  //         .then((url) => {
-  //           console.log(url);
-  //         });
-  //     }
-  //   );
-  // };
-
   return (
     <div className="container">
       <p>Confirmation Page</p>
@@ -89,6 +67,8 @@ const Confirmation = (props) => {
           [MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH RETAKE/CONFIRM
           BUTTONS]
         </p>
+        {/* image preview image logic */}
+        {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
         <label for="live-capture" className="btn-tertiary">
           Retake
         </label>
