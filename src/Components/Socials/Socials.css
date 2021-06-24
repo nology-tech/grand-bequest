@@ -1,0 +1,12 @@
+.socials__socials-container {
+  height: 5%;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+.socials__facebook {
+  font-size: 50px;
+  color: black;
+}

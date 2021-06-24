@@ -1,0 +1,13 @@
+.socialContainer {
+  height: 5%;
+  width: 55px;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  display: flex;
+  z-index: 999;
+  &__socialIcons a {
+    color: black;
+    font-size: 30px;
+  }
+}

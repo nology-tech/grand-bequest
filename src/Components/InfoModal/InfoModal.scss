@@ -1,0 +1,57 @@
+@use "../../assets/styles/typography" as *;
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/buttons" as *;
+
+.info-modal {
+  border: 2px solid black;
+  border-radius: 10px;
+  background: #cdefd1;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  font-family: $title-font;
+  &__info-modal-img {
+    border-radius: 10px;
+    border: 20px solid white;
+    width: 40%;
+  }
+  &__use-input {
+    // padding: 10px;
+    background: #fff;
+    border-radius: 20px;
+    width: 60%;
+    margin: 20px auto;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px auto;
+    height: 30px;
+    font-weight: bold;
+    color: black;
+    font-family: $body-font;
+  }
+  &__onwnership-input {
+    background: #fff;
+    border-radius: 20px;
+    width: 60%;
+    margin: 20px auto;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+  }
+  &__comments {
+    background: #fff;
+    border-radius: 20px;
+    width: 60%;
+    margin: 20px auto;
+  }
+  &__button {
+    border-radius: 20px;
+    background: #109e48;
+    color: #fff;
+    margin: 10px auto;
+    width: 30%;
+    height: 60px;
+    padding: 10px 10px;
+    font-size: 20px;
+  }
+}
