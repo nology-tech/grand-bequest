@@ -49,3 +49,11 @@
     margin-left: 20px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .popup {
+    &__modal {
+      margin-left: -34%;
+    }
+  }
+}

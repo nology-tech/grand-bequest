@@ -60,16 +60,16 @@ const Home = (props) => {
     //     <label for="file-upload" className="btn-secondary">
     //       Upload
     <div className="container">
-      <h1 className="home__title">Capture</h1>
+      <h1 className="home__title">Grand Bequest</h1>
       <Overlay></Overlay>
 
       {/* <div className="map-container"> */}
-        <Map
-          currentLocation={props.currentLocation}
-          setCurrentLocation={props.setCurrentLocation}
-          manualLocation={props.manualLocation}
-          setManualLocation={props.setManualLocation}
-        />
+      <Map
+        currentLocation={props.currentLocation}
+        setCurrentLocation={props.setCurrentLocation}
+        manualLocation={props.manualLocation}
+        setManualLocation={props.setManualLocation}
+      />
       {/* </div> */}
 
       <div className="core-buttons">
