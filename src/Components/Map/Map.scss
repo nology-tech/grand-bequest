@@ -1,23 +1,8 @@
-// .map-container {
-//   // margin: 20px;
-//   // width: fit-content;
-//   // height: 0.5vh;
-//   // position: absolute;
-//   width: auto;
-//   height: 100%;
-//   margin-top: 20px;
-
-//   .leaflet-container {
-//     border-radius: 20px;
-//     margin: 15px;
-//     height: 80vh;
-//   }
 @use "../../assets/styles/variables" as *;
 @use "../../assets/styles/buttons" as *;
 
 .leaflet-container {
-  width: 100vw;
-  height: 100vh;
+  height: 80vh;
 }
 
 .leaflet-popup-content {
