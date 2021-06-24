@@ -17,7 +17,7 @@ const Information = (props) => {
   const [localResident, setLocalResident] = useState("");
   const [yearBuiltPeriod, setYearBuiltPeriod] = useState("");
   const [lastOccupied, setLastOccupied] = useState("");
-  const [contactPermission, setContactPermission] = useState("");
+  const [contactPermission, setContactPermission] = useState(false);
   const [email, setEmail] = useState("");
   const [contactNumber, setContactNumber] = useState("");
 
@@ -41,6 +41,7 @@ const Information = (props) => {
     <div className="container">
       <div className="form">
         <div className="form__middle">
+          <h3>Optional fields</h3>
           <textarea
             className="form__input"
             type="text"
@@ -82,6 +83,8 @@ const Information = (props) => {
               Please tick if you are happy to be contacted?
             </label>
             <input
+              value={contactPermission}
+              onClick={() => setContactPermission(!contactPermission)}
               className="form__permission"
               type="checkbox"
               name="canContact"
