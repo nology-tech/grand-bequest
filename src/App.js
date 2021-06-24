@@ -1,4 +1,4 @@
-import NavBar from "./components/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
 import { useState } from "react";
@@ -15,7 +15,15 @@ function App() {
     zip: "",
     country: "",
     comments: "",
-    // ownership: "",
+    ownership: "",
+    potential_use: "",
+    last_occupied: "",
+    local_resident: "",
+    year_built_period: "",
+    contact_permission: "",
+    email: "",
+    contact_number: "",
+    live: 0,
     // further_comments: "",
   });
 

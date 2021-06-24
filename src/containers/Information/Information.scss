@@ -1,0 +1,52 @@
+// @use "../../assets/styles/typography" as *;
+// @use "../../assets/styles/buttons" as *;
+// @use "../../assets/styles/forms" as *;
+// @use "../../assets/styles/variables" as *;
+// @use "../../assets/styles/main" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  // margin: 20px;
+  border-radius: 20px;
+  background-color: #cdefd1;
+  height: 100vh;
+  textarea {
+    resize: none;
+  }
+
+  @media (max-width: 767px) {
+    border: 2px;
+  }
+  @media (max-width: 400px) {
+    border: 2px;
+    width: 90vw;
+  }
+
+  & > * {
+    margin: 2px;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+  }
+  &__input {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+  }
+  &__middle {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+  }
+}
