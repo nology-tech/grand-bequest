@@ -14,20 +14,39 @@ const Routes = (props) => {
         <Landing />
       </Route>
       <Route path="/home">
-        <Home imgData={props.imgData} setImgData={props.setImgData} />
+        <Home
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+          setImgFile={props.setImgFile}
+        />
       </Route>
       <Route path="/confirmation">
-        <Confirmation upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
+        <Confirmation
+          upload={props.upload}
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+          imgFile={props.imgFile}
+        />
       </Route>
       <Route path="/submit">
-        <Submit upload={props.upload} imgData={props.imgData} setImgData={props.setImgData} />
+        <Submit
+          upload={props.upload}
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+          imgFile={props.imgFile}
+        />
       </Route>
       <Route path="/details">
-        <Details imgData={props.imgData} setImgData={props.setImgData} />
+        <Details
+          imgData={props.imgData}
+          setImgData={props.setImgData}
+          imgFile={props.imgFile}
+        />
       </Route>
       <Route path="/information">
         <Information imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
+
       <Route path="/*">
         <ErrorPage />
       </Route>

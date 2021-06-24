@@ -3,6 +3,7 @@ import "../../App.scss";
 import { useHistory } from "react-router-dom";
 import "./Details.scss";
 import Information from "../Information/Information";
+import storage from "../../firebase";
 
 const Details = (props) => {
   let history = useHistory();
@@ -11,12 +12,14 @@ const Details = (props) => {
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("");
   const [comments, setComments] = useState("");
+  const image = require("../../assets/images/GrandBequestLogo.png");
 
   const updateInformation = () => {
     // Goes to submit page with updated info, ready to go to DB
 
     // Update image data
     const newData = { ...props.imgData };
+    newData.image = image;
     newData.name_of_building = nameOfBuilding;
     newData.zip = zip;
     newData.country = country;
@@ -30,10 +33,12 @@ const Details = (props) => {
     history.push("submit");
   };
 
+  console.log(props.imgFile);
+
   return (
     <div className="container">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Abandoned_building_in_the_Ronet_classification_yard_%28DSCF5518%29.jpg/800px-Abandoned_building_in_the_Ronet_classification_yard_%28DSCF5518%29.jpg"
+        src={URL.createObjectURL(props.imgFile)}
         alt="abandoned building"
         className="preview-image"
       />

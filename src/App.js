@@ -27,6 +27,8 @@ function App() {
     // further_comments: "",
   });
 
+  const [imgFile, setImgFile] = useState(null);
+
   const upload = () => {
     // direct upload without user ID
     // firestore.collection("locations").add(imgData);
@@ -37,8 +39,13 @@ function App() {
 
   return (
     <Router className="App">
-      <Routes upload={upload} imgData={imgData} setImgData={setImgData} />
-      {/* <Socials /> */}
+      <Routes
+        upload={upload}
+        imgData={imgData}
+        setImgData={setImgData}
+        setImgFile={setImgFile}
+        imgFile={imgFile}
+      />
     </Router>
   );
 }

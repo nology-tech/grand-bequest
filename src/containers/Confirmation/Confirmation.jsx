@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import storage from "../../firebase";
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -36,17 +37,17 @@ const Confirmation = (props) => {
     history.push("submit");
   };
 
-  const quickSubmit = () => {
-    // Are you sure you don't want to add more information?
-    // with a 'Don't show me this again' tickbox
-    const newData = { ...props.imgData };
-    newData.image = "this-is-an-abandoned-building.jpg";
-    props.setImgData(newData);
+  // const quickSubmit = () => {
+  //   // Are you sure you don't want to add more information?
+  //   // with a 'Don't show me this again' tickbox
+  //   const newData = { ...props.imgData };
+  //   newData.image = "this-is-an-abandoned-building.jpg";
+  //   props.setImgData(newData);
 
-    // If all OK, sends to DB
-    props.upload();
-    console.log("Sent to DB!", props.imgData);
-  };
+  //   // If all OK, sends to DB
+  //   props.upload();
+  //   console.log("Sent to DB!", props.imgData);
+  // };
 
   const handleLiveCapture = () => {
     const newData = { ...props.imgData };
@@ -66,10 +67,9 @@ const Confirmation = (props) => {
           [MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH RETAKE/CONFIRM
           BUTTONS]
         </p>
-        <label
-          for="live-capture"
-          className="btn-tertiary"
-        >
+        {/* image preview image logic */}
+        {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
+        <label for="live-capture" className="btn-tertiary">
           Retake
         </label>
         <input
@@ -80,7 +80,13 @@ const Confirmation = (props) => {
           onChange={handleLiveCapture}
           id="live-capture"
         />
-        <button className="btn-tertiary" onClick={confirmImage}>
+        <button
+          className="btn-tertiary"
+          onClick={() => {
+            confirmImage();
+            // handleUpload();
+          }}
+        >
           Confirm
         </button>
       </div>
@@ -89,9 +95,9 @@ const Confirmation = (props) => {
         <button className="btn-secondary" onClick={cancelSubmit}>
           Cancel
         </button>
-        <button className="btn-primary" onClick={quickSubmit}>
+        {/* <button className="btn-primary" onClick={(quickSubmit, handleUpload)}>
           Quick Submit
-        </button>
+        </button> */}
       </div>
     </div>
   );

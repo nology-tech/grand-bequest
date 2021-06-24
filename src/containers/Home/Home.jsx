@@ -8,6 +8,7 @@ import Socials from "../../components/Socials/Socials";
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
+  const history = useHistory();
 
   const platform = navigator.platform;
 
@@ -23,9 +24,10 @@ const Home = (props) => {
     return [lat, long];
   };
 
-  const history = useHistory();
-
-  const handleLiveCapture = () => {
+  const handleLiveCapture = (e) => {
+    if (e.target.files[0]) {
+      props.setImgFile(e.target.files[0]);
+    }
     setHasMedia(true);
     // handle geolocation here, and add to OBJECT
     const newData = { ...props.imgData };
@@ -35,8 +37,13 @@ const Home = (props) => {
     history.push("confirmation");
   };
 
-  const handleUpload = () => {
-    setHasMedia(true);
+  const handleUpload = (e) => {
+    // console.log("");
+    // setHasMedia(true);
+    console.log(e.target.files);
+    if (e.target.files[0]) {
+      props.setImgFile(e.target.files[0]);
+    }
     history.push("details");
   };
 
