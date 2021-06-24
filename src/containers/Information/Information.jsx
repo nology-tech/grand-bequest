@@ -109,7 +109,7 @@ const Information = (props) => {
           />
         </div>
         <div className="core-buttons">
-          <button className="btn-secondary" onClick={() => history.push("/submit")}>
+          <button className="btn-secondary" onClick={() => history.push("/details")}>
             Back
           </button>
           <button className="btn-primary" onClick={updateInformation}>

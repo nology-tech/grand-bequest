@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import "./assets/styles/main.scss";
 import Socials from "./components/Socials/Socials";
@@ -11,18 +11,18 @@ function App() {
   
   let manualLocation = [];
   const setManualLocation = (newLocation) => {
-    manualLocation = newLocation;
+    manualLocation = [...newLocation];
   };
   
   let currentLocation = [];
   const setCurrentLocation = (newLocation) => {
-    currentLocation = newLocation;
+    manualLocation = [...newLocation];
   };
   
   const [imgFile, setImgFile] = useState(null);
   const [imgData, setImgData] = useState({
     image: "",
-    geolocation: "",
+    geolocation: [],
     name_of_building: "",
     zip: "",
     country: "",
@@ -38,6 +38,10 @@ function App() {
     live: 0,
     // further_comments: "",
   });
+
+  useEffect(() => {
+    console.log("locations effect", currentLocation, manualLocation);
+  }, currentLocation, manualLocation)
 
   return (
     <Router className="App">

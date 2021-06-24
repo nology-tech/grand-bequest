@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
 import Map from "../../components/Map/Map";
@@ -9,6 +9,7 @@ const Submit = (props) => {
   const history = useHistory();
 
   console.log(props.imgData);
+  console.log("locations:", props.manualLocation, props.currentLocation);
 
   const cancelSubmit = () => {
     // Are you sure you want to cancel?
@@ -48,26 +49,47 @@ const Submit = (props) => {
           });
       }
     );
+  };
+
+  useEffect(() => {
+    // THIS IS ALSO PART OF sendToDB()
+    if (!url) {
+      console.log(url);
+      return;
+    }
+    console.log(url);
 
     // updates with geolocation, mobile location if it exists, otherwise manual
     // MUST CHANGE for desktop users
     const newData = { ...props.imgData };
-    console.log(props.manualLocation, props.currentLocation);
-    newData.geolocation = props.manualLocation ? props.manualLocation : props.currentLocation;
+    newData.geolocation = props.manualLocation
+      ? props.manualLocation
+      : props.currentLocation;
+    // Add reference to the image within DB
+    newData.image = url;
 
     // direct upload without user ID
-    // send newsData, not props.imgData because we've just added the geolocation
+    // send newsData, not props.imgData because we've just added the geolocation and url
     firestore.collection("locations").add(newData);
-
     // for specific user via some sort of ID
     // firestore.collection("locations").doc(USERID).collections("uploaded").add(imgData);
 
-    console.log("Sent to DB!", props.imgData);
-  };
+    window.confetti({
+      zIndex: 1000,
+      particleCount: 60,
+      spread: 60,
+      origin: {
+        y: 0.8,
+      },
+    });
+
+    console.log("Sent to DB!", newData);
+  }, [url]);
 
   return (
     <div className="container">
       <Map
+        imgFile={props.imgFile}
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}
         manualLocation={props.manualLocation}

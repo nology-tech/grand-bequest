@@ -48,29 +48,17 @@ const Home = (props) => {
   };
 
   return (
-    // <div className="home">
-    //   <h1 className="home__title">Capture</h1>
-    //   <Overlay></Overlay>
-
-    //   <div className="map-container">
-    //     <Map></Map>
-    //   </div>
-
-    //   <div className="home__core-buttons">
-    //     <label for="file-upload" className="btn-secondary">
-    //       Upload
     <div className="container">
       <h1 className="home__title">Capture</h1>
       <Overlay></Overlay>
 
-      {/* <div className="map-container"> */}
-        <Map
-          currentLocation={props.currentLocation}
-          setCurrentLocation={props.setCurrentLocation}
-          manualLocation={props.manualLocation}
-          setManualLocation={props.setManualLocation}
-        />
-      {/* </div> */}
+      <Map
+        imgFile={props.imgFile}
+        currentLocation={props.currentLocation}
+        setCurrentLocation={props.setCurrentLocation}
+        manualLocation={props.manualLocation}
+        setManualLocation={props.setManualLocation}
+      />
 
       <div className="core-buttons">
         <label for="file-upload" className="btn-secondary">

@@ -61,6 +61,7 @@ const Confirmation = (props) => {
   return (
     <div className="container">
       <Map
+        imgFile={props.imgFile}
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}
         manualLocation={props.manualLocation}
