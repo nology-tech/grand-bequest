@@ -1,0 +1,14 @@
+.socials__Container {
+  height: 5%;
+  width: 55px;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  display: flex;
+  z-index: 999;
+}
+
+.socials__Container-Icons a {
+  color: black;
+  font-size: 30px;
+}
