@@ -4,6 +4,7 @@ import Routes from "./containers/Routes";
 import { useState } from "react";
 import "./App.scss";
 import "./assets/styles/main.scss";
+import Socials from "./components/Socials/Socials";
 // import {firestore} from "./firebase"
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   return (
     <Router className="App">
       <Routes upload={upload} imgData={imgData} setImgData={setImgData} />
+      <Socials />
     </Router>
   );
 }
