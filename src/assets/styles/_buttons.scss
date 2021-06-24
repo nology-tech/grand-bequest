@@ -5,7 +5,7 @@ $button-font-size: 20px;
 $button-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 $button-radius: 50px;
 
-button {
+button, label[for="file-upload"], label[for="live-capture"] {
   letter-spacing: 2px;
   font-weight: bold;
   min-width: 150px;
@@ -16,6 +16,7 @@ button {
   line-height: $button-height;
   box-shadow: $button-shadow;
   border: none;
+  display: inline-block;
 }
 
 
@@ -30,9 +31,10 @@ button {
 
 .btn-secondary {
   background: $secondary-colour;
+  color: #424200;
   
   &:hover {
-    background-color: #fff132;
+    background-color: darken($secondary-colour, 10%);
   }
 }
 

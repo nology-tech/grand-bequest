@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Modal from "../Modal/Modal.jsx";
+import "./Overlay.scss";
 
 const Overlay = () => {
   const hasDismissed = localStorage.getItem("hasDismissed");
@@ -22,9 +23,9 @@ const Overlay = () => {
   };
 
   return (
-    <div className="App">
+    <div className="overlay">
       {!show && (
-        <button className="helpButton" onClick={handleOpen}>
+        <button className="overlay__show-btn" onClick={handleOpen}>
           ?
         </button>
       )}
