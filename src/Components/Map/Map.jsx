@@ -64,7 +64,7 @@ const Map = () => {
             Pending Info...
           </button> */}
         </Popup>
-        <InfoModal />
+        <InfoModal handleClose={handleClose} show={show} />
       </Marker>
     );
   };
