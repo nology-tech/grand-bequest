@@ -7,7 +7,7 @@ import {
   faFacebookSquare,
   faTwitterSquare,
   fab,
-  heart,
+  faHeart,
   far,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +17,6 @@ const InfoModal = (props) => {
 
   return (
     <div className={show ? "info-modal info-modal__modal" : "info-modal hide"}>
-      {/* <Socials className="infoModal-socials" /> */}
       <button onClick={handleClose} className="popup__closeButton">
         X
       </button>
@@ -35,10 +34,12 @@ const InfoModal = (props) => {
           />
         </a>
       </div>
-      <FontAwesomeIcon
-        icon={["far", "heart"]}
-        className="info-modal__favourites-icon"
-      />
+      <div className="info-modal__heart">
+        <FontAwesomeIcon
+          icon={["far", "heart"]}
+          className="info-modal__favourites-icon"
+        />
+      </div>
       <img
         className="info-modal__info-modal-img"
         src="https://www.wilsons.school/history/files/image_256-687129.jpg"
