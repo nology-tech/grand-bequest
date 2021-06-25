@@ -12,14 +12,12 @@ const Details = (props) => {
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("");
   const [comments, setComments] = useState("");
-  const image = require("../../assets/images/GrandBequestLogo.png");
 
   const updateInformation = () => {
     // Goes to submit page with updated info, ready to go to DB
 
     // Update image data
     const newData = { ...props.imgData };
-    newData.image = image;
     newData.name_of_building = nameOfBuilding;
     newData.zip = zip;
     newData.country = country;
@@ -35,7 +33,6 @@ const Details = (props) => {
     history.push("/information")
   }
 
-  console.log(props.imgFile);
 
   return (
     <div className="container">
@@ -81,7 +78,7 @@ const Details = (props) => {
   
 
       <div className="core-buttons">
-        <button className="btn-secondary" onClick={history.goBack}>
+        <button className="btn-secondary" onClick={() => history.push("/submit")}>
           Back
         </button>
         <button className="btn-primary" onClick={updateInformation}>

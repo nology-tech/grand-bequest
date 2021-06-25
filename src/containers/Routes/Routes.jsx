@@ -16,6 +16,7 @@ const Routes = (props) => {
       <Route path="/home">
         <Home
           setImgFile={props.setImgFile}
+          imgFile={props.imgFile}
           currentLocation={props.currentLocation}
           setCurrentLocation={props.setCurrentLocation}
           manualLocation={props.manualLocation}

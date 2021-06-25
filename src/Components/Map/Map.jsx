@@ -60,12 +60,9 @@ const Map = (props) => {
     }, []);
 
     const map = useMapEvents({
-      // dblclick: () => {
-      //   map.locate();
-      // },
       locationfound: (e) => {
-        console.log("location found");
-        props.setCurrentLocation(e.latlng);
+        props.setCurrentLocation([e.latlng.lat, e.latlng.lng]);
+        console.log([e.latlng.lat, e.latlng.lng]);
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom(), {
           animate: true,
@@ -85,7 +82,7 @@ const Map = (props) => {
     const [position, setPosition] = useState(null);
     useMapEvents({
       dblclick(e) {
-        props.setManualLocation(e.latlng);
+        props.setManualLocation([e.latlng.lat, e.latlng.lng]);
         setPosition(e.latlng);
       },
     });
@@ -93,7 +90,7 @@ const Map = (props) => {
     return position === null ? null : (
       <Marker position={position} icon={buildingMarker}>
         <Popup>
-          <img src="https://www.wilsons.school/history/files/image_256-687129.jpg"></img>
+          <img src={props.imgFile ? URL.createObjectURL(props.imgFile) : "https://www.wilsons.school/history/files/image_256-687129.jpg"}></img>
           {/* <button className="moreInfo btn-primary">More Info!</button> */}
           <button className="pendingInfo btn-secondary">Pending Info...</button>
         </Popup>
