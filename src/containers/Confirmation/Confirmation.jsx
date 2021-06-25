@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
 import Map from "../../components/Map/Map.jsx";
+import Socials from "../../components/Socials/Socials";
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -69,13 +70,9 @@ const Confirmation = (props) => {
       />
 
       <div>
-        <p style={{ fontSize: "10px" }}>
-          [MODAL PREVIEW WOULD GO HERE, ON TOP OF MAP, WITH RETAKE/CONFIRM
-          BUTTONS]
-        </p>
         {/* image preview image logic */}
         {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
-        <label for="live-capture" className="btn-tertiary">
+        <label for="live-capture" className="btn-secondary">
           Retake
         </label>
         <input
@@ -87,7 +84,7 @@ const Confirmation = (props) => {
           id="live-capture"
         />
         <button
-          className="btn-tertiary"
+          className="btn-primary"
           onClick={() => {
             confirmImage();
             // handleUpload();
@@ -105,6 +102,7 @@ const Confirmation = (props) => {
           Quick Submit
         </button> */}
       </div>
+      <Socials />
     </div>
   );
 };

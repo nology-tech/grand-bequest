@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import "./Details.scss";
 import Information from "../Information/Information";
 import { storage } from "../../firebase";
+import Socials from "../../components/Socials/Socials";
 
 const Details = (props) => {
   let history = useHistory();
@@ -83,7 +84,7 @@ const Details = (props) => {
         </div>
       </div>
       <button className="button" onClick={addMoreInformation}>Have more information?</button>
-
+    <Socials />
     </div>
   );
 };

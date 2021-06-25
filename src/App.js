@@ -35,7 +35,7 @@ function App() {
     contact_permission: "",
     email: "",
     contact_number: "",
-    live: 0,
+    live: false,
     // further_comments: "",
   });
 

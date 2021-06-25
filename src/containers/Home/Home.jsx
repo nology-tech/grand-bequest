@@ -94,7 +94,7 @@ const Home = (props) => {
           id="live-capture"
         />
       </div>
-      {/* <Socials /> */}
+      <Socials />
     </div>
   );
 };

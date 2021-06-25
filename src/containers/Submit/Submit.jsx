@@ -4,6 +4,7 @@ import { storage } from "../../firebase";
 import Map from "../../components/Map/Map";
 import { firestore } from "../../firebase";
 import "./Submit.scss";
+import Socials from "../../components/Socials/Socials";
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");
@@ -99,10 +100,6 @@ const Submit = (props) => {
         setManualLocation={props.setManualLocation}
       />
 
-      <p style={{ fontSize: "10px" }}>
-        [Capture image preview would display with pin on map with this 'Add
-        Information?' button]
-      </p>
       {/* image preview image logic */}
       {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
       <button className="button" onClick={addInformation}>
@@ -117,6 +114,7 @@ const Submit = (props) => {
           Submit
         </button>
       </div>
+      <Socials />
     </div>
   );
 };
