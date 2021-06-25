@@ -35,7 +35,10 @@ const Details = (props) => {
 
 
   return (
-    <div className="container">
+    <div className="details container">
+      <h2 className="details__title">Details</h2>
+      <p className="text-default">Provide a few details about your capture...</p>
+
       <img
         src={URL.createObjectURL(props.imgFile)}
         alt="abandoned building"
@@ -44,47 +47,43 @@ const Details = (props) => {
 
       <div className="form">
         <input
-          className="form__input--name"
+          className="form__input"
           type="text"
           placeholder="Name of Building / Former Purpose"
           onBlur={(e) => setNameOfBuilding(e.target.value)}
         />
 
-        <div className="form__middle">
-          <input
-            className="form__middle__input"
-            type="text"
-            placeholder="Area Postcode/Zip"
-            onBlur={(e) => setZip(e.target.value)}
-          />
-          <input
-            className="form__middle__input"
-            type="text"
-            placeholder="Country"
-            onBlur={(e) => setCountry(e.target.value)}
-          />
-        </div>
+        <input
+          className="form__input"
+          type="text"
+          placeholder="Area Postcode/Zip"
+          onBlur={(e) => setZip(e.target.value)}
+        />
+        <input
+          className="form__input"
+          type="text"
+          placeholder="Country"
+          onBlur={(e) => setCountry(e.target.value)}
+        />
 
         <textarea
-          className="form__input--comments"
+          className="form__input"
           type="text"
           placeholder="Comments"
           onBlur={(e) => setComments(e.target.value)}
         />
-      </div>
 
-     
+        <div className="core-buttons">
+          <button className="btn-secondary" onClick={() => history.push("/submit")}>
+            Back
+        </button>
+          <button className="btn-primary" onClick={updateInformation}>
+            Update
+        </button>
+        </div>
+      </div>
       <button className="button" onClick={addMoreInformation}>Have more information?</button>
-  
 
-      <div className="core-buttons">
-        <button className="btn-secondary" onClick={() => history.push("/submit")}>
-          Back
-        </button>
-        <button className="btn-primary" onClick={updateInformation}>
-          Update
-        </button>
-      </div>
     </div>
   );
 };

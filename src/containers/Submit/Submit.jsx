@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
 import Map from "../../components/Map/Map";
 import { firestore } from "../../firebase";
+import "./Submit.scss";
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");
@@ -87,7 +88,9 @@ const Submit = (props) => {
   }, [url]);
 
   return (
-    <div className="container">
+    <div className="submit container">
+      <h2 className="submit__title">Submit</h2>
+      <p className="text-gray">Almost there! Click submit to send your capture..</p>
       <Map
         imgFile={props.imgFile}
         currentLocation={props.currentLocation}

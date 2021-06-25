@@ -49,7 +49,7 @@ button, label[for="file-upload"], label[for="live-capture"] {
 }
 
 
-button, a {
+button, a, label[for="file-upload"], label[for="live-capture"] {
   &:hover {
     cursor: pointer;
   }
