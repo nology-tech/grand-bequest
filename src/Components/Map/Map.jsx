@@ -11,6 +11,7 @@ import L from "leaflet";
 import originalMarker from "../../assets/images/marker.png";
 import orangeMarker from "../../assets/images/location-marker.png";
 import greenMarker from "../../assets/images/building-marker.png";
+import InfoModal from "../InfoModal/InfoModal";
 
 const Map = (props) => {
   let defaultMarker = new L.Icon({
@@ -50,6 +51,7 @@ const Map = (props) => {
     });
   };
 
+
   const LocationMarker = () => {
     const [position, setPosition] = useState(null);
 
@@ -80,20 +82,35 @@ const Map = (props) => {
 
   const ClickMarker = () => {
     const [position, setPosition] = useState(null);
+
     useMapEvents({
       dblclick(e) {
         props.setManualLocation([e.latlng.lat, e.latlng.lng]);
         setPosition(e.latlng);
       },
     });
+    const [show, setShow] = useState(true);
 
+    const handleOpen = () => {
+      setShow(true);
+    };
+    const handleClose = () => {
+      setShow(false);
+    };
     return position === null ? null : (
       <Marker position={position} icon={buildingMarker}>
         <Popup>
+          
           <img src={props.imgFile ? URL.createObjectURL(props.imgFile) : "https://www.wilsons.school/history/files/image_256-687129.jpg"}></img>
-          {/* <button className="moreInfo btn-primary">More Info!</button> */}
+
           <button className="pendingInfo btn-secondary">Pending Info...</button>
+
+          <button onClick={handleOpen} className="moreInfo btn-primary">
+            More Info!
+          </button>
+
         </Popup>
+        <InfoModal handleClose={handleClose} show={show} />
       </Marker>
     );
   };

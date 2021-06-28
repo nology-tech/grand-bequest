@@ -1,0 +1,82 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/typography" as *;
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.info-modal {
+  display: flex;
+  flex-direction: column;
+  font-family: $body-font;
+
+  &__socials-container {
+    width: 100px;
+    display: flex;
+  }
+
+  &__facebook {
+    border-radius: 180%;
+    font-size: $font-L;
+    color: $tertiary-colour;
+    margin-left: 10px;
+  }
+  &__twitter {
+    font-size: $font-L;
+    color: $tertiary-colour;
+    margin-left: 10px;
+  }
+  &__favourites-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__modal {
+    position: absolute;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #cdefd1;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 8px 3px;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 999;
+    left: 70%;
+    top: 10%;
+    margin-left: -30%;
+  }
+  &__info-modal-img {
+    border: 10px solid $text-primary;
+    border-radius: 20px;
+    margin-top: 10px;
+    height: 25vh;
+  }
+  &__use-input {
+    margin-top: 20px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+  }
+  &__onwnership-input {
+    margin-top: 20px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px;
+  }
+  &__comments {
+    margin-top: 20px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px;
+  }
+  &__btn {
+    background: $primary-colour;
+    color: $text-primary;
+    font-size: $font-S;
+    margin-top: 20px;
+  }
+  &__btn:hover {
+    background-color: #00504a;
+  }
+}
