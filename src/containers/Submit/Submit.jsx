@@ -85,13 +85,33 @@ const Submit = (props) => {
       },
     });
 
-    console.log("Sent to DB!", newData);
+    // Reinitialise imgData (make it blank)
+    props.setImgData({
+      image: "",
+      geolocation: [],
+      name_of_building: "",
+      zip: "",
+      country: "",
+      comments: "",
+      ownership: "",
+      potential_use: "",
+      last_occupied: "",
+      local_resident: "",
+      year_built_period: "",
+      contact_permission: "",
+      email: "",
+      contact_number: "",
+      live: true,
+      // further_comments: "",
+    });
   }, [url]);
 
   return (
     <div className="submit container">
       <h2 className="submit__title">Submit</h2>
-      <p className="text-gray">Almost there! Click submit to send your capture..</p>
+      <p className="text-gray">
+        Almost there! Click submit to send your capture..
+      </p>
       <Map
         imgData={props.imgData}
         imgFile={props.imgFile}

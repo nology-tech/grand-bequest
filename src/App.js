@@ -8,6 +8,9 @@ import Socials from "./components/Socials/Socials";
 import { firestore } from "./firebase";
 
 function App() {
+
+  // const [manualLocation, setManualLocation] = useState([])
+  // const [currentLocation, setCurrentLocation] = useState([])
   
   let manualLocation = [];
   const setManualLocation = (newLocation) => {
