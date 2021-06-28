@@ -31,7 +31,6 @@ const Home = (props) => {
     setHasMedia(true);
     // handle geolocation here, and add to OBJECT
     const newData = { ...props.imgData };
-    newData.geolocation = props.manualLocation;
     props.setImgData(newData);
 
     history.push("confirmation");
@@ -60,7 +59,6 @@ const Home = (props) => {
         manualLocation={props.manualLocation}
         setManualLocation={props.setManualLocation}
       />
-      {/* </div> */}
 
       <div className="core-buttons">
         <label for="file-upload" className="btn-secondary">

@@ -81,30 +81,33 @@ const Map = (props) => {
           animate: true,
           duration: 1, // seconds
         });
-        console.log(e.latlng);
       },
     });
 
-    return position === null ? null : (
-      <>
-        <Marker position={position} icon={locationMarker}>
-          <Popup>You are here, at {position.toString()}</Popup>
-        </Marker>
-        <button
-          style={{ position: "absolute", zIndex: 999, right: 20, bottom: 20 }}
-          onClick={() => setToggle(!toggle)}
-        >
-          Locate
-        </button>
-      </>
-    );
+    if (props.currentLocation.length) {
+      return (
+        <>
+          <Marker position={props.currentLocation} icon={locationMarker}>
+            <Popup>You are here, at {props.currentLocation.toString()}</Popup>
+          </Marker>
+          <button className="locate-button" onClick={() => setToggle(!toggle)}>
+            Locate
+          </button>
+        </>
+      );
+    } else {
+      return position === null ? null : (
+        <>
+          <Marker position={position} icon={locationMarker}>
+            <Popup>You are here, at {position.toString()}</Popup>
+          </Marker>
+          <button className="locate-button" onClick={() => setToggle(!toggle)}>
+            Locate
+          </button>
+        </>
+      );
+    }
   };
-
-  // const handleTest = () => {
-  //   //map.setView(L.latLng(40.737, -73.923, 8));
-  //   console.log("Andys break point");
-  //   setToggle(!toggle);
-  // };
 
   const ClickMarker = () => {
     const [position, setPosition] = useState(null);
@@ -112,6 +115,9 @@ const Map = (props) => {
     useMapEvents({
       dblclick(e) {
         props.setManualLocation([e.latlng.lat, e.latlng.lng]);
+
+        console.log([e.latlng.lat, e.latlng.lng]);
+        console.log(props.manualLocation);
         setPosition(e.latlng);
       },
     });
@@ -126,30 +132,57 @@ const Map = (props) => {
       setShow(false);
     };
 
-    return position === null ? null : (
-      <Marker position={position} icon={buildingMarker}>
-        <Popup>
-          <img
-            src={
-              props.imgFile
-                ? URL.createObjectURL(props.imgFile)
-                : "https://www.wilsons.school/history/files/image_256-687129.jpg"
-            }
-          ></img>
+    if (props.manualLocation.length) {
+      return (
+        <Marker position={props.manualLocation} icon={buildingMarker}>
+          <Popup>
+            <img
+              src={
+                props.imgFile
+                  ? URL.createObjectURL(props.imgFile)
+                  : "https://www.wilsons.school/history/files/image_256-687129.jpg"
+              }
+            ></img>
 
-          {props.imgData.live ? (
-            <button onClick={handleOpen} className="moreInfo btn-primary">
-              More Info!
-            </button>
-          ) : (
-            <button className="pendingInfo btn-secondary">
-              Pending Info...
-            </button>
-          )}
-        </Popup>
-        <InfoModal handleClose={handleClose} show={show} />
-      </Marker>
-    );
+            {props.imgData.live ? (
+              <button onClick={handleOpen} className="moreInfo btn-primary">
+                More Info!
+              </button>
+            ) : (
+              <button className="pendingInfo btn-secondary">
+                Pending Info...
+              </button>
+            )}
+          </Popup>
+          <InfoModal handleClose={handleClose} show={show} />
+        </Marker>
+      );
+    } else {
+      return position === null ? null : (
+        <Marker position={position} icon={buildingMarker}>
+          <Popup>
+            <img
+              src={
+                props.imgFile
+                  ? URL.createObjectURL(props.imgFile)
+                  : "https://www.wilsons.school/history/files/image_256-687129.jpg"
+              }
+            ></img>
+
+            {props.imgData.live ? (
+              <button onClick={handleOpen} className="moreInfo btn-primary">
+                More Info!
+              </button>
+            ) : (
+              <button className="pendingInfo btn-secondary">
+                Pending Info...
+              </button>
+            )}
+          </Popup>
+          <InfoModal handleClose={handleClose} show={show} />
+        </Marker>
+      );
+    }
   };
 
   return (
