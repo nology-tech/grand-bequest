@@ -1,4 +1,4 @@
-import NavBar from "./Components/NavBar/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
 import { useEffect, useState } from "react";
@@ -35,7 +35,7 @@ function App() {
     contact_permission: "",
     email: "",
     contact_number: "",
-    live: false,
+    live: true,
     // further_comments: "",
   });
 

@@ -93,6 +93,7 @@ const Submit = (props) => {
       <h2 className="submit__title">Submit</h2>
       <p className="text-gray">Almost there! Click submit to send your capture..</p>
       <Map
+        imgData={props.imgData}
         imgFile={props.imgFile}
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}
