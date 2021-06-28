@@ -4,21 +4,20 @@ import Routes from "./containers/Routes";
 import { useEffect, useState } from "react";
 import "./App.scss";
 import "./assets/styles/main.scss";
-import Socials from "./components/Socials/Socials";
+import Socials from "./Components/Socials/Socials";
 import { firestore } from "./firebase";
 
 function App() {
-  
   let manualLocation = [];
   const setManualLocation = (newLocation) => {
     manualLocation = [...newLocation];
   };
-  
+
   let currentLocation = [];
   const setCurrentLocation = (newLocation) => {
     manualLocation = [...newLocation];
   };
-  
+
   const [imgFile, setImgFile] = useState(null);
   const [imgData, setImgData] = useState({
     image: "",
@@ -39,9 +38,13 @@ function App() {
     // further_comments: "",
   });
 
-  useEffect(() => {
-    console.log("locations effect", currentLocation, manualLocation);
-  }, currentLocation, manualLocation)
+  useEffect(
+    () => {
+      console.log("locations effect", currentLocation, manualLocation);
+    },
+    currentLocation,
+    manualLocation
+  );
 
   return (
     <Router className="App">

@@ -20,6 +20,15 @@ const Information = (props) => {
   const [contactPermission, setContactPermission] = useState(false);
   const [email, setEmail] = useState("");
   const [contactNumber, setContactNumber] = useState("");
+  const [show, setShow] = useState(false);
+  const [checked, setChecked] = useState("");
+
+  // // const handleOpen = () => {
+  //   setShow(true);
+  // };
+  // const handleClose = () => {
+  //   setShow(false);
+  // };
 
   const updateInformation = () => {
     const newData = { ...props.imgData };
@@ -33,10 +42,12 @@ const Information = (props) => {
     newData.contact_number = contactNumber;
     props.setImgData(newData);
 
-
     history.push("/submit");
-
   };
+  const handleChecked = () => {
+    setShow(!show);
+  };
+
   return (
     <div className="container">
       <div className="form">
@@ -54,12 +65,20 @@ const Information = (props) => {
             placeholder="Who is the owner of this building?"
             onBlur={(e) => setOwnership(e.target.value)}
           />
-          <textarea
-            className="form__input"
-            type="text"
-            placeholder="Are you from the local area?"
-            onBlur={(e) => setLocalResident(e.target.value)}
+          <label htmlFor="canContact">
+            Please tick if you are from the local area
+          </label>
+          <input
+            className="form__permission"
+            type="checkbox"
+            name="canContact"
+            id="canContact"
+            style={{
+              height: 26,
+              width: 25,
+            }}
           />
+
           <textarea
             className="form__input"
             type="text"
@@ -85,6 +104,7 @@ const Information = (props) => {
             <input
               value={contactPermission}
               onClick={() => setContactPermission(!contactPermission)}
+              onClick={handleChecked}
               className="form__permission"
               type="checkbox"
               name="canContact"
@@ -95,21 +115,25 @@ const Information = (props) => {
               }}
             />
           </div>
+
           <textarea
-            className="form__input"
+            className={!show ? "form__input hide" : "form__input show"}
             type="text"
             placeholder="Please provide your email address:"
             onBlur={(e) => setEmail(e.target.value)}
           />
           <textarea
-            className="form__input"
+            className={!show ? "form__input hide" : "form__input show"}
             type="text"
             placeholder="Please provide your contact number:"
             onBlur={(e) => setContactNumber(e.target.value)}
           />
         </div>
         <div className="core-buttons">
-          <button className="btn-secondary" onClick={() => history.push("/details")}>
+          <button
+            className="btn-secondary"
+            onClick={() => history.push("/details")}
+          >
             Back
           </button>
           <button className="btn-primary" onClick={updateInformation}>

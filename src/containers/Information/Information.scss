@@ -3,7 +3,12 @@
 // @use "../../assets/styles/forms" as *;
 // @use "../../assets/styles/variables" as *;
 // @use "../../assets/styles/main" as *;
-
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
 .container {
   display: flex;
   flex-direction: column;
