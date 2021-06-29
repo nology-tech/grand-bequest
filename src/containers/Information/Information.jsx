@@ -134,32 +134,37 @@ const Information = (props) => {
               }}
             />
           </div>
-          <div
+
+          <label
+            for="email address"
+            className="form__label-email"
             className={
-              !show ? "form__users-details hide" : "form__users-details show"
+              !show ? "form__label-email hide" : "form__label-email show"
             }
           >
-            <label for="email address" className="form__label-last-used">
-              Please provide your email address:
-            </label>
-            <textarea
-              // className={!show ? "form__input hide" : "form__input show"}
-              className="form__input"
-              type="text"
-              placeholder="Please provide your email address:"
-              onBlur={(e) => setEmail(e.target.value)}
-            />
-            <label for="contact number" className="form__label-last-used">
-              Please provide your contact number:
-            </label>
-            <textarea
-              // className={!show ? "form__input hide" : "form__input show"}
-              className="form__input"
-              type="text"
-              placeholder="Please provide your contact number:"
-              onBlur={(e) => setContactNumber(e.target.value)}
-            />
-          </div>
+            Please provide your email address:
+          </label>
+          <textarea
+            className={!show ? "form__input hide" : "form__input show"}
+            type="text"
+            placeholder="Please provide your email address:"
+            onBlur={(e) => setEmail(e.target.value)}
+          />
+          <label
+            for="contact number"
+            className="form__label-number"
+            className={
+              !show ? "form__label-number hide" : "form__label-number show"
+            }
+          >
+            Please provide your contact number:
+          </label>
+          <textarea
+            className={!show ? "form__input hide" : "form__input show"}
+            type="text"
+            placeholder="Please provide your contact number:"
+            onBlur={(e) => setContactNumber(e.target.value)}
+          />
         </div>
         <div className="core-buttons">
           <button
