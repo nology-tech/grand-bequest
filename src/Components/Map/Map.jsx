@@ -55,23 +55,6 @@ const Map = (props) => {
     const [position, setPosition] = useState(null);
     const [toggle, setToggle] = useState(false);
 
-    useEffect(() => {
-      if (!props.currentLocation.length) {
-        map.locate({ enableHighAccuracy: true });
-      }
-    }, []);
-
-    useEffect(() => {
-      if (toggle) {
-        console.log(position);
-        map.flyTo(position, map.getZoom(), {
-          animate: true,
-          duration: 1, // seconds
-        });
-        setToggle(false);
-      }
-    }, [toggle]);
-
     const map = useMapEvents({
       locationfound: (e) => {
         props.setCurrentLocation([e.latlng.lat, e.latlng.lng]);
@@ -83,6 +66,22 @@ const Map = (props) => {
         });
       },
     });
+
+    useEffect(() => {
+      if (!props.currentLocation.length) {
+        map.locate({ enableHighAccuracy: true });
+      }
+    }, []);
+
+    useEffect(() => {
+      if (toggle) {
+        map.flyTo(props.currentLocation.length ? props.currentLocation : position, map.getZoom(), {
+          animate: true,
+          duration: 1, // seconds
+        });
+        setToggle(false);
+      }
+    }, [toggle]);
 
     if (props.currentLocation.length) {
       return (
