@@ -3,12 +3,13 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebookSquare,
   faTwitterSquare,
+  faInstagramSquare,
   fab,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.css";
 
-library.add(fab, faFacebookSquare, faTwitterSquare);
+library.add(fab, faFacebookSquare, faTwitterSquare, faInstagramSquare);
 
 const Socials = () => {
   return (
@@ -19,6 +20,9 @@ const Socials = () => {
         </a>
         <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20old%20building,%20We%20must%20save%20it!&url=https://twitter.com/GrandBequest">
           <FontAwesomeIcon icon={["fab", "twitter-square"]} />
+        </a>
+        <a href="https://www.instagram.com/grandbequest/?hl=en">
+          <FontAwesomeIcon icon={["fab", "instagram-square"]} />
         </a>
       </div>
     </div>

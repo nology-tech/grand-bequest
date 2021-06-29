@@ -1,10 +1,28 @@
 // BrandonGrot seemed incorrect?
 // @import url(//db.onlinewebfonts.com/c/6dd2f2510b4a00a5461b2455928209c2?family=BrandonGrotW01-Light);
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Benne&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Taviraj&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Taviraj:wght@500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap");
 
 // imported via index.html
-$body-font: "Poppins", "sans-serif";
+// $body-font: "Poppins", "sans-serif";
 $title-font: "Cinzel", "serif";
+
+$body-font: "Lora", "sans-serif";
+// $body-font: "Benne", "sans-serif";
+// $body-font: "Taviraj", "sans-serif";
+// $body-font: "Darker Grotesque", "sans-serif";
+// $body-font: "Bitter", "sans-serif";
 
 $font-XL: 40px;
 $font-L: 32px;
@@ -12,30 +30,34 @@ $font-M: 24px;
 $font-S: 14px;
 
 * {
-    font-family: $body-font;
+  font-family: $body-font;
 }
 
-h1, h2, h3, h4, h5 {
-    font-family: $title-font;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $title-font;
 }
 
 h1 {
-    margin: 10px 0px;
-    font-size: $font-XL;
+  margin: 10px 0px;
+  font-size: $font-XL;
 }
 
 h2 {
-    font-size: $font-L;
+  font-size: $font-L;
 }
 
 h3 {
-    font-size: $font-M;
+  font-size: $font-M;
 }
 
 p {
-    font-size: $font-S;
+  font-size: $font-S;
 }
 
 .text-default {
-    color: gray;
+  color: gray;
 }

@@ -1,78 +1,78 @@
 @import "../../assets/styles/variables";
 
-  .welcome {
-    background-position: bottom;
-    background-repeat: no-repeat;
+.welcome {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 5% 20px 25% 20px;
+
+  &__logo {
+    height: 130px;
+    width: 130px;
+  }
+
+  &__title {
+    font-size: 40px;
+
     text-align: center;
-    padding: 5% 20px 25% 20px;
+  }
 
+  &__wave {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
 
+  p {
+    margin: 0px 0px 20px 0px;
+  }
+
+  @media screen and (min-width: 375px) {
     &__logo {
-      height: 130px;
-      width: 130px;
-    }
-
-    &__title {
-      font-size: 40px;
-      text-align: center;
-    }
-
-    &__wave {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-    }
-
-    p {
-      margin: 0px 0px 20px 0px;
-    }
-
-    @media screen and (min-width: 375px) {
-      &__logo {
-        // margin-top: 100px;
-      }
+      // margin-top: 100px;
     }
   }
+}
 
-  .about {
-    background: $primary-colour;
-    padding: 50px 15%;
-    color: $text-primary;
+.about {
+  background: #000000;
+  padding: 50px 15%;
+  color: $text-primary;
+  text-align: center;
+
+  &__title {
     text-align: center;
-
-    &__title {
-      text-align: center;
-    }
-
-    &__wave {
-      position: absolute;
-      left: 0px;
-      margin-top: 40px;
-      transform: rotate(180deg);
-      z-index: -1;
-    }
   }
 
-  .contact {
-    padding: 50px 15%;
-    padding-top: 15%;
+  &__wave {
+    position: absolute;
+    left: 0px;
+    margin-top: 40px;
+    transform: rotate(180deg);
+    z-index: -1;
+  }
+}
+
+.contact {
+  padding: 50px 15%;
+  padding-top: 15%;
+  text-align: center;
+
+  &__title {
     text-align: center;
+  }
 
-    &__title {
-      text-align: center;
-    }
-
-    &__social {
-      img {
-        width: 60px;
-        margin: 20px;
-        opacity: 0.8;
-      }
-    }
-
-    &__rights {
-      font-weight: bold;
-      color: lightgray;
-      font-size: 12px;
+  &__social {
+    img {
+      width: 60px;
+      margin: 20px;
+      opacity: 0.8;
     }
   }
+
+  &__rights {
+    font-weight: bold;
+    color: lightgray;
+    font-size: 12px;
+  }
+}
