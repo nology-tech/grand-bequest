@@ -12,6 +12,9 @@ import originalMarker from "../../assets/images/marker.png";
 import orangeMarker from "../../assets/images/location-marker.png";
 import greenMarker from "../../assets/images/building-marker.png";
 import InfoModal from "../InfoModal/InfoModal";
+import { EsriProvider, GeoSearchControl } from "leaflet-geosearch";
+
+
 
 const Map = (props) => {
   let defaultMarker = new L.Icon({
@@ -82,6 +85,13 @@ const Map = (props) => {
         setToggle(false);
       }
     }, [toggle]);
+
+    const provider = new EsriProvider(
+      );
+      useEffect(() => {
+        map.addControl(new GeoSearchControl({provider: provider, classNames:{container: "search-input", msgbox: "search-results", resetButton: "search-reset"}}));
+      }, []);
+
 
     if (props.currentLocation.length) {
       return (

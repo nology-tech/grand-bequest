@@ -1,6 +1,27 @@
 @use "../../assets/styles/variables" as *;
 @use "../../assets/styles/buttons" as *;
 
+.search-input {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+
+  & div {
+    padding: 6px;
+  }
+}
+
+.search-reset {
+  margin: 10px;
+}
+
+// .geosearch .leaflet-touch .leaflet-control-layers,
+// .leaflet-touch .leaflet-bar {
+//   border: solid 2px fuchsia;
+// }
+
 .leaflet-container {
   height: 80vh;
   width: 90vw;
