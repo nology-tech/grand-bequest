@@ -23,13 +23,6 @@ const Information = (props) => {
   const [show, setShow] = useState(false);
   const [checked, setChecked] = useState("");
 
-  // // const handleOpen = () => {
-  //   setShow(true);
-  // };
-  // const handleClose = () => {
-  //   setShow(false);
-  // };
-
   const updateInformation = () => {
     const newData = { ...props.imgData };
     newData.ownership = ownership;
@@ -53,18 +46,33 @@ const Information = (props) => {
       <div className="form">
         <div className="form__middle">
           <h3>Optional fields</h3>
+          <label
+            for="potential usage of building"
+            className="form__label-usage"
+          >
+            What do you think this building should be used for?
+          </label>
           <textarea
             className="form__input"
             type="text"
             placeholder="What do you think this building should be used for?"
             onBlur={(e) => setPotentialUse(e.target.value)}
           />
+          <label for="owner of the building" className="form__label-owner">
+            Who is the owner of this building?
+          </label>
           <textarea
             className="form__input"
             type="text"
             placeholder="Who is the owner of this building?"
             onBlur={(e) => setOwnership(e.target.value)}
           />
+          {/* <textarea
+            className="form__input"
+            type="checkbox"
+            placeholder="Are you from the local area?"
+            onBlur={(e) => setLocalResident(e.target.value)}
+          /> */}
           <label htmlFor="canContact">
             Please tick if you are from the local area
           </label>
@@ -78,13 +86,24 @@ const Information = (props) => {
               width: 25,
             }}
           />
-
+          <label
+            for="stories/memories of building"
+            className="form__label-stories"
+          >
+            Do you have any stories or memories about this building?
+          </label>
           <textarea
             className="form__input"
             type="text"
-            placeholder="When was this building built?"
+            placeholder="Do you have any stories or memories about this building?"
             onBlur={(e) => setYearBuiltPeriod(e.target.value)}
           />
+          <label
+            for="date that the building was last used"
+            className="form__label-last-used"
+          >
+            When was this building last used/occupied?
+          </label>
           <textarea
             className="form__input"
             type="text"
@@ -105,7 +124,7 @@ const Information = (props) => {
               value={contactPermission}
               onClick={() => setContactPermission(!contactPermission)}
               onClick={handleChecked}
-              className="form__permission"
+              className="form__permission form__checkbox"
               type="checkbox"
               name="canContact"
               id="canContact"
@@ -115,19 +134,32 @@ const Information = (props) => {
               }}
             />
           </div>
-
-          <textarea
-            className={!show ? "form__input hide" : "form__input show"}
-            type="text"
-            placeholder="Please provide your email address:"
-            onBlur={(e) => setEmail(e.target.value)}
-          />
-          <textarea
-            className={!show ? "form__input hide" : "form__input show"}
-            type="text"
-            placeholder="Please provide your contact number:"
-            onBlur={(e) => setContactNumber(e.target.value)}
-          />
+          <div
+            className={
+              !show ? "form__users-details hide" : "form__users-details show"
+            }
+          >
+            <label for="email address" className="form__label-last-used">
+              Please provide your email address:
+            </label>
+            <textarea
+              // className={!show ? "form__input hide" : "form__input show"}
+              className="form__input"
+              type="text"
+              placeholder="Please provide your email address:"
+              onBlur={(e) => setEmail(e.target.value)}
+            />
+            <label for="contact number" className="form__label-last-used">
+              Please provide your contact number:
+            </label>
+            <textarea
+              // className={!show ? "form__input hide" : "form__input show"}
+              className="form__input"
+              type="text"
+              placeholder="Please provide your contact number:"
+              onBlur={(e) => setContactNumber(e.target.value)}
+            />
+          </div>
         </div>
         <div className="core-buttons">
           <button
