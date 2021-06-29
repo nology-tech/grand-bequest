@@ -5,10 +5,10 @@
 // $button-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 // $button-radius: 50px;
 
-$bg-color: #1e9c4b; // font colour after hover
+$bg-color: black; // font colour after hover
 $bg-color2: #1e9c4b; //nothing so far
 
-$border-color: black; // font color before hover
+$border-color: #1e9c4b; // font color before hover
 $border-width: 2px;
 
 $sqrt3: 1.7321; // Square-root of 3
@@ -59,10 +59,10 @@ label[for="live-capture"] {
   font-size: 20px;
   line-height: 70px;
   vertical-align: middle;
-  color: $border-color;
+  //color: $border-color;
   cursor: pointer;
   border: none;
-  background-color: #1e9c4b; //rgba(0, 0, 0, 0.25);
+  //background-color: black; //rgba(0, 0, 0, 0.25);
   clip-path: polygon(
     #{$hex-distance} 0,
     calc(100% - #{$hex-distance}) 0,
@@ -79,7 +79,8 @@ label[for="live-capture"] {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: black; //border
+    //background-color: black; //border
+
     clip-path: polygon(
       0 50%,
       #{$border-width} 50%,
@@ -99,39 +100,39 @@ label[for="live-capture"] {
     );
   }
 
+  //&:hover {
+  color: $bg-color;
+  background-color: $border-color;
+  //}
+}
+
+.btn-primary {
+  background: $primary-colour;
+  color: $text-primary;
+
   &:hover {
-    color: $bg-color;
-    background-color: $border-color;
+    background-color: darken($primary-colour, 10%);
   }
 }
 
-// .btn-primary {
-//   background: $primary-colour;
-//   color: $text-primary;
+.btn-secondary {
+  background: $secondary-colour;
+  color: #424200;
 
-//   &:hover {
-//     background-color: darken($primary-colour, 10%);
-//   }
-// }
+  &:hover {
+    background-color: darken($secondary-colour, 10%);
+  }
+}
 
-// .btn-secondary {
-//   background: $secondary-colour;
-//   color: #424200;
+.btn-tertiary {
+  padding: 5px;
+  border: 1px solid $primary-colour;
+  border-radius: 10px;
 
-//   &:hover {
-//     background-color: darken($secondary-colour, 10%);
-//   }
-// }
-
-// .btn-tertiary {
-//   padding: 5px;
-//   border: 1px solid $primary-colour;
-//   border-radius: 10px;
-
-//   &:hover {
-//     background-color: $primary-colour;
-//   }
-// }
+  &:hover {
+    background-color: $primary-colour;
+  }
+}
 
 button,
 a,
