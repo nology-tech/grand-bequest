@@ -10,6 +10,7 @@ import wave4 from "../../assets/images/wave4.svg";
 import secondWave from "../../assets/images/wave-2.svg";
 import facebook from "../../assets/images/facebook.png";
 import twitter from "../../assets/images/twitter.png";
+import instagram from "../../assets/images/instagram.png";
 
 // Styles
 import "./Landing.scss";
@@ -75,6 +76,9 @@ const Landing = () => {
           </a>
           <a href="https://twitter.com/GrandBequest" target="_blank">
             <img src={twitter} />
+          </a>
+          <a href="https://instagram.com/GrandBequest" target="_blank">
+            <img src={instagram} />
           </a>
         </div>
         <p className="contact__rights">
