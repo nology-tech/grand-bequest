@@ -13,8 +13,7 @@ import orangeMarker from "../../assets/images/location-marker.png";
 import greenMarker from "../../assets/images/building-marker.png";
 import InfoModal from "../InfoModal/InfoModal";
 import { EsriProvider, GeoSearchControl } from "leaflet-geosearch";
-
-
+import { firestore, storage } from "../../firebase";
 
 const Map = (props) => {
   let defaultMarker = new L.Icon({
@@ -39,20 +38,63 @@ const Map = (props) => {
     iconSize: [25, 40],
   });
 
+  const [renderDBMarkers, setRenderDBMarkers] = useState([]);
+  const [show, setShow] = useState(false);
+
   const showDatabaseMarkers = () => {
     // may need a useEffect to render correctly from DB query
-
+    const dbGeolocations = [];
     // replace allMarkers with database input
-    const allMarkers = [
-      [50.833841, -1.688118],
-      [51.514403, -2.58728],
-      [51.505537, -0.128746],
-    ];
 
-    return allMarkers.map((marker) => {
-      return <Marker position={marker} icon={defaultMarker} />;
-    });
+    const handleOpen = () => {
+      setShow(true);
+    };
+
+    const handleClose = () => {
+      setShow(false);
+    };
+
+    firestore
+      .collection("locations")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // console.log(doc.data());
+          dbGeolocations.push(doc.data());
+        });
+        setRenderDBMarkers(
+          dbGeolocations.map((location) => {
+            if (location.geolocation.length) {
+              return (
+                <Marker position={location.geolocation} icon={defaultMarker}>
+                  <Popup>
+                    <img src={location.image ? location.image : null}></img>
+
+                    {location.live ? (
+                      <button
+                        onClick={handleOpen}
+                        className="moreInfo btn-primary"
+                      >
+                        More Info!
+                      </button>
+                    ) : (
+                      <button className="pendingInfo btn-secondary">
+                        Pending Info...
+                      </button>
+                    )}
+                  </Popup>
+                  <InfoModal handleClose={handleClose} show={show} />
+                </Marker>
+              );
+            }
+          })
+        );
+      });
   };
+
+  useEffect(() => {
+    showDatabaseMarkers();
+  }, []);
 
   const LocationMarker = () => {
     const [position, setPosition] = useState(null);
@@ -78,20 +120,31 @@ const Map = (props) => {
 
     useEffect(() => {
       if (toggle) {
-        map.flyTo(props.currentLocation.length ? props.currentLocation : position, map.getZoom(), {
-          animate: true,
-          duration: 1, // seconds
-        });
+        map.flyTo(
+          props.currentLocation.length ? props.currentLocation : position,
+          map.getZoom(),
+          {
+            animate: true,
+            duration: 1, // seconds
+          }
+        );
         setToggle(false);
       }
     }, [toggle]);
 
-    const provider = new EsriProvider(
+    const provider = new EsriProvider();
+    useEffect(() => {
+      map.addControl(
+        new GeoSearchControl({
+          provider: provider,
+          classNames: {
+            container: "search-input",
+            msgbox: "search-results",
+            resetButton: "search-reset",
+          },
+        })
       );
-      useEffect(() => {
-        map.addControl(new GeoSearchControl({provider: provider, classNames:{container: "search-input", msgbox: "search-results", resetButton: "search-reset"}}));
-      }, []);
-
+    }, []);
 
     if (props.currentLocation.length) {
       return (
@@ -211,7 +264,7 @@ const Map = (props) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {showDatabaseMarkers()}
+        {renderDBMarkers}
 
         <LocationMarker />
 
