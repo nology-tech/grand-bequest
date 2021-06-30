@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
-import Map from "../../components/Map/Map";
+import Map from "../../Components/Map/Map";
 import { firestore } from "../../firebase";
 import "./Submit.scss";
-import Socials from "../../components/Socials/Socials";
+import Socials from "../../Components/Socials/Socials";
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");
@@ -91,7 +91,9 @@ const Submit = (props) => {
   return (
     <div className="submit container">
       <h2 className="submit__title">Submit</h2>
-      <p className="text-gray">Almost there! Click submit to send your capture..</p>
+      <p className="text-gray">
+        Almost there! Click submit to send your capture..
+      </p>
       <Map
         imgFile={props.imgFile}
         currentLocation={props.currentLocation}

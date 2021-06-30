@@ -11,6 +11,13 @@
   }
 }
 
+.add-button {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 300px;
+}
+
 @media screen and (min-width: 375px) {
   .core-buttons {
     .btn-primary {

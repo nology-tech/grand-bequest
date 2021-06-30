@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import Map from "../../Components/Map/Map.jsx";
 import Overlay from "../../Components/Overlay";
 import Socials from "../../Components/Socials/Socials";
+// import AddToHomescreen from "add-to-homescreen";
 
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
@@ -46,6 +47,10 @@ const Home = (props) => {
     }
     history.push("details");
   };
+
+  //handleAddToHomescreenClick
+  // const handleAddToHomescreenClick = () => {};
+  // const AddToHomescreen = handleAddToHomescreenClick()(" ");
 
   return (
     <div className="container">
@@ -95,6 +100,7 @@ const Home = (props) => {
         />
       </div>
       <Socials />
+      <button class="add-button">Add to home screen</button>
     </div>
   );
 };

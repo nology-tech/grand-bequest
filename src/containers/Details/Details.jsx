@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import "./Details.scss";
 import Information from "../Information/Information";
 import { storage } from "../../firebase";
-import Socials from "../../components/Socials/Socials";
+import Socials from "../../Components/Socials/Socials";
 
 const Details = (props) => {
   let history = useHistory();
@@ -31,14 +31,15 @@ const Details = (props) => {
   const addMoreInformation = () => {
     // ADDS current details AND goes to next page
     updateInformation();
-    history.push("/information")
-  }
-
+    history.push("/information");
+  };
 
   return (
     <div className="details container">
       <h2 className="details__title">Details</h2>
-      <p className="text-default">Provide a few details about your capture...</p>
+      <p className="text-default">
+        Provide a few details about your capture...
+      </p>
 
       <img
         src={URL.createObjectURL(props.imgFile)}
@@ -75,16 +76,21 @@ const Details = (props) => {
         />
 
         <div className="core-buttons">
-          <button className="btn-secondary" onClick={() => history.push("/submit")}>
+          <button
+            className="btn-secondary"
+            onClick={() => history.push("/submit")}
+          >
             Back
-        </button>
+          </button>
           <button className="btn-primary" onClick={updateInformation}>
             Update
-        </button>
+          </button>
         </div>
       </div>
-      <button className="button" onClick={addMoreInformation}>Have more information?</button>
-    <Socials />
+      <button className="button" onClick={addMoreInformation}>
+        Have more information?
+      </button>
+      <Socials />
     </div>
   );
 };
