@@ -5,6 +5,7 @@ import Map from "../../components/Map/Map";
 import { firestore } from "../../firebase";
 import "./Submit.scss";
 import Socials from "../../components/Socials/Socials";
+import GrandStepper from "../../components/GrandStepper/GrandStepper";
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");
@@ -91,6 +92,7 @@ const Submit = (props) => {
   return (
     <div className="submit container">
       <h2 className="submit__title">Submit</h2>
+      <GrandStepper className="grand-stepper" />
       <p className="text-gray">
         Almost there! Click submit to send your capture..
       </p>

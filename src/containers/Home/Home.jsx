@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import Map from "../../components/Map/Map.jsx";
 import Overlay from "../../components/Overlay";
 import Socials from "../../components/Socials/Socials";
-
+import GrandStepper from "../../components/GrandStepper/GrandStepper";
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
   const history = useHistory();
@@ -49,7 +49,10 @@ const Home = (props) => {
 
   return (
     <div className="container">
-      <h1 className="home__title">Grand Bequest</h1>
+      {/* <h1 className="home__title">Grand Bequest</h1> */}
+      <div className="home__title"></div>
+      <GrandStepper className="grand-stepper" />
+
       <Overlay></Overlay>
 
       <Map
