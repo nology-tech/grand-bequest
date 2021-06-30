@@ -13,7 +13,7 @@ import orangeMarker from "../../assets/images/location-marker.png";
 import greenMarker from "../../assets/images/building-marker.png";
 import InfoModal from "../InfoModal/InfoModal";
 import { EsriProvider, GeoSearchControl } from "leaflet-geosearch";
-import { firestore, storage } from "../../firebase";
+import { firestore } from "../../firebase";
 
 const Map = (props) => {
   let defaultMarker = new L.Icon({
@@ -59,12 +59,12 @@ const Map = (props) => {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          // console.log(doc.data());
           dbGeolocations.push(doc.data());
         });
         setRenderDBMarkers(
           dbGeolocations.map((location) => {
             if (location.geolocation.length) {
+              console.log("db location: ", location.geolocation);
               return (
                 <Marker position={location.geolocation} icon={defaultMarker}>
                   <Popup>
@@ -103,7 +103,6 @@ const Map = (props) => {
     const map = useMapEvents({
       locationfound: (e) => {
         props.setCurrentLocation([e.latlng.lat, e.latlng.lng]);
-        console.log([e.latlng.lat, e.latlng.lng]);
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom(), {
           animate: true,
@@ -177,9 +176,6 @@ const Map = (props) => {
     useMapEvents({
       dblclick(e) {
         props.setManualLocation([e.latlng.lat, e.latlng.lng]);
-
-        console.log([e.latlng.lat, e.latlng.lng]);
-        console.log(props.manualLocation);
         setPosition(e.latlng);
       },
     });
@@ -250,6 +246,7 @@ const Map = (props) => {
   return (
     <div>
       <MapContainer
+        key={Math.random()}
         center={
           !props.currentLocation.length
             ? [51.505537, -0.128746]

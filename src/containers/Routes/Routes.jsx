@@ -27,6 +27,7 @@ const Routes = (props) => {
       </Route>
       <Route path="/confirmation">
         <Confirmation
+          setImgFile={props.setImgFile}
           imgFile={props.imgFile}
           currentLocation={props.currentLocation}
           setCurrentLocation={props.setCurrentLocation}
@@ -38,6 +39,7 @@ const Routes = (props) => {
       </Route>
       <Route path="/submit">
         <Submit
+          setImgFile={props.setImgFile}
           imgFile={props.imgFile}
           currentLocation={props.currentLocation}
           setCurrentLocation={props.setCurrentLocation}

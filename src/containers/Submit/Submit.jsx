@@ -57,6 +57,7 @@ const Submit = (props) => {
     // updates with geolocation, mobile location if it exists, otherwise manual
     // MUST CHANGE for desktop users
     const newData = { ...props.imgData };
+    console.log(props.currentLocation, props.manualLocation);
     newData.geolocation = props.manualLocation.length
       ? props.manualLocation
       : props.currentLocation;
