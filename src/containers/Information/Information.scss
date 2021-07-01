@@ -3,7 +3,14 @@
 // @use "../../assets/styles/forms" as *;
 // @use "../../assets/styles/variables" as *;
 // @use "../../assets/styles/main" as *;
-
+.show {
+  display: block;
+  transition: height 2s linear 500s;
+}
+.hide {
+  display: none;
+  transition: height 2s linear 500s;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -18,7 +25,7 @@
   // margin: 20px;
   border-radius: 20px;
   background-color: #cdefd1;
-  height: 100vh;
+  height: 250vh;
   textarea {
     resize: none;
   }
@@ -42,6 +49,16 @@
     padding: 10px;
     border: none;
   }
+  // &__users-details {
+  //   height: 0px; /* we start animation from 0px */
+
+  //   transition: height 200s ease-in; /* transition has to be defined on base state of element */
+  //   background-color: #f5f5f5;
+  // }
+  // &__checkbox:checked ~ .form__users-details {
+  //   height: 500px;
+  // }
+
   &__middle {
     display: flex;
     flex-direction: column;

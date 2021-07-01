@@ -20,6 +20,8 @@ const Information = (props) => {
   const [contactPermission, setContactPermission] = useState(false);
   const [email, setEmail] = useState("");
   const [contactNumber, setContactNumber] = useState("");
+  const [show, setShow] = useState(false);
+  const [checked, setChecked] = useState("");
 
   const updateInformation = () => {
     const newData = { ...props.imgData };
@@ -47,11 +49,21 @@ const Information = (props) => {
 
     history.push("/submit");
   };
+  const handleChecked = () => {
+    setShow(!show);
+  };
+
   return (
     <div className="container">
       <div className="form">
         <div className="form__middle">
           <h3>Optional fields</h3>
+          <label
+            for="potential usage of building"
+            className="form__label-usage"
+          >
+            What do you think this building should be used for?
+          </label>
           <textarea
             className="form__input"
             type="text"
@@ -61,6 +73,9 @@ const Information = (props) => {
               props.imgData.potential_use ? props.imgData.potential_use : ""
             }
           />
+          <label for="owner of the building" className="form__label-owner">
+            Who is the owner of this building?
+          </label>
           <textarea
             className="form__input"
             type="text"
@@ -70,19 +85,35 @@ const Information = (props) => {
               props.imgData.ownership ? props.imgData.ownership : ""
             }
           />
-          <textarea
+          {/* <textarea
             className="form__input"
-            type="text"
+            type="checkbox"
             placeholder="Are you from the local area?"
             onBlur={(e) => setLocalResident(e.target.value)}
-            defaultValue={
-              props.imgData.local_resident ? props.imgData.local_resident : ""
-            }
+          /> */}
+          <label htmlFor="canContact">
+            Please tick if you are from the local area
+          </label>
+          <input
+            className="form__permission"
+            type="checkbox"
+            name="canContact"
+            id="canContact"
+            style={{
+              height: 26,
+              width: 25,
+            }}
           />
+          <label
+            for="stories/memories of building"
+            className="form__label-stories"
+          >
+            Do you have any stories or memories about this building?
+          </label>
           <textarea
             className="form__input"
             type="text"
-            placeholder="When was this building built?"
+            placeholder="Do you have any stories or memories about this building?"
             onBlur={(e) => setYearBuiltPeriod(e.target.value)}
             defaultValue={
               props.imgData.year_built_period
@@ -90,6 +121,12 @@ const Information = (props) => {
                 : ""
             }
           />
+          <label
+            for="date that the building was last used"
+            className="form__label-last-used"
+          >
+            When was this building last used/occupied?
+          </label>
           <textarea
             className="form__input"
             type="text"
@@ -112,7 +149,8 @@ const Information = (props) => {
             <input
               value={contactPermission}
               onClick={() => setContactPermission(!contactPermission)}
-              className="form__permission"
+              onClick={handleChecked}
+              className="form__permission form__checkbox"
               type="checkbox"
               name="canContact"
               id="canContact"
@@ -122,15 +160,34 @@ const Information = (props) => {
               }}
             />
           </div>
+
+          <label
+            for="email address"
+            className="form__label-email"
+            className={
+              !show ? "form__label-email hide" : "form__label-email show"
+            }
+          >
+            Please provide your email address:
+          </label>
           <textarea
-            className="form__input"
+            className={!show ? "form__input hide" : "form__input show"}
             type="text"
             placeholder="Please provide your email address:"
             onBlur={(e) => setEmail(e.target.value)}
             defaultValue={props.imgData.email ? props.imgData.email : ""}
           />
+          <label
+            for="contact number"
+            className="form__label-number"
+            className={
+              !show ? "form__label-number hide" : "form__label-number show"
+            }
+          >
+            Please provide your contact number:
+          </label>
           <textarea
-            className="form__input"
+            className={!show ? "form__input hide" : "form__input show"}
             type="text"
             placeholder="Please provide your contact number:"
             onBlur={(e) => setContactNumber(e.target.value)}
