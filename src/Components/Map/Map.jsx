@@ -14,6 +14,10 @@ import greenMarker from "../../assets/images/building-marker.png";
 import InfoModal from "../InfoModal/InfoModal";
 import { EsriProvider, GeoSearchControl } from "leaflet-geosearch";
 import { firestore } from "../../firebase";
+import { useHistory } from "react-router-dom";
+
+// HACK: To stop duplicates
+let hasAddedSearchControl = false;
 
 const Map = (props) => {
   let defaultMarker = new L.Icon({
@@ -40,6 +44,9 @@ const Map = (props) => {
 
   const [renderDBMarkers, setRenderDBMarkers] = useState([]);
   const [show, setShow] = useState(false);
+  let history = useHistory();
+
+  console.log(history);
 
   const showDatabaseMarkers = () => {
     // may need a useEffect to render correctly from DB query
@@ -131,18 +138,21 @@ const Map = (props) => {
       }
     }, [toggle]);
 
-    const provider = new EsriProvider();
     useEffect(() => {
-      map.addControl(
-        new GeoSearchControl({
-          provider: provider,
-          classNames: {
-            container: "search-input",
-            msgbox: "search-results",
-            resetButton: "search-reset",
-          },
-        })
-      );
+      if (!hasAddedSearchControl) {
+        hasAddedSearchControl = true;
+        const provider = new EsriProvider();
+        map.addControl(
+          new GeoSearchControl({
+            provider: provider,
+            classNames: {
+              container: "search-input",
+              msgbox: "search-results",
+              resetButton: "search-reset",
+            },
+          })
+        );
+      }
     }, []);
 
     if (props.currentLocation.length) {
@@ -176,6 +186,10 @@ const Map = (props) => {
     useMapEvents({
       dblclick(e) {
         props.setManualLocation([e.latlng.lat, e.latlng.lng]);
+        if (history.location.pathname == "/submit") {
+          history.push("/submit");
+          // props.setForceLocation([e.latlng.lat, e.latlng.lng])
+        }
         setPosition(e.latlng);
       },
     });
@@ -246,7 +260,7 @@ const Map = (props) => {
   return (
     <div>
       <MapContainer
-        key={Math.random()}
+        // key={Math.random()}
         center={
           !props.currentLocation.length
             ? [51.505537, -0.128746]

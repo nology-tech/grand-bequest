@@ -10,6 +10,15 @@ const Submit = (props) => {
   const [url, setUrl] = useState("");
   const history = useHistory();
 
+  let forceLocation = [];
+  const setForceLocation = (location) => {
+    forceLocation = [...location];
+  };
+
+  useEffect(() => {
+    props.setManualLocation(forceLocation);
+  }, [forceLocation]);
+
   const cancelSubmit = () => {
     // Are you sure you want to cancel?
     const newData = { ...props.imgData };
@@ -58,9 +67,18 @@ const Submit = (props) => {
     // MUST CHANGE for desktop users
     const newData = { ...props.imgData };
     console.log(props.currentLocation, props.manualLocation);
-    newData.geolocation = props.manualLocation.length
+    newData.geolocation = props.manualLocation
       ? props.manualLocation
       : props.currentLocation;
+
+    // if (forceLocation.length) {
+    //   newData.geolocation = forceLocation;
+    // } else if (props.manualLocation.length) {
+    //   newData.geolocation = props.manualLocation;
+    // } else {
+    //   newData.geolocation = props.currentLocation;
+    // }
+
     // Add reference to the image within DB
     newData.image = url;
 
@@ -98,7 +116,6 @@ const Submit = (props) => {
       live: true,
       // further_comments: "",
     });
-
   }, [url]);
 
   return (
@@ -114,6 +131,7 @@ const Submit = (props) => {
         setCurrentLocation={props.setCurrentLocation}
         manualLocation={props.manualLocation}
         setManualLocation={props.setManualLocation}
+        setForceLocation={setForceLocation}
       />
 
       {/* image preview image logic */}
