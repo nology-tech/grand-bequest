@@ -23,12 +23,22 @@ const Information = (props) => {
 
   const updateInformation = () => {
     const newData = { ...props.imgData };
-    newData.ownership = ownership;
-    newData.potential_use = potentialUse;
-    newData.local_resident = localResident;
-    newData.year_built_period = yearBuiltPeriod;
-    newData.last_occupied = lastOccupied;
-    newData.contact_permission = contactPermission;
+    newData.ownership = ownership ? ownership : props.imgData.ownership;
+    newData.potential_use = potentialUse
+      ? potentialUse
+      : props.imgData.potential_use;
+    newData.local_resident = localResident
+      ? localResident
+      : props.imgData.local_resident;
+    newData.year_built_period = yearBuiltPeriod
+      ? yearBuiltPeriod
+      : props.imgData.year_built_period;
+    newData.last_occupied = lastOccupied
+      ? lastOccupied
+      : props.imgData.last_occupied;
+    newData.contact_permission = contactPermission
+      ? contactPermission
+      : !props.imgData.contact_permission;
     newData.email = email;
     newData.contact_number = contactNumber;
     props.setImgData(newData);
@@ -115,12 +125,16 @@ const Information = (props) => {
             type="text"
             placeholder="Please provide your email address:"
             onBlur={(e) => setEmail(e.target.value)}
+            defaultValue={props.imgData.email ? props.imgData.email : ""}
           />
           <textarea
             className="form__input"
             type="text"
             placeholder="Please provide your contact number:"
             onBlur={(e) => setContactNumber(e.target.value)}
+            defaultValue={
+              props.imgData.contact_number ? props.imgData.contact_number : ""
+            }
           />
         </div>
         <div className="core-buttons">
