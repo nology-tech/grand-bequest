@@ -39,8 +39,10 @@ const Information = (props) => {
     newData.contact_permission = contactPermission
       ? contactPermission
       : !props.imgData.contact_permission;
-    newData.email = email;
-    newData.contact_number = contactNumber;
+    newData.email = email ? email : props.imgData.email;
+    newData.contact_number = contactNumber
+      ? contactNumber
+      : props.imgData.contact_number;
     props.setImgData(newData);
 
     history.push("/submit");
