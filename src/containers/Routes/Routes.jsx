@@ -32,6 +32,7 @@ const Routes = (props) => {
       </Route>
       <Route path="/confirmation">
         <Confirmation
+          setImgFile={props.setImgFile}
           imgFile={props.imgFile}
           currentLocation={props.currentLocation}
           setCurrentLocation={props.setCurrentLocation}
@@ -45,6 +46,7 @@ const Routes = (props) => {
         <GrandStepper step={currentStep} />
         <Submit
           setCurrentStep={setCurrentStep}
+          setImgFile={props.setImgFile}
           imgFile={props.imgFile}
           currentLocation={props.currentLocation}
           setCurrentLocation={props.setCurrentLocation}
