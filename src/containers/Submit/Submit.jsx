@@ -10,16 +10,12 @@ const Submit = (props) => {
   const [url, setUrl] = useState("");
   const history = useHistory();
 
-  console.log(props.imgData);
-  console.log("locations:", props.manualLocation, props.currentLocation);
-
   const cancelSubmit = () => {
     // Are you sure you want to cancel?
     const newData = { ...props.imgData };
     for (let i in newData) {
       newData[i] = "";
     }
-    console.log(newData);
     props.setImgData(newData);
 
     history.push("home");
@@ -46,7 +42,6 @@ const Submit = (props) => {
           .child(props.imgFile.name)
           .getDownloadURL()
           .then((url) => {
-            console.log(url);
             setUrl(url);
           });
       }
@@ -56,15 +51,13 @@ const Submit = (props) => {
   useEffect(() => {
     // THIS IS ALSO PART OF sendToDB()
     if (!url) {
-      console.log(url);
       return;
     }
-    console.log(url);
 
     // updates with geolocation, mobile location if it exists, otherwise manual
     // MUST CHANGE for desktop users
     const newData = { ...props.imgData };
-    newData.geolocation = props.manualLocation
+    newData.geolocation = props.manualLocation.length
       ? props.manualLocation
       : props.currentLocation;
     // Add reference to the image within DB
@@ -85,7 +78,26 @@ const Submit = (props) => {
       },
     });
 
-    console.log("Sent to DB!", newData);
+    // Reinitialise imgData (make it blank)
+    props.setImgData({
+      image: "",
+      geolocation: [],
+      name_of_building: "",
+      zip: "",
+      country: "",
+      comments: "",
+      ownership: "",
+      potential_use: "",
+      last_occupied: "",
+      local_resident: "",
+      year_built_period: "",
+      contact_permission: "",
+      email: "",
+      contact_number: "",
+      live: true,
+      // further_comments: "",
+    });
+
   }, [url]);
 
   return (
@@ -95,6 +107,7 @@ const Submit = (props) => {
         Almost there! Click submit to send your capture..
       </p>
       <Map
+        imgData={props.imgData}
         imgFile={props.imgFile}
         currentLocation={props.currentLocation}
         setCurrentLocation={props.setCurrentLocation}
