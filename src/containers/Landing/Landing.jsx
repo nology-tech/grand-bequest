@@ -25,11 +25,19 @@ const Landing = () => {
         <img className="welcome__logo" src={logo} alt="GrandBequestLogo" />
         <h1 className="welcome__title">Grand Bequest</h1>
         <p>Build your Legacy and Help Save an Old Building!</p>
-        <div className="welcome__core-buttons">
-          <button className="btn-primary" onClick={() => history.push("/home")}>
+
+        <button className="startButton" onClick={() => history.push("/home")}>
+          START
+        </button>
+
+        {/* <div className="welcome__core-buttons">
+          <button
+            className="welcome__core-buttons__startButton"
+            onClick={() => history.push("/home")}
+          >
             START
           </button>
-        </div>
+        </div> */}
       </section>
 
       <section className="about">
