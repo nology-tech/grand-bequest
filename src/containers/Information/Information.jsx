@@ -2,16 +2,13 @@ import React, { useState } from "react";
 import "../../App.scss";
 import "./Information.scss";
 import { useHistory } from "react-router-dom";
-
 // possible extra information to add:
 // 1. do you know the owner of this building?
 // 2. what do you think this building should be used for?
 // 3. are you happy to be contacted regarding this building?
 // 4. ^if yes please provide your email address
-
 const Information = (props) => {
   let history = useHistory();
-
   const [ownership, setOwnership] = useState("");
   const [potentialUse, setPotentialUse] = useState("");
   const [localResident, setLocalResident] = useState("");
@@ -46,8 +43,46 @@ const Information = (props) => {
       ? contactNumber
       : props.imgData.contact_number;
     props.setImgData(newData);
-
     history.push("/submit");
+  };
+
+    // history.push("/submit"); <---- does this need to go in?
+  const validateInputs = () => {
+    const emailValue = document.getElementsByClassName("email")[0];
+    const numberValue = document.getElementsByClassName("number")[0];
+
+    if (show === true) {
+      if (validateEmail(emailValue.value)) {
+        emailValue.style.border = "none";
+        if (validateNumber(numberValue.value)) {
+          numberValue.style.border = "none";
+          updateInformation();
+        } else {
+          numberValue.style.border = "solid red";
+          alert("Please enter a valid phone number");
+        }
+      } else {
+        emailValue.style.border = "solid red";
+        alert("Please enter a valid email address");
+      }
+    } else {
+      updateInformation();
+    }
+  };
+
+  const validateEmail = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validateNumber = (number) => {
+    const re = /((\+44(\s\(0\)\s|\s0\s|\s)?)|0)7\d{3}(\s)?\d{6}/;
+    return re.test(number);
+  };
+
+  const handleChecked = () => {
+    setShow(!show);
   };
   const handleChecked = () => {
     setShow(!show);
@@ -85,12 +120,6 @@ const Information = (props) => {
               props.imgData.ownership ? props.imgData.ownership : ""
             }
           />
-          {/* <textarea
-            className="form__input"
-            type="checkbox"
-            placeholder="Are you from the local area?"
-            onBlur={(e) => setLocalResident(e.target.value)}
-          /> */}
           <label htmlFor="canContact">
             Please tick if you are from the local area
           </label>
@@ -171,7 +200,10 @@ const Information = (props) => {
             Please provide your email address:
           </label>
           <textarea
-            className={!show ? "form__input hide" : "form__input show"}
+            // className={!show ? "form__input hide" : "form__input show"}
+            className={
+              !show ? "form__input hide email" : "form__input show email"
+            }
             type="text"
             placeholder="Please provide your email address:"
             onBlur={(e) => setEmail(e.target.value)}
@@ -187,7 +219,10 @@ const Information = (props) => {
             Please provide your contact number:
           </label>
           <textarea
-            className={!show ? "form__input hide" : "form__input show"}
+            // className={!show ? "form__input hide" : "form__input show"}
+            className={
+              !show ? "form__input hide number" : "form__input show number"
+            }
             type="text"
             placeholder="Please provide your contact number:"
             onBlur={(e) => setContactNumber(e.target.value)}
@@ -203,7 +238,7 @@ const Information = (props) => {
           >
             Back
           </button>
-          <button className="btn-primary" onClick={updateInformation}>
+          <button className="btn-primary" onClick={validateInputs}>
             Add Info
           </button>
         </div>
@@ -211,5 +246,4 @@ const Information = (props) => {
     </div>
   );
 };
-
 export default Information;

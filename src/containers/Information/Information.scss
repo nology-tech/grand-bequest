@@ -26,6 +26,8 @@
   border-radius: 20px;
   background-color: #cdefd1;
   height: 250vh;
+  transition: 2s;
+  height: 100vh;
   textarea {
     resize: none;
   }
@@ -48,6 +50,7 @@
     border-radius: 10px;
     padding: 10px;
     border: none;
+    transition: 0.5s;
   }
   // &__users-details {
   //   height: 0px; /* we start animation from 0px */
