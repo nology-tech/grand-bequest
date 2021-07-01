@@ -4,7 +4,7 @@ import Routes from "./containers/Routes";
 import { useEffect, useState } from "react";
 import "./App.scss";
 import "./assets/styles/main.scss";
-import Socials from "./Components/Socials/Socials";
+import Socials from "./components/Socials/Socials.jsx";
 import { firestore } from "./firebase";
 import { setCurrentLocation, setManualLocation, currentLocation, manualLocation } from "./locations";
 

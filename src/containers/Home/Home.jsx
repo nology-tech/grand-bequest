@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "../../App.scss";
 import "../Home/Home.scss";
 import { useHistory } from "react-router-dom";
-import Map from "../../components/Map/Map";
+import Map from "../../components/Map/Map.jsx";
 import Overlay from "../../components/Overlay";
 import Socials from "../../components/Socials/Socials";
-import GrandStepper from "../../components/GrandStepper/GrandStepper";
+
 const Home = (props) => {
   const [hasMedia, setHasMedia] = useState(false);
   const history = useHistory();

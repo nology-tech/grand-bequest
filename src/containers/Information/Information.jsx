@@ -84,9 +84,6 @@ const Information = (props) => {
   const handleChecked = () => {
     setShow(!show);
   };
-  const handleChecked = () => {
-    setShow(!show);
-  };
 
   return (
     <div className="container">

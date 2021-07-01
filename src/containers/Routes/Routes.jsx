@@ -7,7 +7,7 @@ import ErrorPage from "../ErrorPage";
 import Submit from "../Submit";
 import Landing from "../Landing/Landing";
 import Information from "../Information/Information";
-import GrandStepper from "../../components/GrandStepper/GrandStepper";
+import GrandStepper from "../../components/GrandStepper/GrandStepper.jsx";
 
 const Routes = (props) => {
   const [currentStep, setCurrentStep] = useState(1);

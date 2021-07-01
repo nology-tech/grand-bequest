@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
-import Map from "../../components/Map/Map";
+import Map from "../../components/Map/Map.jsx";
 import Socials from "../../components/Socials/Socials";
-import GrandStepper from "../../components/GrandStepper/GrandStepper";
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -62,7 +61,6 @@ const Confirmation = (props) => {
 
   return (
     <div className="container">
-      <GrandStepper />
       <Map
         imgData={props.imgData}
         imgFile={props.imgFile}
