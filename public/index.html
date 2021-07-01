@@ -54,16 +54,7 @@
       src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0"
       nonce="exeUQnJC"
     ></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register(".serviceWorker.js.js")
-            .then((reg) => console.log("Success: ", reg.scope))
-            .catch((err) => console.log(err));
-        });
-      }
-    </script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -76,5 +67,15 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register(".serviceWorker.js.js")
+            .then((reg) => console.log("Success: ", reg.scope))
+            .catch((err) => console.log(err));
+        });
+      }
+    </script>
   </body>
 </html>
