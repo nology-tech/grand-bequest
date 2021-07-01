@@ -45,13 +45,14 @@ const Home = (props) => {
       props.setImgFile(e.target.files[0]);
     }
     history.push("details");
+    //this is the line to update the stepper
+    props.setCurrentStep(2);
   };
 
   return (
     <div className="container">
       {/* <h1 className="home__title">Grand Bequest</h1> */}
       <div className="home__title"></div>
-      <GrandStepper className="grand-stepper" />
 
       <Overlay></Overlay>
 

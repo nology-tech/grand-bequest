@@ -52,6 +52,7 @@ const Submit = (props) => {
           });
       }
     );
+    props.setCurrentStep(4);
   };
 
   useEffect(() => {
@@ -91,11 +92,7 @@ const Submit = (props) => {
 
   return (
     <div className="submit container">
-      <h2 className="submit__title">Submit</h2>
-      <GrandStepper className="grand-stepper" />
-      <p className="text-gray">
-        Almost there! Click submit to send your capture..
-      </p>
+      <div className="submit__title"></div>
       <Map
         imgFile={props.imgFile}
         currentLocation={props.currentLocation}

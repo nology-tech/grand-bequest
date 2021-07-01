@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Stepper from "react-stepper-component-with-svg";
 
 import "./GrandStepper.scss";
 
-const GrandStepper = () => {
+const GrandStepper = (props) => {
   const platform = navigator.platform;
 
+  //"green"
+
   const stepperData = {
-    currentStep: 1,
+    currentStep: props.step,
     outerCircleBorderColor: "#ccc",
     innerCircleBorderColor: "#ccc",
     counterTextColor: "#ccc",
-    labelTextColor: "#ccc",
-    completedIndicatorColor: "green",
+    labelTextColor: "#000000",
+    completedIndicatorColor: "#008379",
     completedTextColor: "#fff",
     connectorColor: "#ccc",
-    completedLabelColor: "green",
-    activeIndicator: "#006400",
+    completedLabelColor: "#000000",
+    activeIndicator: "#000000",
     steps: [
       {
         title: "Home",
@@ -31,6 +33,9 @@ const GrandStepper = () => {
       },
       {
         title: "Submit",
+      },
+      {
+        title: "Completed",
       },
     ],
   };
