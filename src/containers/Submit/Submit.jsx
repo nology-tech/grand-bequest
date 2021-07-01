@@ -4,7 +4,8 @@ import { storage } from "../../firebase";
 import Map from "../../Components/Map/Map";
 import { firestore } from "../../firebase";
 import "./Submit.scss";
-import Socials from "../../Components/Socials/Socials";
+import Socials from "../../components/Socials/Socials";
+import SubmitModal from "../../components/SubmitModal/SubmitModal";
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");
@@ -130,6 +131,7 @@ const Submit = (props) => {
         </button>
       </div>
       <Socials />
+      <SubmitModal />
     </div>
   );
 };
