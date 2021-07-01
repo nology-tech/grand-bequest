@@ -6,6 +6,7 @@ import { firestore } from "../../firebase";
 import "./Submit.scss";
 import Socials from "../../components/Socials/Socials";
 import SubmitModal from "../../components/SubmitModal/SubmitModal";
+import GrandStepper from "../../components/GrandStepper/GrandStepper";
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");
@@ -47,6 +48,7 @@ const Submit = (props) => {
           });
       }
     );
+    props.setCurrentStep(4);
   };
 
   useEffect(() => {
@@ -103,10 +105,7 @@ const Submit = (props) => {
 
   return (
     <div className="submit container">
-      <h2 className="submit__title">Submit</h2>
-      <p className="text-gray">
-        Almost there! Click submit to send your capture..
-      </p>
+      <div className="submit__title"></div>
       <Map
         imgData={props.imgData}
         imgFile={props.imgFile}

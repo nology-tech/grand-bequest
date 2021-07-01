@@ -28,6 +28,7 @@ const Details = (props) => {
     props.setImgData(newData);
 
     history.push("submit");
+    props.setCurrentStep(3);
   };
 
   const addMoreInformation = () => {
@@ -38,10 +39,7 @@ const Details = (props) => {
 
   return (
     <div className="details container">
-      <h2 className="details__title">Details</h2>
-      <p className="text-default">
-        Provide a few details about your capture...
-      </p>
+      <div className="details__title"></div>
 
       <img
         src={URL.createObjectURL(props.imgFile)}

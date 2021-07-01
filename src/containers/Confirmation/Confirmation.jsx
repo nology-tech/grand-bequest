@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
 import Map from "../../components/Map/Map";
 import Socials from "../../components/Socials/Socials";
+import GrandStepper from "../../components/GrandStepper/GrandStepper";
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -61,6 +62,7 @@ const Confirmation = (props) => {
 
   return (
     <div className="container">
+      <GrandStepper />
       <Map
         imgData={props.imgData}
         imgFile={props.imgFile}
@@ -69,7 +71,6 @@ const Confirmation = (props) => {
         manualLocation={props.manualLocation}
         setManualLocation={props.setManualLocation}
       />
-
       <div>
         {/* image preview image logic */}
         {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
@@ -94,7 +95,6 @@ const Confirmation = (props) => {
           Confirm
         </button>
       </div>
-
       <div className="core-buttons">
         <button className="btn-secondary" onClick={cancelSubmit}>
           Cancel

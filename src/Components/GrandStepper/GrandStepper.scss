@@ -1,0 +1,21 @@
+@use "../../assets/styles/variables" as *;
+@use "../../assets/styles/typography" as *;
+.grand-stepper {
+  svg {
+    position: absolute;
+    z-index: 999;
+    width: 80%;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $body-font;
+    font-size: font-M;
+
+    g > text:nth-of-type(2) {
+      font-size: 0.6rem;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
