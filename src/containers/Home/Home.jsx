@@ -100,7 +100,7 @@ const Home = (props) => {
         />
       </div>
       <Socials />
-      {/* <button class="add-button">Add to home screen</button> */}
+      <button class="add-button">Add to home screen</button>
     </div>
   );
 };
