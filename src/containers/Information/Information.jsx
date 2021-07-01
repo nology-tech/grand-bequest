@@ -23,19 +23,29 @@ const Information = (props) => {
 
   const updateInformation = () => {
     const newData = { ...props.imgData };
-    newData.ownership = ownership;
-    newData.potential_use = potentialUse;
-    newData.local_resident = localResident;
-    newData.year_built_period = yearBuiltPeriod;
-    newData.last_occupied = lastOccupied;
-    newData.contact_permission = contactPermission;
-    newData.email = email;
-    newData.contact_number = contactNumber;
+    newData.ownership = ownership ? ownership : props.imgData.ownership;
+    newData.potential_use = potentialUse
+      ? potentialUse
+      : props.imgData.potential_use;
+    newData.local_resident = localResident
+      ? localResident
+      : props.imgData.local_resident;
+    newData.year_built_period = yearBuiltPeriod
+      ? yearBuiltPeriod
+      : props.imgData.year_built_period;
+    newData.last_occupied = lastOccupied
+      ? lastOccupied
+      : props.imgData.last_occupied;
+    newData.contact_permission = contactPermission
+      ? contactPermission
+      : !props.imgData.contact_permission;
+    newData.email = email ? email : props.imgData.email;
+    newData.contact_number = contactNumber
+      ? contactNumber
+      : props.imgData.contact_number;
     props.setImgData(newData);
 
-
     history.push("/submit");
-
   };
   return (
     <div className="container">
@@ -47,30 +57,47 @@ const Information = (props) => {
             type="text"
             placeholder="What do you think this building should be used for?"
             onBlur={(e) => setPotentialUse(e.target.value)}
+            defaultValue={
+              props.imgData.potential_use ? props.imgData.potential_use : ""
+            }
           />
           <textarea
             className="form__input"
             type="text"
             placeholder="Who is the owner of this building?"
             onBlur={(e) => setOwnership(e.target.value)}
+            defaultValue={
+              props.imgData.ownership ? props.imgData.ownership : ""
+            }
           />
           <textarea
             className="form__input"
             type="text"
             placeholder="Are you from the local area?"
             onBlur={(e) => setLocalResident(e.target.value)}
+            defaultValue={
+              props.imgData.local_resident ? props.imgData.local_resident : ""
+            }
           />
           <textarea
             className="form__input"
             type="text"
             placeholder="When was this building built?"
             onBlur={(e) => setYearBuiltPeriod(e.target.value)}
+            defaultValue={
+              props.imgData.year_built_period
+                ? props.imgData.year_built_period
+                : ""
+            }
           />
           <textarea
             className="form__input"
             type="text"
             placeholder="When was this building last used/occupied?"
             onBlur={(e) => setLastOccupied(e.target.value)}
+            defaultValue={
+              props.imgData.last_occupied ? props.imgData.last_occupied : ""
+            }
           />
           <div
             style={{
@@ -100,16 +127,23 @@ const Information = (props) => {
             type="text"
             placeholder="Please provide your email address:"
             onBlur={(e) => setEmail(e.target.value)}
+            defaultValue={props.imgData.email ? props.imgData.email : ""}
           />
           <textarea
             className="form__input"
             type="text"
             placeholder="Please provide your contact number:"
             onBlur={(e) => setContactNumber(e.target.value)}
+            defaultValue={
+              props.imgData.contact_number ? props.imgData.contact_number : ""
+            }
           />
         </div>
         <div className="core-buttons">
-          <button className="btn-secondary" onClick={() => history.push("/details")}>
+          <button
+            className="btn-secondary"
+            onClick={() => history.push("/details")}
+          >
             Back
           </button>
           <button className="btn-primary" onClick={updateInformation}>
