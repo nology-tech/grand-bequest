@@ -1,7 +1,6 @@
 .socials__Container {
   height: 5%;
-  width: 90px;
-  position: absolute;
+  width: 200px;
   bottom: 0;
   right: 50px;
   display: flex;
@@ -11,4 +10,5 @@
 .socials__Container-Icons a {
   color: black;
   font-size: 30px;
+  margin: 15px;
 }

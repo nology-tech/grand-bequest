@@ -93,9 +93,9 @@ const Submit = (props) => {
     window.confetti({
       zIndex: 1000,
       particleCount: 60,
-      spread: 60,
+      spread: 300,
       origin: {
-        y: 0.8,
+        y: 0,
       },
     });
 
@@ -118,11 +118,13 @@ const Submit = (props) => {
       live: true,
       // further_comments: "",
     });
+
+    // Redirect user
+    history.push("/");
   }, [url]);
 
   return (
     <div className="submit container">
-      <div className="submit__title"></div>
       <Map
         imgData={props.imgData}
         imgFile={props.imgFile}

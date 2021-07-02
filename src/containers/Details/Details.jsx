@@ -39,8 +39,6 @@ const Details = (props) => {
 
   return (
     <div className="details container">
-      <div className="details__title"></div>
-
       <img
         src={URL.createObjectURL(props.imgFile)}
         alt="abandoned building"

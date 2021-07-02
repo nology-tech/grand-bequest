@@ -3,7 +3,7 @@
 $button-height: 70px;
 $button-font-size: 20px;
 $button-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-$button-radius: 50px;
+$button-radius: 3px;
 
 button,
 label[for="file-upload"],
@@ -42,7 +42,7 @@ label[for="live-capture"] {
 .btn-tertiary {
   padding: 5px;
   border: 1px solid $primary-colour;
-  border-radius: 10px;
+  border-radius: $button-radius;
 
   &:hover {
     background-color: $primary-colour;

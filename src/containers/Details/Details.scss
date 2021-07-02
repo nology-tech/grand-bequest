@@ -31,6 +31,8 @@
 }
 
 .core-buttons {
+  display: flex;
+  justify-content: center;
   .btn-primary {
     // max-width: 10px;
     // max-height: 120px;

@@ -6,3 +6,8 @@
 body {
     background: #F3F4F5;
 }
+
+#root {
+    display: grid;
+    grid-template-rows: 15vh auto;
+}

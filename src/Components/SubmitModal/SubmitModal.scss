@@ -19,9 +19,10 @@
   &__text {
     max-height: 350px;
     overflow-y: hidden;
+    padding: 15px 0px;
 
     p {
-      font-size: 17px;
+      font-size: 16px;
       text-align: center;
       font-weight: 500 !important;
     }
@@ -34,7 +35,6 @@
   }
 
   &__modal {
-    height: 60%;
     width: 60%;
     position: absolute;
     margin: 0px auto;
@@ -95,7 +95,7 @@
 
     &__text {
       p {
-        font-size: 19px;
+        font-size: 16px;
       }
     }
   }
@@ -109,7 +109,7 @@
 
     &__text {
       p {
-        font-size: 22px;
+        font-size: 16px;
       }
     }
   }

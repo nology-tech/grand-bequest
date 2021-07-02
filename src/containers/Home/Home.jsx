@@ -12,24 +12,11 @@ const Home = (props) => {
 
   const platform = navigator.platform;
 
-  // const getGeo = () => {
-  //   let lat = null;
-  //   let long = null;
-
-  //   navigator.geolocation.getCurrentPosition((positions) => {
-  //     lat = positions.coords.latitude;
-  //     long = positions.coords.longitude;
-  //   });
-
-  //   return [lat, long];
-  // };
-
   const handleLiveCapture = (e) => {
     if (e.target.files[0]) {
       props.setImgFile(e.target.files[0]);
     }
     setHasMedia(true);
-    // handle geolocation here, and add to OBJECT
     const newData = { ...props.imgData };
     props.setImgData(newData);
 
@@ -42,19 +29,11 @@ const Home = (props) => {
       props.setImgFile(e.target.files[0]);
     }
     history.push("details");
-    //this is the line to update the stepper
     props.setCurrentStep(2);
   };
 
-  //handleAddToHomescreenClick
-  // const handleAddToHomescreenClick = () => {};
-  // const AddToHomescreen = handleAddToHomescreenClick()(" ");
-
   return (
-    <div className="container">
-      {/* <h1 className="home__title">Grand Bequest</h1> */}
-      <div className="home__title"></div>
-
+    <div>
       <Overlay></Overlay>
 
       <Map
@@ -100,7 +79,7 @@ const Home = (props) => {
         />
       </div>
       <Socials />
-      <button class="add-button">Add to home screen</button>
+      {/* <button class="add-button">Add to home screen</button> */}
     </div>
   );
 };
