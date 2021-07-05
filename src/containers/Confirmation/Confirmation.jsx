@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
 import Map from "../../Components/Map/Map.jsx";
 import Socials from "../../Components/Socials/Socials";
+import "./Confirmation.scss";
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -69,7 +70,7 @@ const Confirmation = (props) => {
         manualLocation={props.manualLocation}
         setManualLocation={props.setManualLocation}
       />
-      <div>
+      <div className="buttonContainer">
         {/* image preview image logic */}
         {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
         <label for="live-capture" className="btn-secondary">
