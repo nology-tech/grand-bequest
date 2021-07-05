@@ -8,6 +8,7 @@ import Submit from "../Submit";
 import Landing from "../Landing/Landing";
 import Information from "../Information/Information";
 import GrandStepper from "../../components/GrandStepper/GrandStepper.jsx";
+import FinishedPage from "../FinishedPage";
 
 const Routes = (props) => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -68,7 +69,10 @@ const Routes = (props) => {
       <Route path="/information">
         <Information imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
-
+      <Route path="/Finished">
+        <GrandStepper step={currentStep} />
+        <FinishedPage setCurrentStep={setCurrentStep} />
+      </Route>
       <Route path="/*">
         <ErrorPage />
       </Route>

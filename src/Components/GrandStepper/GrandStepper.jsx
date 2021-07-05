@@ -22,6 +22,7 @@ const GrandStepper = (props) => {
     steps: [
       {
         title: "Home",
+        title: "Finished",
       },
       {
         title:

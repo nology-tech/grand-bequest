@@ -120,7 +120,7 @@ const Submit = (props) => {
     });
 
     // Redirect user
-    history.push("/");
+    history.push("/Finished");
   }, [url]);
 
   return (
@@ -149,7 +149,6 @@ const Submit = (props) => {
           Submit
         </button>
       </div>
-      <Socials />
       <SubmitModal />
     </div>
   );
