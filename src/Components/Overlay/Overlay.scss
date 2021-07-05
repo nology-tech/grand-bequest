@@ -5,7 +5,7 @@
   width: 70px;
   min-width: 0px;
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .overlay {
     &__show-btn {
       min-height: 5px !important;
@@ -17,7 +17,8 @@
     }
   }
 }
-@media (max-width: 767px) {
+
+@media (min-width: 375px), (min-height: 667) {
   .overlay {
     &__show-btn {
       min-height: 5px !important;
@@ -25,7 +26,40 @@
       line-height: 30px;
       font-size: 16px;
       width: 20px;
-      top: 25px;
+      top: 32px;
+    }
+  }
+}
+
+@media (min-width: 375px), (min-height: 812px) {
+  .overlay {
+    &__show-btn {
+      min-height: 5px !important;
+      height: 27px !important;
+      line-height: 30px;
+      font-size: 16px;
+      width: 20px;
+      top: 40px;
+    }
+  }
+}
+
+@media (min-width: 414px) {
+  .overlay {
+    &__show-btn {
+      min-height: 5px !important;
+      height: 27px !important;
+      line-height: 30px;
+      font-size: 16px;
+      width: 20px;
+      top: 34px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .overlay {
+    &__show-btn {
     }
   }
 }

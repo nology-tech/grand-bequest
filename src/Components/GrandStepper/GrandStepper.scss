@@ -24,17 +24,33 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   .grand-stepper {
     svg {
       width: 95vw !important;
     }
   }
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .grand-stepper {
     svg {
       width: 75vw !important;
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .grand-stepper {
+    svg {
+      width: 80vw !important;
+    }
+  }
+}
+
+@media (min-width: 414px) {
+  .grand-stepper {
+    svg {
+      width: 85vw !important;
     }
   }
 }
