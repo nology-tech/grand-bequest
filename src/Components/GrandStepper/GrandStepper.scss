@@ -10,8 +10,8 @@
     //z-index: 999;
     width: 60%;
     max-width: 900px;
-   // top: 15%;
-   // left: 50%;
+    // top: 15%;
+    // left: 50%;
     //transform: translate(-50%, -50%);
     font-family: $body-font;
 
@@ -26,7 +26,15 @@
 
 @media (max-width: 767px) {
   .grand-stepper {
-    svg { width: 95vw!important; }
+    svg {
+      width: 95vw !important;
+    }
   }
 }
-
+@media (max-width: 320px) {
+  .grand-stepper {
+    svg {
+      width: 75vw !important;
+    }
+  }
+}
