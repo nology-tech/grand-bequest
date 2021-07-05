@@ -128,7 +128,7 @@ const Information = (props) => {
               name="canContact"
               id="canContact"
               style={{
-                height: 22,
+                height: 21,
                 width: 25,
               }}
             />
