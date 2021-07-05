@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
-import Map from "../../components/Map/Map.jsx";
+import Map from "../../Components/Map/Map.jsx";
 import { firestore } from "../../firebase";
 import "./Submit.scss";
-import Socials from "../../components/Socials/Socials";
-import SubmitModal from "../../components/SubmitModal/SubmitModal";
+import Socials from "../../Components/Socials/Socials";
+import SubmitModal from "../../Components/SubmitModal/SubmitModal";
 
 const Submit = (props) => {
   const [url, setUrl] = useState("");

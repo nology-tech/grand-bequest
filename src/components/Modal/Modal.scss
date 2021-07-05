@@ -16,7 +16,6 @@
     text-align: center;
   }
 
-
   &__text {
     max-height: 300px;
     overflow-y: auto;
@@ -86,6 +85,9 @@
   .popup {
     &__modal {
       margin-left: -38%;
+    }
+    &__dismiss-btn {
+      max-width: 10rem;
     }
   }
 }

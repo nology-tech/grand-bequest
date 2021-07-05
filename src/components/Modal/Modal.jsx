@@ -15,20 +15,21 @@ const Modal = (props) => {
             <p>
               1a. Double-tap on the map to show where the abandoned building is,
               then take a picture! (A green marker will appear)
-            </p><p>
-              1b. OR, if you're at home, upload a picture from your computer/phone
-              gallery
-              </p><p>
+            </p>
+            <p>
+              1b. OR, if you're at home, upload a picture from your
+              computer/phone gallery
+            </p>
+            <p>
               2. Tap the Submit button and send us the image directly, or let us
               know some information about it!
-              </p><p>
-              3. Tap on other markers in your area and see what other people have
-              found!
-              </p><p>
-              4. Share your favourite images to social media!
             </p>
+            <p>
+              3. Tap on other markers in your area and see what other people
+              have found!
+            </p>
+            <p>4. Share your favourite images to social media!</p>
           </div>
-
           <button
             onClick={handleDismiss}
             className="popup__dismiss-btn btn-primary"
