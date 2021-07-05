@@ -31,11 +31,13 @@
     padding: 0;
   }
 }
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
   border: solid 1px black;
   background-clip: padding-box;
 }
-.leaflet-bar a, .leaflet-bar a:hover {
+.leaflet-bar a,
+.leaflet-bar a:hover {
   border-bottom: solid 1px black;
 }
 .results.active {
@@ -59,7 +61,7 @@
 }
 .locate-button {
   position: absolute;
-  z-index: 999;
+  z-index: 800;
   right: 20px;
   bottom: 20px;
 }
