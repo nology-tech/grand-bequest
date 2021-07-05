@@ -46,7 +46,7 @@ const Information = (props) => {
     history.push("/submit");
   };
 
-    // history.push("/submit"); <---- does this need to go in?
+  // history.push("/submit"); <---- does this need to go in?
   const validateInputs = () => {
     const emailValue = document.getElementsByClassName("email")[0];
     const numberValue = document.getElementsByClassName("number")[0];
@@ -99,7 +99,6 @@ const Information = (props) => {
           <textarea
             className="form__input"
             type="text"
-            placeholder="What do you think this building should be used for?"
             onBlur={(e) => setPotentialUse(e.target.value)}
             defaultValue={
               props.imgData.potential_use ? props.imgData.potential_use : ""
@@ -111,7 +110,6 @@ const Information = (props) => {
           <textarea
             className="form__input"
             type="text"
-            placeholder="Who is the owner of this building?"
             onBlur={(e) => setOwnership(e.target.value)}
             defaultValue={
               props.imgData.ownership ? props.imgData.ownership : ""
@@ -139,7 +137,6 @@ const Information = (props) => {
           <textarea
             className="form__input"
             type="text"
-            placeholder="Do you have any stories or memories about this building?"
             onBlur={(e) => setYearBuiltPeriod(e.target.value)}
             defaultValue={
               props.imgData.year_built_period
@@ -156,7 +153,6 @@ const Information = (props) => {
           <textarea
             className="form__input"
             type="text"
-            placeholder="When was this building last used/occupied?"
             onBlur={(e) => setLastOccupied(e.target.value)}
             defaultValue={
               props.imgData.last_occupied ? props.imgData.last_occupied : ""
@@ -202,7 +198,6 @@ const Information = (props) => {
               !show ? "form__input hide email" : "form__input show email"
             }
             type="text"
-            placeholder="Please provide your email address:"
             onBlur={(e) => setEmail(e.target.value)}
             defaultValue={props.imgData.email ? props.imgData.email : ""}
           />
@@ -221,7 +216,6 @@ const Information = (props) => {
               !show ? "form__input hide number" : "form__input show number"
             }
             type="text"
-            placeholder="Please provide your contact number:"
             onBlur={(e) => setContactNumber(e.target.value)}
             defaultValue={
               props.imgData.contact_number ? props.imgData.contact_number : ""
