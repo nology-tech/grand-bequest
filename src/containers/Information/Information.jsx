@@ -90,10 +90,7 @@ const Information = (props) => {
       <div className="form">
         <div className="form__middle">
           <h3>Optional fields</h3>
-          <label
-            for="potential usage of building"
-            className="form__label-usage"
-          >
+          <label for="potential usage of building" className="form__label">
             What do you think this building should be used for?
           </label>
           <textarea
@@ -104,7 +101,7 @@ const Information = (props) => {
               props.imgData.potential_use ? props.imgData.potential_use : ""
             }
           />
-          <label for="owner of the building" className="form__label-owner">
+          <label for="owner of the building" className="form__label">
             Who is the owner of this building?
           </label>
           <textarea
@@ -115,23 +112,28 @@ const Information = (props) => {
               props.imgData.ownership ? props.imgData.ownership : ""
             }
           />
-          <label htmlFor="canContact">
-            Please tick if you are from the local area
-          </label>
-          <input
-            className="form__permission"
-            type="checkbox"
-            name="canContact"
-            id="canContact"
+          <div
             style={{
-              height: 26,
-              width: 25,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-          />
-          <label
-            for="stories/memories of building"
-            className="form__label-stories"
           >
+            <label htmlFor="canContact" className="form__label">
+              Please tick if you are from the local area
+            </label>
+            <input
+              className="form__permission"
+              type="checkbox"
+              name="canContact"
+              id="canContact"
+              style={{
+                height: 22,
+                width: 25,
+              }}
+            />
+          </div>
+          <label for="stories/memories of building" className="form__label">
             Do you have any stories or memories about this building?
           </label>
           <textarea
@@ -146,7 +148,7 @@ const Information = (props) => {
           />
           <label
             for="date that the building was last used"
-            className="form__label-last-used"
+            className="form__label"
           >
             When was this building last used/occupied?
           </label>
@@ -165,7 +167,7 @@ const Information = (props) => {
               justifyContent: "center",
             }}
           >
-            <label htmlFor="canContact">
+            <label htmlFor="canContact" className="form__label">
               Please tick if you are happy to be contacted?
             </label>
             <input

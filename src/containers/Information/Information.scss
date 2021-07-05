@@ -1,8 +1,3 @@
-// @use "../../assets/styles/typography" as *;
-// @use "../../assets/styles/buttons" as *;
-// @use "../../assets/styles/forms" as *;
-// @use "../../assets/styles/variables" as *;
-// @use "../../assets/styles/main" as *;
 .show {
   display: block;
   transition: height 2s linear 500s;
@@ -18,7 +13,6 @@
   height: 100vh;
 }
 .form {
-
   padding: 10px;
   border-radius: 20px;
   background-color: #cdefd1;
@@ -35,7 +29,17 @@
     width: 90vw;
   }
 
+  &__label {
+    padding: 10px;
+  }
 
+  &__label-email {
+    padding: 10px;
+  }
+
+  &__label-number {
+    padding: 10px;
+  }
 
   // &__users-details {
   //   height: 0px; /* we start animation from 0px */
@@ -54,4 +58,9 @@
     padding: 10px;
     border: none;
   }
+}
+
+.form__permission {
+  height: 35;
+  width: 25;
 }
