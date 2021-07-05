@@ -46,35 +46,36 @@ const Details = (props) => {
       />
 
       <div className="form">
+        <label>Name of Building / Former Purpose</label>
         <input
           className="form__input"
           type="text"
-          placeholder="Name of Building / Former Purpose"
           onBlur={(e) => setNameOfBuilding(e.target.value)}
           defaultValue={
             props.imgData.name_of_building ? props.imgData.name_of_building : ""
           }
         />
 
+        <label>Area Postcode/Zip</label>
         <input
           className="form__input"
           type="text"
-          placeholder="Area Postcode/Zip"
           onBlur={(e) => setZip(e.target.value)}
           defaultValue={props.imgData.zip ? props.imgData.zip : ""}
         />
+
+        <label>Country</label>
         <input
           className="form__input"
           type="text"
-          placeholder="Country"
           onBlur={(e) => setCountry(e.target.value)}
           defaultValue={props.imgData.country ? props.imgData.country : ""}
         />
 
+        <label>Comments</label>
         <textarea
           className="form__input input__box"
           type="text"
-          placeholder="Comments"
           onBlur={(e) => setComments(e.target.value)}
           defaultValue={props.imgData.comments ? props.imgData.comments : ""}
         />
