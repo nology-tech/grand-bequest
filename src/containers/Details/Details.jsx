@@ -72,7 +72,7 @@ const Details = (props) => {
         />
 
         <textarea
-          className="form__input"
+          className="form__input input__box"
           type="text"
           placeholder="Comments"
           onBlur={(e) => setComments(e.target.value)}
