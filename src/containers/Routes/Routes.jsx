@@ -7,7 +7,7 @@ import ErrorPage from "../ErrorPage";
 import Submit from "../Submit";
 import Landing from "../Landing/Landing";
 import Information from "../Information/Information";
-import GrandStepper from "../../Components/GrandStepper/GrandStepper.jsx";
+import GrandStepper from "../../components/GrandStepper/GrandStepper.jsx";
 
 const Routes = (props) => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -31,7 +31,9 @@ const Routes = (props) => {
         />
       </Route>
       <Route path="/confirmation">
+        <GrandStepper step={currentStep} />
         <Confirmation
+          setCurrentStep={setCurrentStep}
           setImgFile={props.setImgFile}
           imgFile={props.imgFile}
           currentLocation={props.currentLocation}

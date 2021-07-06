@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
-import Map from "../../Components/Map/Map.jsx";
-import Socials from "../../Components/Socials/Socials";
+import Map from "../../components/Map/Map.jsx";
+import Socials from "../../components/Socials/Socials";
 import "./Confirmation.scss";
+import ConfirmationModal from "../../components/ConfirmationModal/ConfirmationModal"
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -62,6 +63,9 @@ const Confirmation = (props) => {
 
   return (
     <div className="container">
+
+      <ConfirmationModal imgFile={props.imgFile} handleLiveCapture={handleLiveCapture} confirmImage={confirmImage} />
+
       <Map
         imgData={props.imgData}
         imgFile={props.imgFile}
@@ -94,14 +98,7 @@ const Confirmation = (props) => {
           Confirm
         </button>
       </div>
-      <div className="core-buttons">
-        <button className="btn-secondary" onClick={cancelSubmit}>
-          Cancel
-        </button>
-        {/* <button className="btn-primary" onClick={(quickSubmit, handleUpload)}>
-          Quick Submit
-        </button> */}
-      </div>
+    
       <Socials />
     </div>
   );

@@ -4,8 +4,6 @@ import Stepper from "react-stepper-component-with-svg";
 import "./GrandStepper.scss";
 
 const GrandStepper = (props) => {
-  const platform = navigator.platform;
-
   //"green"
 
   const stepperData = {
@@ -24,12 +22,7 @@ const GrandStepper = (props) => {
         title: "Home",
       },
       {
-        title:
-          platform.includes("Win") ||
-          platform.includes("Mac") ||
-          platform.includes("Linux")
-            ? "Details"
-            : "Confirmation",
+        title: window.screen.width > 1050 ? "Details" : "Confirmation",
       },
       {
         title: "Submit",
