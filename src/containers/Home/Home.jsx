@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "../../App.scss";
 import "../Home/Home.scss";
 import { useHistory } from "react-router-dom";
-import Map from "../../Components/Map/Map.jsx";
-import Overlay from "../../Components/Overlay";
-import Socials from "../../Components/Socials/Socials";
+import Map from "../../components/Map/Map.jsx";
+import Overlay from "../../components/Overlay";
+import Socials from "../../components/Socials/Socials";
 
 const Home = (props) => {
   const history = useHistory();

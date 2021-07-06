@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
-import Map from "../../Components/Map/Map.jsx";
-import Socials from "../../Components/Socials/Socials";
+import Map from "../../components/Map/Map.jsx";
+import Socials from "../../components/Socials/Socials";
 import "./Confirmation.scss";
-import ConfirmationModal from "../../Components/ConfirmationModal/ConfirmationModal";
+import ConfirmationModal from "../../components/ConfirmationModal/ConfirmationModal";
 
 const Confirmation = (props) => {
   const history = useHistory();
