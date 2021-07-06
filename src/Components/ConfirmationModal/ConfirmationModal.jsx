@@ -33,9 +33,9 @@ const ConfirmationModal = (props) => {
         <div className="confirmation-popup__container">
           <img
             src={URL.createObjectURL(props.imgFile)}
+            // src="https://www.wilsons.school/history/files/image_256-687129.jpg"
             alt="Abandoned Building"
           />
-
         </div>
       </div>
     </>

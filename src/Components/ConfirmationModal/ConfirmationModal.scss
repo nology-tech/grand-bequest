@@ -18,19 +18,19 @@
 
   &__container {
     display: flex;
-    // flex-direction: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
     img {
-      height: 80%;
+      max-height: 50vh;
       width: 100%;
       // object-fit: cover;
     }
   }
 
   &__modal {
-    height: 60%;
+    //height: 60%;
     width: 60%;
     position: absolute;
     margin: 0px auto;
@@ -41,16 +41,15 @@
     justify-content: center;
     align-items: center;
 
-  
     // transform: translateY(100%);
     transition: transform 0.2s ease;
     box-shadow: 0 2px 8px 3px;
     padding: 30px;
     border-radius: 10px;
     z-index: 2000;
-    left: 50%;
+    left: 54%;
     top: 20%;
-    margin-left: -30%;
+    margin-left: -34%;
   }
 
   &__closeButton {
@@ -80,13 +79,12 @@
     font-size: 12px !important;
     margin-top: 20px;
   }
-
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 375px) {
   .confirmation-popup {
     &__modal {
-      margin-left: -38%;
+      //margin-left: -38%;
     }
     &__dismiss-btn {
       max-width: 10rem;
@@ -94,10 +92,10 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .confirmation-popup {
     &__modal {
-      margin-left: -34%;
+      // margin-left: -34%;
     }
   }
 }
