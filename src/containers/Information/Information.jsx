@@ -90,7 +90,7 @@ const Information = (props) => {
       <div className="form">
         <div className="form__middle">
           <h3>Optional fields</h3>
-          <label for="potential usage of building" className="form__label">
+          <label htmlFor="potential usage of building" className="form__label">
             What do you think this building should be used for?
           </label>
           <textarea
@@ -101,7 +101,7 @@ const Information = (props) => {
               props.imgData.potential_use ? props.imgData.potential_use : ""
             }
           />
-          <label for="owner of the building" className="form__label">
+          <label htmlFor="owner of the building" className="form__label">
             Who is the owner of this building?
           </label>
           <textarea
@@ -133,7 +133,7 @@ const Information = (props) => {
               }}
             />
           </div>
-          <label for="stories/memories of building" className="form__label">
+          <label htmlFor="stories/memories of building" className="form__label">
             Do you have any stories or memories about this building?
           </label>
           <textarea
@@ -147,7 +147,7 @@ const Information = (props) => {
             }
           />
           <label
-            for="date that the building was last used"
+            htmlFor="date that the building was last used"
             className="form__label"
           >
             When was this building last used/occupied?
@@ -186,7 +186,7 @@ const Information = (props) => {
           </div>
 
           <label
-            for="email address"
+            htmlFor="email address"
             className="form__label-email"
             className={
               !show ? "form__label-email hide" : "form__label-email show"
@@ -204,7 +204,7 @@ const Information = (props) => {
             defaultValue={props.imgData.email ? props.imgData.email : ""}
           />
           <label
-            for="contact number"
+            htmlFor="contact number"
             className="form__label-number"
             className={
               !show ? "form__label-number hide" : "form__label-number show"
