@@ -1,7 +1,12 @@
 .submit {
   &__title {
     margin-bottom: 0px;
-    margin: 85px 0px;
+    margin: 20px 0px;
     text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .submit__title {
+    display: none;
   }
 }

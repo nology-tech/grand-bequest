@@ -24,43 +24,16 @@
   }
 }
 
-@media (min-width: 767px) {
+@media (max-width: 767px) {
   .grand-stepper {
-    svg {
-      width: 95vw !important;
-    }
+    display: none;
   }
 }
 @media (min-width: 320px) {
-  .grand-stepper {
-    svg {
-      width: 75vw !important;
-    }
-  }
 }
 
 @media (min-width: 375px) {
-  .grand-stepper {
-    svg {
-      width: 80vw !important;
-
-      g > circle {
-        display: flex;
-        background-color: red;
-      }
-
-      g > text:nth-of-type(2) {
-        font-size: $font-L;
-        justify-content: center;
-      }
-    }
-  }
 }
 
 @media (min-width: 414px) {
-  .grand-stepper {
-    svg {
-      width: 85vw !important;
-    }
-  }
 }

@@ -5,7 +5,7 @@
   width: 70px;
   min-width: 0px;
 }
-@media (min-width: 320px) {
+@media (max-width: 320px) {
   .overlay {
     &__show-btn {
       min-height: 5px !important;
@@ -18,7 +18,7 @@
   }
 }
 
-@media (min-width: 375px), (min-height: 667) {
+@media (max-width: 375px), (max-height: 667) {
   .overlay {
     &__show-btn {
       min-height: 5px !important;
@@ -31,7 +31,7 @@
   }
 }
 
-@media (min-width: 375px), (min-height: 812px) {
+@media (max-width: 375px), (max-height: 812px) {
   .overlay {
     &__show-btn {
       min-height: 5px !important;

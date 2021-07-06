@@ -3,7 +3,7 @@
 
   &__title {
     margin-bottom: 0px;
-    margin: 85px 0px;
+    margin: 20px 0px;
     text-align: center;
   }
 }
@@ -47,5 +47,11 @@
     &__modal {
       margin-left: -34%;
     }
+  }
+}
+@media (min-width: 768px) {
+  .details__title {
+    display: none;
+    margin: 20px 0px;
   }
 }
