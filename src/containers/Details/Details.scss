@@ -7,7 +7,27 @@
     text-align: center;
   }
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 
+  img {
+    height: 560px;
+    width: 100%;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  .preview-image {
+    height: 300px;
+    width: 300px;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
+}
 .form {
   display: flex;
   flex-direction: column;
