@@ -20,6 +20,7 @@ const GrandStepper = (props) => {
     steps: [
       {
         title: "Home",
+        title: "Finished",
       },
       {
         title: window.screen.width > 1050 ? "Details" : "Confirmation",

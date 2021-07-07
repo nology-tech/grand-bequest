@@ -1,5 +1,11 @@
 @use "../../assets/styles/variables" as *;
 @use "../../assets/styles/buttons" as *;
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 998;
+}
+
 .search-input {
   background-color: white;
   padding: 0;

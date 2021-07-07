@@ -75,8 +75,6 @@ const Home = (props) => {
           id="live-capture"
         />
       </div>
-      <Socials />
-      {/* <button class="add-button">Add to home screen</button> */}
     </div>
   );
 };

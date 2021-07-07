@@ -93,7 +93,6 @@ const Details = (props) => {
       <button className="button" onClick={addMoreInformation}>
         Have more information?
       </button>
-      <Socials />
     </div>
   );
 };
