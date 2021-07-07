@@ -8,7 +8,7 @@ describe("Optional confirmation form tests", () => {
   let component;
 
   const props = {
-    setImgFile: () => console.log("setImgFile"),
+    setImgFile: "imgHere",
     setCurrentStep: () => console.log("setCurrentStep"),
     currentLocation: [50.7163074, -1.8718383],
     setCurrentLocation: [50.7163074, -1.8718383],
@@ -29,6 +29,7 @@ describe("Optional confirmation form tests", () => {
         setManualLocation={props.setManualLocation}
       />
     );
+    const URL = jest.spyOn(URL, "createObjectURL");
   });
 
   it("should render", () => {
