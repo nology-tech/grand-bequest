@@ -29,7 +29,20 @@
     display: none;
   }
 }
-@media (min-width: 320px) {
+@media (min-width: 768px) {
+  .grand-stepper {
+    svg {
+      width: 82%;
+    }
+  }
+}
+
+@media (min-width: 834px) {
+  .grand-stepper {
+    svg {
+      width: 83%;
+    }
+  }
 }
 
 @media (min-width: 375px) {
