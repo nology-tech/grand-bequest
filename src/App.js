@@ -1,10 +1,8 @@
-import NavBar from "./Components/NavBar/NavBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
 import { useEffect, useState } from "react";
 import "./App.scss";
 import "./assets/styles/main.scss";
-import Socials from "./Components/Socials/Socials.jsx";
 import { firestore } from "./firebase";
 import {
   setCurrentLocation,

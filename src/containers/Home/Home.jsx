@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import "../../App.scss";
 import "../Home/Home.scss";
 import { useHistory } from "react-router-dom";
-import Map from "../../Components/Map/Map.jsx";
-import Overlay from "../../Components/Overlay";
-import Socials from "../../Components/Socials/Socials";
+import Map from "../../components/Map/Map.jsx";
+import Overlay from "../../components/Overlay";
+import Socials from "../../components/Socials/Socials";
 
 const Home = (props) => {
-  const [hasMedia, setHasMedia] = useState(false);
   const history = useHistory();
-
-  const platform = navigator.platform;
 
   const handleLiveCapture = (e) => {
     if (e.target.files[0]) {
       props.setImgFile(e.target.files[0]);
     }
-    setHasMedia(true);
+
     const newData = { ...props.imgData };
     props.setImgData(newData);
+
+    props.setCurrentStep(2);
 
     history.push("confirmation");
   };
@@ -60,10 +59,8 @@ const Home = (props) => {
         <label
           for="live-capture"
           className={
-            platform.includes("Win") ||
-            platform.includes("Mac") ||
-            platform.includes("Linux")
-              ? "btn-primary hidden"
+            window.screen.width > 1050
+              ? "btn-primary" // hidden
               : "btn-primary"
           }
         >

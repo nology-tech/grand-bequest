@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { storage } from "../../firebase";
-import Map from "../../Components/Map/Map.jsx";
-import Socials from "../../Components/Socials/Socials";
+import Map from "../../components/Map/Map.jsx";
+import Socials from "../../components/Socials/Socials";
+import "./Confirmation.scss";
+import ConfirmationModal from "../../components/ConfirmationModal/ConfirmationModal";
 
 const Confirmation = (props) => {
   const history = useHistory();
@@ -32,10 +34,6 @@ const Confirmation = (props) => {
   };
 
   const confirmImage = () => {
-    const newData = { ...props.imgData };
-    newData.image = "this-is-an-abandoned-building.jpg";
-    props.setImgData(newData);
-
     history.push("submit");
   };
 
@@ -51,16 +49,27 @@ const Confirmation = (props) => {
   //   console.log("Sent to DB!", props.imgData);
   // };
 
-  const handleLiveCapture = () => {
+  const handleLiveCapture = (e) => {
+    if (e.target.files[0]) {
+      props.setImgFile(e.target.files[0]);
+    }
+
     const newData = { ...props.imgData };
-    newData.geolocation = getGeo();
     props.setImgData(newData);
+
+    props.setCurrentStep(2);
 
     history.push("confirmation");
   };
 
   return (
     <div className="container">
+      <ConfirmationModal
+        imgFile={props.imgFile}
+        handleLiveCapture={handleLiveCapture}
+        confirmImage={confirmImage}
+      />
+
       <Map
         imgData={props.imgData}
         imgFile={props.imgFile}
@@ -69,7 +78,7 @@ const Confirmation = (props) => {
         manualLocation={props.manualLocation}
         setManualLocation={props.setManualLocation}
       />
-      <div>
+      <div className="core-buttons">
         {/* image preview image logic */}
         {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
         <label for="live-capture" className="btn-secondary">
@@ -93,14 +102,7 @@ const Confirmation = (props) => {
           Confirm
         </button>
       </div>
-      <div className="core-buttons">
-        <button className="btn-secondary" onClick={cancelSubmit}>
-          Cancel
-        </button>
-        {/* <button className="btn-primary" onClick={(quickSubmit, handleUpload)}>
-          Quick Submit
-        </button> */}
-      </div>
+
       <Socials />
     </div>
   );

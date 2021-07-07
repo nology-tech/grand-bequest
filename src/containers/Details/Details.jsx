@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import "../../App.scss";
 import { useHistory } from "react-router-dom";
 import "./Details.scss";
-import Information from "../Information/Information";
-import { storage } from "../../firebase";
-import Socials from "../../Components/Socials/Socials.jsx";
+import Socials from "../../components/Socials/Socials.jsx";
 
 const Details = (props) => {
   let history = useHistory();
