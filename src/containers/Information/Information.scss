@@ -1,66 +1,68 @@
-.show {
-  display: block;
-  transition: height 2s linear 500s;
-}
-.hide {
-  display: none;
-  transition: height 2s linear 500s;
-}
-.container {
+.info-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100vh;
-}
-.form {
-  padding: 10px;
-  border-radius: 20px;
-  background-color: #cdefd1;
-  transition: 2s;
-  textarea {
-    resize: none;
+
+  .show {
+    display: block;
+    transition: height 2s linear 500s;
+  }
+  .hide {
+    display: none;
+    transition: height 2s linear 500s;
   }
 
-  @media (max-width: 767px) {
-    border: 2px;
-  }
-  @media (max-width: 400px) {
-    border: 2px;
-    width: 90vw;
-  }
-
-  &__label {
+  .form {
     padding: 10px;
+    border-radius: 20px;
+    background-color: #cdefd1;
+    transition: 2s;
+    textarea {
+      resize: none;
+    }
+
+    @media (max-width: 767px) {
+      border: 2px;
+    }
+    @media (max-width: 400px) {
+      border: 2px;
+      width: 90vw;
+    }
+
+    &__label {
+      padding: 10px;
+    }
+
+    &__label-email {
+      padding: 10px;
+    }
+
+    &__label-number {
+      padding: 10px;
+    }
+
+    // &__users-details {
+    //   height: 0px; /* we start animation from 0px */
+
+    //   transition: height 200s ease-in; /* transition has to be defined on base state of element */
+    //   background-color: #f5f5f5;
+    // }
+    // &__checkbox:checked ~ .form__users-details {
+    //   height: 500px;
+    // }
+
+    &__middle {
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+    }
+
+    &__permission {
+      height: 35;
+      width: 25;
+    }
   }
-
-  &__label-email {
-    padding: 10px;
-  }
-
-  &__label-number {
-    padding: 10px;
-  }
-
-  // &__users-details {
-  //   height: 0px; /* we start animation from 0px */
-
-  //   transition: height 200s ease-in; /* transition has to be defined on base state of element */
-  //   background-color: #f5f5f5;
-  // }
-  // &__checkbox:checked ~ .form__users-details {
-  //   height: 500px;
-  // }
-
-  &__middle {
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-  }
-}
-
-.form__permission {
-  height: 35;
-  width: 25;
 }

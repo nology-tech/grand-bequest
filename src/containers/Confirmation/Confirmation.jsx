@@ -102,8 +102,6 @@ const Confirmation = (props) => {
           Confirm
         </button>
       </div>
-
-      <Socials />
     </div>
   );
 };

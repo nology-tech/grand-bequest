@@ -86,7 +86,7 @@ const Information = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="info-container">
       <div className="form">
         <div className="form__middle">
           <h3>Optional fields</h3>
