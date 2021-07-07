@@ -16,7 +16,6 @@
     text-align: center;
   }
 
-
   &__text {
     max-height: 300px;
     overflow-y: auto;
@@ -42,7 +41,7 @@
     box-shadow: 0 2px 8px 3px;
     padding: 30px;
     border-radius: 10px;
-    z-index: 999;
+    z-index: 2000;
     left: 50%;
     top: 20%;
     margin-left: -30%;
@@ -86,6 +85,9 @@
   .popup {
     &__modal {
       margin-left: -38%;
+    }
+    &__dismiss-btn {
+      max-width: 10rem;
     }
   }
 }

@@ -25,21 +25,21 @@ const Map = (props) => {
     iconRetinaUrl: originalMarker,
     iconAnchor: [5, 55],
     popupAnchor: [10, -44],
-    iconSize: [25, 40],
+    iconSize: [40, 40],
   });
   let locationMarker = new L.Icon({
     iconUrl: orangeMarker,
     iconRetinaUrl: orangeMarker,
     iconAnchor: [5, 55],
     popupAnchor: [10, -44],
-    iconSize: [25, 40],
+    iconSize: [40, 40],
   });
   let buildingMarker = new L.Icon({
     iconUrl: greenMarker,
     iconRetinaUrl: greenMarker,
     iconAnchor: [5, 55],
     popupAnchor: [10, -44],
-    iconSize: [25, 40],
+    iconSize: [40, 40],
   });
 
   const [renderDBMarkers, setRenderDBMarkers] = useState([]);
