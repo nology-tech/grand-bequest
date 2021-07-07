@@ -1,6 +1,6 @@
 .home {
   &__title {
-    margin: 85px 0px;
+    margin: 20px 0px;
     text-align: center;
   }
 
@@ -40,5 +40,10 @@
       height: 60px;
       width: 50px;
     }
+  }
+}
+@media (min-width: 768px) {
+  .home__title {
+    display: none;
   }
 }

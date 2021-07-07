@@ -34,6 +34,7 @@ const Home = (props) => {
   return (
     <div>
       <Overlay></Overlay>
+      <h2 className="home__title">Step 1/3: Home</h2>
 
       <Map
         imgData={props.imgData}
