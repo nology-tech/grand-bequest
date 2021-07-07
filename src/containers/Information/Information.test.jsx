@@ -9,14 +9,28 @@ describe("Optional information form tests", () => {
 
   const props = {
     image: diner,
+    setImgData: () => "setImgData",
+    email: "",
   };
 
   beforeEach(() => {
-    component = mount(<Information imgData={props.image} />);
+    component = mount(
+      <Information
+        imgData={props.image}
+        setImgData={props.setImgData}
+        email={props.email}
+      />
+    );
   });
 
   it("should render", () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should render title", () => {
+    const title = "Optional fields";
+
+    expect(component.find("h3").text()).toBe(title);
   });
 
   it("should validate email", () => {
