@@ -18,4 +18,18 @@ describe("Optional information form tests", () => {
   it("should render", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should validate email", () => {
+    const emailInput = component.find(".form__label-email");
+    const email = "abc@hotmail.co.uk";
+
+    emailInput.simulate("change", {
+      currentTarget: { value: email },
+    });
+
+    const submitButton = component.find('[type="submit"]');
+    submitButton.simulate("click");
+
+    expect(emailInput.text()).toBe(email);
+  });
 });

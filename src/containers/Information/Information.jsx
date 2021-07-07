@@ -48,6 +48,7 @@ const Information = (props) => {
 
   // history.push("/submit"); <---- does this need to go in?
   const validateInputs = () => {
+    //e.preventDefault();
     const emailValue = document.getElementsByClassName("email")[0];
     const numberValue = document.getElementsByClassName("number")[0];
 
@@ -231,7 +232,11 @@ const Information = (props) => {
           >
             Back
           </button>
-          <button className="btn-primary" onClick={validateInputs}>
+          <button
+            className="btn-primary"
+            onClick={validateInputs}
+            type="submit"
+          >
             Add Info
           </button>
         </div>
