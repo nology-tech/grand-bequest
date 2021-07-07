@@ -10,7 +10,7 @@
   background-color: white;
   padding: 0;
   margin: 0;
-  height: 35px;
+  height: 33px;
   width: 90%;
   & div {
     padding: 3px;
@@ -67,9 +67,14 @@
 }
 .locate-button {
   position: absolute;
-  z-index: 800;
-  right: 20px;
-  bottom: 20px;
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 999;
+  right: 10px;
+  top: 10px;
 }
 .leaflet-popup-content {
   height: 261px;
