@@ -104,7 +104,6 @@ const Map = (props) => {
   const LocationMarker = () => {
     const [position, setPosition] = useState(null);
     const [toggle, setToggle] = useState(false);
-    console.log("hello");
 
     const map = useMapEvents({
       locationfound: (e) => {
@@ -118,14 +117,12 @@ const Map = (props) => {
     });
 
     useEffect(() => {
-      console.log("hello2");
       if (!props.currentLocation.length) {
         map.locate({ enableHighAccuracy: true });
       }
     }, []);
 
     useEffect(() => {
-      console.log("hello3");
       if (toggle) {
         map.flyTo(
           props.currentLocation.length ? props.currentLocation : position,
@@ -140,7 +137,6 @@ const Map = (props) => {
     }, [toggle]);
 
     useEffect(() => {
-      console.log("hello4");
       if (!hasAddedSearchControl) {
         hasAddedSearchControl = true;
         const provider = new EsriProvider();
@@ -184,11 +180,9 @@ const Map = (props) => {
 
   const ClickMarker = () => {
     const [position, setPosition] = useState(null);
-    console.log("hello5");
 
     useMapEvents({
       dblclick(e) {
-        console.log("hello6");
         props.setManualLocation([e.latlng.lat, e.latlng.lng]);
         if (history.location.pathname == "/submit") {
           history.push("/submit");
