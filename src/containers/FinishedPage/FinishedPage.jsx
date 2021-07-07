@@ -19,11 +19,11 @@ const FinishedPage = (props) => {
     <div>
       <main>
         <section
-          className="welcome"
+          className="banner"
           style={{ backgroundImage: `url(${wave4})` }}
         >
-          <img className="welcome__logo" src={logo} alt="GrandBequestLogo" />
-          <h1 className="welcome__title">Grand Bequest</h1>
+          <img className="banner__logo" src={logo} alt="GrandBequestLogo" />
+          <h1 className="banner__title">Grand Bequest</h1>
           <p>Build your Legacy and Help Save an Old Building!</p>
 
           <button
@@ -41,10 +41,10 @@ const FinishedPage = (props) => {
           <img className="about__wave" src={wave3} />
         </section>
 
-        <section className="contact">
-          <h2 className="contact__title">Save more Buildings!</h2>
+        <section className="socials">
+          <h2 className="socials__title">Save more Buildings!</h2>
           <p>Share the App!</p>
-          <div className="contact__social">
+          <div className="socials__links">
             <a
               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.grandbequest.co.uk%2F&amp;src=sdkpreparse"
               target="_blank"
@@ -58,7 +58,7 @@ const FinishedPage = (props) => {
               <img src={twitter} />
             </a>
           </div>
-          <p className="contact__rights">
+          <p className="socials__rights">
             Grand Bequest 2021 - All Rights Reserved
           </p>
         </section>

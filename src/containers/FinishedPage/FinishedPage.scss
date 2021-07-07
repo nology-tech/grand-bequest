@@ -1,5 +1,5 @@
 @import "../../assets/styles/variables";
-.welcome {
+.banner {
   background-position: bottom;
   background-repeat: no-repeat;
   text-align: center;
@@ -46,7 +46,7 @@
   }
 }
 
-.contact {
+.socials {
   padding: 0;
   padding-top: 5%;
   text-align: center;
@@ -55,7 +55,7 @@
     text-align: center;
   }
 
-  &__social {
+  &__links {
     img {
       width: 60px;
       margin: 20px;
