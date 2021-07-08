@@ -6,6 +6,17 @@
     margin: 20px 0px;
     text-align: center;
   }
+  .core-buttons {
+    display: flex;
+    justify-content: center;
+    .btn-primary {
+      // max-width: 10px;
+      // max-height: 120px;
+      max-width: 200px;
+      height: 67px;
+      margin-left: 20px;
+    }
+  }
 }
 .container {
   display: flex;
@@ -23,7 +34,7 @@
 
   .preview-image {
     height: 300px;
-    width: 300px;
+    width: 90%;
     border-radius: 16px;
     margin-top: 20px;
   }
@@ -35,7 +46,7 @@
   margin: 20px;
   border-radius: 20px;
   background-color: #cdefd1;
-  width: 400px;
+  width: 88%;
   max-width: 100%;
 
   & > * {
@@ -50,18 +61,6 @@
   }
 }
 
-.core-buttons {
-  display: flex;
-  justify-content: center;
-  .btn-primary {
-    // max-width: 10px;
-    // max-height: 120px;
-    max-width: 200px;
-    height: 67px;
-    margin-left: 20px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .popup {
     &__modal {
@@ -73,5 +72,13 @@
   .details__title {
     display: none;
     margin: 20px 0px;
+  }
+}
+@media (max-width: 320px) {
+  .btn-primary {
+    min-width: 125px !important;
+  }
+  .btn-secondary {
+    min-width: 125px !important;
   }
 }
