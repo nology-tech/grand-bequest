@@ -21,10 +21,12 @@ const FinishedPage = (props) => {
         <section
           className="banner"
           style={{ backgroundImage: `url(${wave4})` }}
-        >
-          <img className="banner__logo" src={logo} alt="GrandBequestLogo" />
-          <h1 className="banner__title">Grand Bequest</h1>
-          <p>Build your Legacy and Help Save an Old Building!</p>
+        ></section>
+
+        <section className="about">
+          <h2 className="about__title">Thanks for uploading!</h2>
+          <p>Your building has been saved to the map and is now viewable!</p>
+          <img className="about__wave" src={wave3} />
 
           <button
             className="startButton"
@@ -33,12 +35,6 @@ const FinishedPage = (props) => {
           >
             Return Home!
           </button>
-        </section>
-
-        <section className="about">
-          <h2 className="about__title">Thanks for uploading!</h2>
-          <p>Your building has been saved to the map and is now viewable!</p>
-          <img className="about__wave" src={wave3} />
         </section>
 
         <section className="socials">

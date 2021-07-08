@@ -72,7 +72,6 @@ const Routes = (props) => {
         <Information imgData={props.imgData} setImgData={props.setImgData} />
       </Route>
       <Route path="/Finished">
-        <GrandStepper step={currentStep} />
         <FinishedPage setCurrentStep={setCurrentStep} />
       </Route>
       <Route path="/*">

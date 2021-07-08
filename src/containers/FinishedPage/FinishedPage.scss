@@ -3,7 +3,8 @@
   background-position: bottom;
   background-repeat: no-repeat;
   text-align: center;
-  padding: 1% 20px 0 20px;
+  padding: 20px;
+  margin-bottom: -2px;
 
   &__logo {
     height: 130px;
@@ -16,11 +17,11 @@
     text-align: center;
   }
 
-  @media screen and (min-width: 375px) {
-    &__logo {
-      // margin-top: 100px;
-    }
-  }
+  // @media screen and (min-width: 375px) {
+  //   &__logo {
+  //     // margin-top: 100px;
+  //   }
+  // }
 }
 
 .about {

@@ -36,11 +36,11 @@
     margin: 0px 0px 20px 0px;
   }
 
-  @media screen and (min-width: 375px) {
-    &__logo {
-      // margin-top: 100px;
-    }
-  }
+  // @media screen and (min-width: 375px) {
+  //   &__logo {
+  //     // margin-top: 100px;
+  //   }
+  // }
 }
 
 .about {
@@ -64,7 +64,7 @@
 
 .contact {
   padding: 50px 15%;
-  padding-top: 15%;
+  padding-top: 20%;
   text-align: center;
 
   &__title {
