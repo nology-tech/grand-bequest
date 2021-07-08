@@ -1,4 +1,5 @@
 @import "../../assets/styles/variables";
+
 .banner {
   background-position: bottom;
   background-repeat: no-repeat;
@@ -9,11 +10,6 @@
   &__logo {
     height: 130px;
     width: 130px;
-  }
-
-  &__title {
-    font-size: $font-L;
-    text-align: center;
   }
 }
 

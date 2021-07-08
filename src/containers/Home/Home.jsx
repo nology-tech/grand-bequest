@@ -45,7 +45,7 @@ const Home = (props) => {
         setManualLocation={props.setManualLocation}
       />
 
-      <div className="core-buttons">
+      <div className="home__core-buttons core-buttons">
         <label for="file-upload" className="btn-secondary">
           Upload
         </label>
