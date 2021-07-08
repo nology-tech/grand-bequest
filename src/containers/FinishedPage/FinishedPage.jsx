@@ -1,15 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./FinishedPage.scss";
-import logo from "../../assets/images/GrandBequestLogo.png";
-import wave from "../../assets/images/wave.svg";
-import wave3 from "../../assets/images/wave3.svg";
-import wave4 from "../../assets/images/wave4.svg";
-import secondWave from "../../assets/images/wave-2.svg";
 import facebook from "../../assets/images/facebook.png";
 import twitter from "../../assets/images/twitter.png";
-import instagram from "../../assets/images/instagram.png";
-
+import pgram from "../../assets/images/pgram2.png";
 const FinishedPage = (props) => {
   let history = useHistory();
   const resetStepper = () => {
@@ -18,25 +12,19 @@ const FinishedPage = (props) => {
   return (
     <div>
       <main>
-        <section
-          className="banner"
-          style={{ backgroundImage: `url(${wave4})` }}
-        ></section>
-
-        <section className="about">
-          <h2 className="about__title">Thanks for uploading!</h2>
+        <section className="banner"></section>
+        <section className="finished">
+          <h2 className="finished__title">Thanks for uploading!</h2>
           <p>Your building has been saved to the map and is now viewable!</p>
-          <img className="about__wave" src={wave3} />
-
+          <img className="finished__wave" src={pgram} />
           <button
-            className="startButton"
+            className="finishButton"
             onClick={resetStepper}
             onClick={() => history.push("/home")}
           >
             Return Home!
           </button>
         </section>
-
         <section className="socials">
           <h2 className="socials__title">Save more Buildings!</h2>
           <p>Share the App!</p>
@@ -62,5 +50,4 @@ const FinishedPage = (props) => {
     </div>
   );
 };
-
 export default FinishedPage;
