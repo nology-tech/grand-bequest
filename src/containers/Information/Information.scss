@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100vh;
+  align-items: center;
+  width: 100vw;
 
   .show {
     display: block;
@@ -13,7 +15,7 @@
     transition: height 2s linear 500s;
   }
 
-  .form {
+  .info_form {
     padding: 10px;
     border-radius: 20px;
     background-color: #cdefd1;
