@@ -12,16 +12,9 @@
     text-align: center;
   }
 
-  img {
-    height: 560px;
-    width: 100%;
-    border-radius: 14px;
-    object-fit: cover;
-  }
-
   .preview-image {
     height: 300px;
-    width: 90%;
+    width: 400px;
     border-radius: 16px;
     margin-top: 20px;
   }
@@ -46,7 +39,7 @@
   margin: 20px;
   border-radius: 20px;
   background-color: #cdefd1;
-  width: 88%;
+  width: 400px;
   max-width: 100%;
 
   & > * {
