@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   font-family: $body-font;
+  z-index: 999;
 
   &__socials-container {
     width: 100px;
@@ -52,23 +53,27 @@
     margin-top: 10px;
     height: 25vh;
   }
-  &__use-input {
-    margin-top: 20px;
-    border-radius: 20px;
+  &__label {
+    font-family: $body-font;
     text-align: center;
-    padding: 5px;
+  }
+  &__use-input {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin: 5px;
   }
   &__onwnership-input {
-    margin-top: 20px;
-    border-radius: 20px;
-    text-align: center;
-    padding: 8px;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin: 5px;
   }
   &__comments {
-    margin-top: 20px;
-    border-radius: 20px;
-    text-align: center;
-    padding: 8px;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin: 5px;
   }
   &__btn {
     background: $primary-colour;
@@ -78,5 +83,11 @@
   }
   &__btn:hover {
     background-color: #00504a;
+  }
+}
+@media screen and (max-width: 320px) {
+  .info-modal__modal {
+    position: absolute;
+    height: 100vh;
   }
 }
