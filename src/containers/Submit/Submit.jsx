@@ -124,7 +124,7 @@ const Submit = (props) => {
   }, [url]);
 
   return (
-    <div className="submit container">
+    <div className="submit__container">
       <h2 className="submit__title">Step 3/3: Submit</h2>
       <Map
         imgData={props.imgData}
@@ -137,9 +137,11 @@ const Submit = (props) => {
       />
       {/* image preview image logic */}
       {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
-      <button className="button" onClick={addInformation}>
-        Add Information?
-      </button>
+      <div className="info">
+        <button className="button" onClick={addInformation}>
+          Add Information?
+        </button>
+      </div>
       <div className="core-buttons">
         <button className="btn-secondary" onClick={cancelSubmit}>
           Cancel

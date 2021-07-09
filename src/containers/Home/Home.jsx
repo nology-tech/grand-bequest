@@ -32,7 +32,7 @@ const Home = (props) => {
   };
 
   return (
-    <div>
+    <div className="home__container">
       <Overlay></Overlay>
       <h2 className="home__title">Step 1/3: Home</h2>
 

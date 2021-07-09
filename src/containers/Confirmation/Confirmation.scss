@@ -2,3 +2,21 @@
 //   padding: 10px;
 //   border-radius: 20px;
 // }
+
+.confirmation__container {
+  .core-buttons {
+    display: flex;
+    justify-content: center;
+    .btn-primary {
+      // max-width: 10px;
+      // max-height: 120px;
+      max-width: 200px;
+      height: 67px;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+    .btn-secondary {
+      margin-top: 20px;
+    }
+  }
+}

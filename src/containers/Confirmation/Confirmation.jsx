@@ -63,7 +63,7 @@ const Confirmation = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="confirmation__container">
       <ConfirmationModal
         imgFile={props.imgFile}
         handleLiveCapture={handleLiveCapture}

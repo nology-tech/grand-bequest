@@ -21,31 +21,42 @@ label[for="live-capture"] {
   display: inline-block;
 }
 
-.btn-primary {
-  background: $primary-colour;
-  color: $text-primary;
+.core-buttons {
+  display: flex;
+  justify-content: center;
 
-  &:hover {
-    background-color: darken($primary-colour, 10%);
+  .btn-primary {
+    background: $primary-colour;
+    color: $text-primary;
+
+    &:hover {
+      background-color: darken($primary-colour, 10%);
+    }
+
+    max-width: 200px;
+    height: 67px;
+    margin-left: 20px;
+    margin-top: 20px;
   }
-}
 
-.btn-secondary {
-  background: $secondary-colour;
-  color: #424200;
+  .btn-secondary {
+    background: $secondary-colour;
+    color: #424200;
 
-  &:hover {
-    background-color: darken($secondary-colour, 10%);
+    &:hover {
+      background-color: darken($secondary-colour, 10%);
+    }
+    margin-top: 20px;
   }
-}
 
-.btn-tertiary {
-  padding: 5px;
-  border: 1px solid $primary-colour;
-  border-radius: $button-radius;
+  .btn-tertiary {
+    padding: 5px;
+    border: 1px solid $primary-colour;
+    border-radius: $button-radius;
 
-  &:hover {
-    background-color: $primary-colour;
+    &:hover {
+      background-color: $primary-colour;
+    }
   }
 }
 
