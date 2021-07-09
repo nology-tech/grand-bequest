@@ -137,7 +137,7 @@ const Submit = (props) => {
       />
       {/* image preview image logic */}
       {/* <img src={URL.createObjectURL(props.imgFile)} alt="abandoned building"/> */}
-      <div>
+      <div className="info">
         <button className="button" onClick={addInformation}>
           Add Information?
         </button>
