@@ -11,11 +11,7 @@
   flex-direction: column;
   font-family: $body-font;
   z-index: 999;
-
-  &__socials-container {
-    width: 100px;
-    display: flex;
-  }
+  overflow: visible;
 
   &__facebook {
     border-radius: 180%;
@@ -42,10 +38,10 @@
     box-shadow: 0 2px 8px 3px;
     padding: 30px;
     border-radius: 10px;
-    z-index: 999;
-    left: 70%;
-    top: 10%;
-    margin-left: -30%;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   &__info-modal-img {
     border: 10px solid $text-primary;

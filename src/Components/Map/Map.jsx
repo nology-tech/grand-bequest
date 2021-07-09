@@ -15,7 +15,7 @@ import InfoModal from "../InfoModal/InfoModal";
 import { EsriProvider, GeoSearchControl } from "leaflet-geosearch";
 import { firestore } from "../../firebase";
 import { useHistory } from "react-router-dom";
-import locatebtn from '../../assets/images/Locatebutton.png'
+import locatebtn from "../../assets/images/Locatebutton.png";
 
 // HACK: To stop duplicates
 let hasAddedSearchControl = false;
@@ -89,7 +89,6 @@ const Map = (props) => {
                       </button>
                     )}
                   </Popup>
-                  <InfoModal handleClose={handleClose} show={show} />
                 </Marker>
               );
             }
@@ -160,8 +159,11 @@ const Map = (props) => {
           <Marker position={props.currentLocation} icon={locationMarker}>
             <Popup>You are here, at {props.currentLocation.toString()}</Popup>
           </Marker>
-          <img className="locate-button" src={locatebtn} onClick={() => setToggle(!toggle)}>
-          </img>
+          <img
+            className="locate-button"
+            src={locatebtn}
+            onClick={() => setToggle(!toggle)}
+          ></img>
         </>
       );
     } else {
@@ -170,8 +172,11 @@ const Map = (props) => {
           <Marker position={position} icon={locationMarker}>
             <Popup>You are here, at {position.toString()}</Popup>
           </Marker>
-          <img className="locate-button" src={locatebtn} onClick={() => setToggle(!toggle)}>
-          </img>
+          <img
+            className="locate-button"
+            src={locatebtn}
+            onClick={() => setToggle(!toggle)}
+          ></img>
         </>
       );
     }
