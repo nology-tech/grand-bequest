@@ -12,6 +12,8 @@
   font-family: $body-font;
   z-index: 999;
   overflow: visible;
+  height: 60vh;
+  width: 25%;
 
   &__facebook {
     border-radius: 180%;
@@ -46,8 +48,10 @@
   &__info-modal-img {
     border: 10px solid $text-primary;
     border-radius: 20px;
-    margin-top: 10px;
-    height: 25vh;
+    height: 18vh;
+    width: 50%;
+    display: block;
+    margin: auto;
   }
   &__label {
     font-family: $body-font;
@@ -81,9 +85,46 @@
     background-color: #00504a;
   }
 }
-@media screen and (max-width: 320px) {
-  .info-modal__modal {
-    position: absolute;
-    height: 100vh;
+@media screen and (min-width: 320px) {
+  .info-modal {
+    height: 55vh;
+    width: 60%;
+    &__use-input {
+      border-radius: 10px;
+    }
+    .popup__closeButton {
+      margin: 5px auto;
+    }
+
+    &__onwnership-input {
+      border-radius: 10px;
+    }
+    &__comments {
+      border-radius: 10px;
+    }
+  }
+}
+@media screen and (min-width: 375px) {
+  .info-modal {
+    height: 60vh;
+    width: 60%;
+    .popup__closeButton {
+      margin: 13px auto;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .info-modal {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .info-modal {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .info-modal {
+    width: 25%;
   }
 }

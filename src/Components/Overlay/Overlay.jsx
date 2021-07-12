@@ -6,7 +6,6 @@ import InfoModal from "../InfoModal/InfoModal.jsx";
 const Overlay = () => {
   const hasDismissed = localStorage.getItem("hasDismissed");
   const [show, setShow] = useState(true);
-  const [display, setDisplay] = useState(false);
 
   useEffect(() => {
     if (!hasDismissed) setShow(true);
@@ -36,7 +35,6 @@ const Overlay = () => {
         handleClose={handleClose}
         show={show}
       />
-      <InfoModal handleClose={handleClose} show={show} />
     </div>
   );
 };
