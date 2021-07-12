@@ -14,6 +14,7 @@ const FinishedPage = (props) => {
       <main>
         <section className="banner"></section>
         <section className="finished">
+          <div>
           <h2 className="finished__title">Thanks for uploading!</h2>
           <p>Your building has been saved to the map and is now viewable!</p>
           <img className="finished__wave" src={pgram} />
@@ -24,6 +25,7 @@ const FinishedPage = (props) => {
           >
             Return Home!
           </button>
+          </div>
         </section>
         <section className="socials">
           <h2 className="socials__title">Save more Buildings!</h2>
