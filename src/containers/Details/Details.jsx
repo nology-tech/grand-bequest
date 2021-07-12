@@ -44,7 +44,7 @@ const Details = (props) => {
         className="preview-image"
       />
 
-      <div className="info_form">
+      <div className="form">
         <label>Name of Building / Former Purpose</label>
         <input
           className="form__input"

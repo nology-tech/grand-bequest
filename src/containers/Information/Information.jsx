@@ -87,7 +87,7 @@ const Information = (props) => {
 
   return (
     <div className="info-container">
-      <div className="info_form">
+      <div className="form">
         <div className="form__middle">
           <h3>Optional fields</h3>
           <label htmlFor="potential usage of building" className="form__label">

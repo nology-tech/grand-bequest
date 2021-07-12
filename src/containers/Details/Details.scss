@@ -14,7 +14,7 @@
 
   .preview-image {
     height: 300px;
-    width: 400px;
+    width: 370px;
     border-radius: 16px;
     margin-top: 20px;
   }
@@ -32,14 +32,14 @@
   }
 }
 
-.info_form {
+.form {
   display: flex;
   flex-direction: column;
   padding: 10px;
   margin: 20px;
   border-radius: 20px;
   background-color: #cdefd1;
-  width: 400px;
+  // width: 400px;
   max-width: 100%;
 
   & > * {

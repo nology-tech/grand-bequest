@@ -15,11 +15,11 @@
     transition: height 2s linear 500s;
   }
 
-  .info_form {
+  .form {
     padding: 10px;
     border-radius: 20px;
     background-color: #cdefd1;
-    transition: 2s;
+    // transition: 2s;
     textarea {
       resize: none;
     }
