@@ -7,7 +7,6 @@ import {
   faFacebookSquare,
   faTwitterSquare,
   fab,
-  faHeart,
   far,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,12 +32,6 @@ const InfoModal = (props) => {
             className="info-modal__twitter"
           />
         </a>
-      </div>
-      <div className="info-modal__heart">
-        <FontAwesomeIcon
-          icon={["far", "heart"]}
-          className="info-modal__favourites-icon"
-        />
       </div>
       <img
         className="info-modal__info-modal-img"

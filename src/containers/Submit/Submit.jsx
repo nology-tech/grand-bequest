@@ -4,7 +4,6 @@ import { storage } from "../../firebase";
 import Map from "../../components/Map/Map.jsx";
 import { firestore } from "../../firebase";
 import "./Submit.scss";
-import Socials from "../../components/Socials/Socials";
 import SubmitModal from "../../components/SubmitModal/SubmitModal";
 
 const Submit = (props) => {
