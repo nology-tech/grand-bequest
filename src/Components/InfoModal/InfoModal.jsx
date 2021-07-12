@@ -38,22 +38,18 @@ const InfoModal = (props) => {
         src="https://www.wilsons.school/history/files/image_256-687129.jpg"
         alt=""
       />
-
-      <textarea
-        className="info-modal__use-input"
-        placeholder="Potential Use"
-      ></textarea>
-      <textarea
-        className="info-modal__onwnership-input"
-        type="text"
-        placeholder="Ownership"
-      />
-      <textarea
-        className="info-modal__comments"
-        rows="3"
-        cols="10"
-        placeholder="Comments"
-      ></textarea>
+      <label htmlFor="potential use" className="info-modal__label">
+        Potential Use
+      </label>
+      <textarea className="info-modal__use-input"></textarea>
+      <label htmlFor="ownership" className="info-modal__label">
+        Ownership
+      </label>
+      <textarea className="info-modal__onwnership-input" type="text" />
+      <label htmlFor="comments" className="info-modal__label">
+        Comments
+      </label>
+      <textarea className="info-modal__comments" rows="3" cols="10"></textarea>
       <button className="primary-btn info-modal__btn">Add Comments</button>
     </div>
   );

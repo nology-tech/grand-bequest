@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Modal from "../Modal/Modal.jsx";
 import "./Overlay.scss";
+import InfoModal from "../InfoModal/InfoModal.jsx";
 
 const Overlay = () => {
   const hasDismissed = localStorage.getItem("hasDismissed");
